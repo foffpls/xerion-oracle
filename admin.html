@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Oracle Admin</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root{--bg:#0f0c12;--panel:#17121a;--line:#2a2230;--ink:#f3ece8;--muted:#9d939a;--red:#ac0800;--ok:#3fb47a;--warn:#e7a43a;--err:#ff5a4a;--font:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 var(--font)}
+.wrap{max-width:1100px;margin:0 auto;padding:20px 16px 60px}
+header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+header img{height:26px}
+header h1{font-size:18px;margin:0;font-weight:800}
+header .tag{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px}
+.card h2{font-size:14px;margin:0 0 4px;font-weight:800}
+.card p{margin:0 0 12px;color:var(--muted);font-size:13px}
+.btn{appearance:none;border:1px solid var(--line);background:#221a25;color:var(--ink);font:700 13px/1 var(--font);padding:11px 14px;border-radius:12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{background:#2b2130}
+.btn.primary{background:var(--red);border-color:var(--red);color:#fff}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+label.f{display:block;font-size:12px;color:var(--muted);margin:8px 0 4px}
+input[type=text],input[type=password],input[type=search],select{width:100%;background:#0f0b11;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:10px 11px;font:14px var(--font)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.stat b{display:block;font-size:20px}
+.stat span{font-size:12px;color:var(--muted)}
+.log{margin-top:12px;font-size:13px;border-radius:12px;padding:10px 12px;background:#0f0b11;border:1px solid var(--line);white-space:pre-wrap;display:none;max-height:260px;overflow:auto}
+.log.on{display:block}
+.log .e{color:var(--err)}.log .w{color:var(--warn)}.log .o{color:var(--ok)}
+.pending{display:none;margin-top:14px;border:1px dashed var(--warn);border-radius:12px;padding:12px}
+.pending.on{display:block}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:700;font-size:12px;position:sticky;top:0;background:var(--bg)}
+td.id{color:var(--muted);width:44px}
+td.cat{width:96px;color:var(--muted)}
+td.rare{width:30px;color:#ffc54d}
+td a{color:#ff8f78;text-decoration:none;font-size:12px}
+.tools{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
+.tools input{flex:1;min-width:200px}
+.tools select{width:auto}
+.hl{background:rgba(231,164,58,.08)}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+.note a{color:#ff8f78}
+@media (max-width:700px){ td.cat,th.cat{display:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="logo.png" alt="Xerion">
+    <h1>Oracle · адмінка передбачень</h1>
+    <span class="tag" id="srcTag">завантаження…</span>
+  </header>
+
+  <div class="grid">
+    <section class="card">
+      <h2>1. Експорт у Excel</h2>
+      <p>Вивантаж поточні передбачення у .xlsx, відредагуй у Excel чи Google Sheets і завантаж назад.</p>
+      <button class="btn primary" id="exportBtn">Завантажити .xlsx</button>
+      <div class="note">Колонки: <b>id</b>, <b>category</b>, <b>legendary</b> (1/0), <b>text_ua</b>, <b>text_en</b>. Для нового рядка залиш id порожнім. Щоб видалити передбачення, видали рядок.</div>
+    </section>
+
+    <section class="card">
+      <h2>2. Імпорт з Excel</h2>
+      <p>Обери відредагований файл. Спершу буде перевірка і попередній перегляд, нічого не публікується автоматично.</p>
+      <input type="file" id="file" accept=".xlsx" hidden>
+      <div class="row">
+        <button class="btn primary" id="importBtn">Обрати .xlsx</button>
+        <button class="btn" id="jsonBtn" disabled>Завантажити predictions.json</button>
+      </div>
+      <div class="log" id="importLog"></div>
+    </section>
+
+    <section class="card">
+      <h2>3. Опублікувати на сайт</h2>
+      <p>Записує predictions.json у репозиторій GitHub. Сайт оновиться приблизно за 1–2 хвилини.</p>
+      <div class="two">
+        <div><label class="f">Власник</label><input type="text" id="ghOwner" value="foffpls"></div>
+        <div><label class="f">Репозиторій</label><input type="text" id="ghRepo" value="xerion-oracle"></div>
+      </div>
+      <div class="two">
+        <div><label class="f">Гілка</label><input type="text" id="ghBranch" value="main"></div>
+        <div><label class="f">Файл</label><input type="text" id="ghPath" value="predictions.json"></div>
+      </div>
+      <label class="f">GitHub token (fine-grained, Contents: Read and write)</label>
+      <input type="password" id="ghToken" placeholder="github_pat_…" autocomplete="off">
+      <div class="row" style="margin-top:8px"><label style="font-size:13px;color:var(--muted)"><input type="checkbox" id="ghRemember"> Запам'ятати в цьому браузері</label></div>
+      <div class="row" style="margin-top:10px"><button class="btn primary" id="publishBtn" disabled>Опублікувати</button></div>
+      <div class="log" id="pubLog"></div>
+    </section>
+  </div>
+
+  <div class="pending" id="pending"></div>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="tools">
+    <input type="search" id="q" placeholder="Пошук по тексту…">
+    <select id="catF"><option value="">Усі категорії</option></select>
+    <select id="rareF"><option value="">Усі</option><option value="1">Тільки легендарні</option></select>
+  </div>
+  <table>
+    <thead><tr><th>id</th><th class="cat">Категорія</th><th>★</th><th>Українською</th><th>English</th><th></th></tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<script>
+'use strict';
+const $=s=>document.querySelector(s);
+let data={version:1,updated:'',items:[]};      // what is shown
+let original=null;                               // what is on the site
+let dirty=false;
+
+/* ================= minimal ZIP (store) + XLSX ================= */
+const CRC=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0;}return t;})();
+function crc32(u8){let c=0xFFFFFFFF;for(let i=0;i<u8.length;i++)c=CRC[(c^u8[i])&255]^(c>>>8);return (c^0xFFFFFFFF)>>>0;}
+function zip(files){ // files: [{name, data:string}]
+  const enc=new TextEncoder(), parts=[], central=[]; let off=0;
+  for(const f of files){
+    const name=enc.encode(f.name), d=enc.encode(f.data), crc=crc32(d);
+    const h=new DataView(new ArrayBuffer(30));
+    h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint16(6,0x0800,true);h.setUint16(8,0,true);
+    h.setUint16(10,0,true);h.setUint16(12,0x21,true);h.setUint32(14,crc,true);h.setUint32(18,d.length,true);h.setUint32(22,d.length,true);
+    h.setUint16(26,name.length,true);h.setUint16(28,0,true);
+    parts.push(new Uint8Array(h.buffer),name,d);
+    const c=new DataView(new ArrayBuffer(46));
+    c.setUint32(0,0x02014b50,true);c.setUint16(4,20,true);c.setUint16(6,20,true);c.setUint16(8,0x0800,true);c.setUint16(10,0,true);
+    c.setUint16(12,0,true);c.setUint16(14,0x21,true);c.setUint32(16,crc,true);c.setUint32(20,d.length,true);c.setUint32(24,d.length,true);
+    c.setUint16(28,name.length,true);c.setUint32(42,off,true);
+    central.push(new Uint8Array(c.buffer),name);
+    off+=30+name.length+d.length;
+  }
+  const csize=central.reduce((s,a)=>s+a.length,0);
+  const e=new DataView(new ArrayBuffer(22));
+  e.setUint32(0,0x06054b50,true);e.setUint16(8,files.length,true);e.setUint16(10,files.length,true);e.setUint32(12,csize,true);e.setUint32(16,off,true);
+  return new Blob([...parts,...central,new Uint8Array(e.buffer)],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+}
+async function unzip(buf){
+  const u8=new Uint8Array(buf), dv=new DataView(buf); let eocd=-1;
+  for(let i=u8.length-22;i>=Math.max(0,u8.length-66000);i--){ if(dv.getUint32(i,true)===0x06054b50){eocd=i;break;} }
+  if(eocd<0) throw new Error('Це не схоже на .xlsx файл');
+  const n=dv.getUint16(eocd+10,true); let p=dv.getUint32(eocd+16,true); const out={}; const dec=new TextDecoder();
+  for(let k=0;k<n;k++){
+    const method=dv.getUint16(p+10,true), csz=dv.getUint32(p+20,true), nl=dv.getUint16(p+28,true), xl=dv.getUint16(p+30,true), cl=dv.getUint16(p+32,true), lo=dv.getUint32(p+42,true);
+    const name=dec.decode(u8.subarray(p+46,p+46+nl));
+    const lnl=dv.getUint16(lo+26,true), lxl=dv.getUint16(lo+28,true); const start=lo+30+lnl+lxl;
+    const raw=u8.subarray(start,start+csz);
+    out[name]={method,raw};
+    p+=46+nl+xl+cl;
+  }
+  return { async text(name){ const f=out[name]; if(!f) return null;
+      if(f.method===0) return dec.decode(f.raw);
+      if(f.method===8){ const s=new Blob([f.raw]).stream().pipeThrough(new DecompressionStream('deflate-raw')); return await new Response(s).text(); }
+      throw new Error('Непідтримуваний формат стиснення'); }, names:Object.keys(out) };
+}
+const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,'');
+function colName(i){ let s=''; i++; while(i){ const m=(i-1)%26; s=String.fromCharCode(65+m)+s; i=Math.floor((i-1)/26);} return s; }
+function sheetXml(rows, widths, styleHeader){
+  let x='<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols>';
+  widths.forEach((w,i)=>x+=`<col min="${i+1}" max="${i+1}" width="${w}" customWidth="1"/>`);
+  x+='</cols><sheetData>';
+  rows.forEach((r,ri)=>{ x+=`<row r="${ri+1}">`; r.forEach((v,ci)=>{ const ref=colName(ci)+(ri+1); const s=ri===0&&styleHeader?' s="1"':' s="2"';
+      if(typeof v==='number') x+=`<c r="${ref}"${s}><v>${v}</v></c>`; else x+=`<c r="${ref}" t="inlineStr"${s}><is><t xml:space="preserve">${esc(v)}</t></is></c>`; }); x+='</row>'; });
+  return x+'</sheetData></worksheet>';
+}
+function buildXlsx(sheets){ // [{name, rows, widths}]
+  const files=[];
+  files.push({name:'[Content_Types].xml',data:'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>'+sheets.map((s,i)=>`<Override PartName="/xl/worksheets/sheet${i+1}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join('')+'</Types>'});
+  files.push({name:'_rels/.rels',data:'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>'});
+  files.push({name:'xl/workbook.xml',data:'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets>'+sheets.map((s,i)=>`<sheet name="${esc(s.name)}" sheetId="${i+1}" r:id="rId${i+1}"/>`).join('')+'</sheets></workbook>'});
+  files.push({name:'xl/_rels/workbook.xml.rels',data:'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'+sheets.map((s,i)=>`<Relationship Id="rId${i+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet${i+1}.xml"/>`).join('')+`<Relationship Id="rId${sheets.length+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`});
+  files.push({name:'xl/styles.xml',data:'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><color rgb="FFFFFFFF"/><name val="Calibri"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FFAC0800"/><bgColor indexed="64"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="3"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1"/><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0" applyAlignment="1"><alignment vertical="top" wrapText="1"/></xf></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>'});
+  sheets.forEach((s,i)=>files.push({name:`xl/worksheets/sheet${i+1}.xml`,data:sheetXml(s.rows,s.widths,true)}));
+  return zip(files);
+}
+async function readXlsx(buf){
+  const z=await unzip(buf); const P=new DOMParser();
+  const NS='http://schemas.openxmlformats.org/spreadsheetml/2006/main';
+  const wb=P.parseFromString(await z.text('xl/workbook.xml'),'application/xml');
+  const sheets=[...wb.getElementsByTagNameNS(NS,'sheet')];
+  if(!sheets.length) throw new Error('У файлі немає аркушів');
+  const relsDoc=P.parseFromString(await z.text('xl/_rels/workbook.xml.rels'),'application/xml');
+  const rels={}; [...relsDoc.getElementsByTagName('Relationship')].forEach(r=>rels[r.getAttribute('Id')]=r.getAttribute('Target'));
+  let sh=sheets.find(s=>/predict|передб/i.test(s.getAttribute('name')))||sheets[0];
+  const rid=sh.getAttribute('r:id')||sh.getAttributeNS('http://schemas.openxmlformats.org/officeDocument/2006/relationships','id');
+  let target=rels[rid]||'worksheets/sheet1.xml'; target=target.replace(/^\/?xl\//,'').replace(/^\//,'');
+  const ss=[]; const sst=await z.text('xl/sharedStrings.xml');
+  if(sst){ const d=P.parseFromString(sst,'application/xml'); [...d.getElementsByTagNameNS(NS,'si')].forEach(si=>{ ss.push([...si.getElementsByTagNameNS(NS,'t')].filter(t=>!t.closest||!t.parentNode||t.parentNode.localName!=='rPh').map(t=>t.textContent).join('')); }); }
+  const doc=P.parseFromString(await z.text('xl/'+target),'application/xml');
+  const rows=[];
+  [...doc.getElementsByTagNameNS(NS,'row')].forEach(row=>{
+    const ri=Number(row.getAttribute('r'))-1; const arr=[];
+    [...row.getElementsByTagNameNS(NS,'c')].forEach((c,idx)=>{
+      const ref=c.getAttribute('r'); let ci=idx;
+      if(ref){ const L=ref.replace(/\d+/g,''); ci=0; for(const ch of L) ci=ci*26+(ch.charCodeAt(0)-64); ci--; }
+      const t=c.getAttribute('t'); const v=c.getElementsByTagNameNS(NS,'v')[0]; let val='';
+      if(t==='s') val=ss[Number(v?.textContent)]??'';
+      else if(t==='inlineStr') val=[...c.getElementsByTagNameNS(NS,'t')].map(x=>x.textContent).join('');
+      else if(t==='b') val=v?.textContent==='1';
+      else val=v?v.textContent:'';
+      arr[ci]=val;
+    });
+    rows[isNaN(ri)?rows.length:ri]=arr;
+  });
+  return rows.filter(Boolean);
+}
+
+/* ================= data ================= */
+const CATS=['affiliate','career','home','money','tech','food','mood','social','weekend','mystic'];
+function stats(){
+  const it=data.items, by={}; it.forEach(i=>by[i.cat]=(by[i.cat]||0)+1);
+  $('#stats').innerHTML=`<div class="stat"><b>${it.length}</b><span>передбачень</span></div><div class="stat"><b>${it.filter(i=>i.rare).length}</b><span>легендарних</span></div>`+
+    Object.entries(by).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="stat"><b>${v}</b><span>${esc(k)}</span></div>`).join('');
+  const sel=$('#catF'), cur=sel.value; sel.innerHTML='<option value="">Усі категорії</option>'+Object.keys(by).sort().map(c=>`<option ${c===cur?'selected':''}>${esc(c)}</option>`).join('');
+}
+function render(){
+  const q=$('#q').value.trim().toLowerCase(), cf=$('#catF').value, rf=$('#rareF').value;
+  const rows=data.items.filter(i=>(!cf||i.cat===cf)&&(!rf||i.rare)&&(!q||(i.ua+' '+i.en).toLowerCase().includes(q)));
+  $('#tbody').innerHTML=rows.map(i=>`<tr class="${i._changed?'hl':''}"><td class="id">${i.id}</td><td class="cat">${esc(i.cat)}</td><td class="rare">${i.rare?'★':''}</td><td>${esc(i.ua)}</td><td>${esc(i.en)}</td><td>${dirty?'':`<a href="./?preview=${i.id}" target="_blank">перегляд</a>`}</td></tr>`).join('');
+}
+['#q','#catF','#rareF'].forEach(s=>$(s).addEventListener('input',render));
+
+function log(el,lines){ el.classList.add('on'); el.innerHTML=lines.map(([c,t])=>`<div class="${c}">${esc(t)}</div>`).join(''); }
+
+/* ---- export ---- */
+$('#exportBtn').onclick=()=>{
+  const rows=[['id','category','legendary','text_ua','text_en']].concat(data.items.map(i=>[i.id,i.cat,i.rare?1:0,i.ua,i.en]));
+  const help=[['Інструкція / How to'],
+   ['1. Редагуй тексти в аркуші Predictions. Одне передбачення = один рядок.'],
+   ['2. id: не змінюй для наявних рядків. Для нового рядка залиш id порожнім, він створиться автоматично.'],
+   ['3. category: '+CATS.join(', ')+'. Можна додати свою, на сайті вона покажеться як є.'],
+   ['4. legendary: 1 = рідкісне "легендарне" передбачення (золота куля), 0 = звичайне.'],
+   ['5. text_ua і text_en: обидва бажано заповнити. Якщо одна мова порожня, покажеться інша.'],
+   ['6. Рекомендована довжина: до ~110 символів, щоб текст гарно вмістився в кулю.'],
+   ['7. Щоб видалити передбачення, видали рядок повністю.'],
+   ['8. Збережи як .xlsx і завантаж в адмінці: Імпорт → перевір → Опублікувати.']];
+  const blob=buildXlsx([{name:'Predictions',rows,widths:[7,13,11,70,70]},{name:'Інструкція',rows:help,widths:[110]}]);
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=`xerion-oracle-predictions-${new Date().toISOString().slice(0,10)}.xlsx`; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+};
+
+/* ---- import ---- */
+$('#importBtn').onclick=()=>$('#file').click();
+const truthy=v=>v===true||/^(1|true|так|yes|y|\+|★|x)$/i.test(String(v).trim());
+$('#file').onchange=async e=>{
+  const f=e.target.files[0]; e.target.value=''; if(!f) return;
+  const out=[]; try{
+    const rows=await readXlsx(await f.arrayBuffer());
+    if(rows.length<2) throw new Error('Файл порожній');
+    const head=rows[0].map(h=>String(h||'').trim().toLowerCase());
+    const col=(...names)=>head.findIndex(h=>names.includes(h));
+    const cId=col('id','№'), cCat=col('category','категорія','cat'), cRare=col('legendary','rare','легендарне'), cUa=col('text_ua','ua','українською','текст ua'), cEn=col('text_en','en','english','текст en');
+    if(cUa<0&&cEn<0) throw new Error('Не знайдено колонок text_ua / text_en у першому рядку');
+    const items=[], errs=[], warns=[]; const ids=new Set(); let maxId=Math.max(0,...data.items.map(i=>i.id),...(original?.items||[]).map(i=>i.id));
+    const pending=[];
+    rows.slice(1).forEach((r,k)=>{
+      const line=k+2; const ua=String(r[cUa]??'').trim(), en=String(r[cEn]??'').trim();
+      if(!ua&&!en) return; // empty row
+      let id=cId>=0?String(r[cId]??'').trim():''; const cat=(cCat>=0?String(r[cCat]??'').trim().toLowerCase():'')||'mystic';
+      const rare=cRare>=0?truthy(r[cRare]??''):false;
+      if(id!==''){ id=Number(id); if(!Number.isInteger(id)||id<1){ errs.push(`Рядок ${line}: некоректний id "${r[cId]}"`); return; }
+        if(ids.has(id)){ errs.push(`Рядок ${line}: id ${id} повторюється`); return; } ids.add(id); maxId=Math.max(maxId,id); }
+      if(!ua) warns.push(`Рядок ${line}: немає тексту UA (покажеться англійський)`);
+      if(!en) warns.push(`Рядок ${line}: немає тексту EN (покажеться український)`);
+      if(Math.max(ua.length,en.length)>140) warns.push(`Рядок ${line}: довгий текст (${Math.max(ua.length,en.length)} симв.) — може бути дрібним у кулі`);
+      if(!CATS.includes(cat)) warns.push(`Рядок ${line}: нова категорія "${cat}"`);
+      const it={id:id===''?null:id,cat,rare,ua:ua||en,en:en||ua}; items.push(it); if(id==='') pending.push(it);
+    });
+    pending.forEach(it=>it.id=++maxId);
+    const seenUa=new Map(), seenEn=new Map();
+    items.forEach(i=>{ const a=i.ua.toLowerCase(), b=i.en.toLowerCase();
+      if(seenUa.has(a)) warns.push(`Дублікат UA: id ${seenUa.get(a)} і ${i.id}`); else seenUa.set(a,i.id);
+      if(seenEn.has(b)) warns.push(`Дублікат EN: id ${seenEn.get(b)} і ${i.id}`); else seenEn.set(b,i.id); });
+    if(errs.length){ log($('#importLog'),[['e',`Знайдено помилок: ${errs.length}. Виправ їх у файлі та імпортуй знову.`],...errs.map(x=>['e',x])]); return; }
+    if(!items.length) throw new Error('Не знайдено жодного передбачення');
+    // diff
+    const base=new Map((original||data).items.map(i=>[i.id,i]));
+    let added=0,changed=0; items.forEach(i=>{ const o=base.get(i.id); if(!o){added++;i._changed=true;} else if(o.ua!==i.ua||o.en!==i.en||o.cat!==i.cat||!!o.rare!==!!i.rare){changed++;i._changed=true;} });
+    const removed=[...base.keys()].filter(id=>!items.some(i=>i.id===id)).length;
+    data={version:(original?.version||1)+1,updated:new Date().toISOString().slice(0,10),items};
+    dirty=true; stats(); render();
+    out.push(['o',`Імпортовано ${items.length} передбачень: додано ${added}, змінено ${changed}, видалено ${removed}.`]);
+    if(warns.length) out.push(['w',`Попередження (${warns.length}):`],...warns.slice(0,60).map(w=>['w','• '+w]));
+    out.push(['','Змінені рядки підсвічені в таблиці нижче. Якщо все гаразд, натисни «Опублікувати».']);
+    log($('#importLog'),out);
+    $('#jsonBtn').disabled=false; $('#publishBtn').disabled=false;
+    $('#srcTag').textContent='чернетка з файлу '+f.name;
+  }catch(err){ log($('#importLog'),[['e','Помилка: '+(err.message||err)]]); }
+};
+function cleanJson(){ return JSON.stringify({version:data.version,updated:data.updated,items:data.items.map(({id,cat,rare,ua,en})=>({id,cat,rare:!!rare,ua,en}))},null,1); }
+$('#jsonBtn').onclick=()=>{ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([cleanJson()],{type:'application/json'})); a.download='predictions.json'; a.click(); };
+
+/* ---- publish ---- */
+const GHK='xerion-oracle.admin.gh';
+try{ const s=JSON.parse(localStorage.getItem(GHK)||'null'); if(s){ ['Owner','Repo','Branch','Path','Token'].forEach(k=>{ if(s[k]) $('#gh'+k).value=s[k]; }); $('#ghRemember').checked=!!s.Token; } }catch(e){}
+function b64(str){ const bytes=new TextEncoder().encode(str); let bin=''; for(let i=0;i<bytes.length;i+=0x8000) bin+=String.fromCharCode.apply(null,bytes.subarray(i,i+0x8000)); return btoa(bin); }
+$('#publishBtn').onclick=async()=>{
+  const o=$('#ghOwner').value.trim(), r=$('#ghRepo').value.trim(), br=$('#ghBranch').value.trim()||'main', path=$('#ghPath').value.trim()||'predictions.json', tok=$('#ghToken').value.trim();
+  const L=$('#pubLog');
+  if(!tok){ log(L,[['e','Встав GitHub token.']]); return; }
+  try{ const keep={Owner:o,Repo:r,Branch:br,Path:path}; if($('#ghRemember').checked) keep.Token=tok; localStorage.setItem(GHK,JSON.stringify(keep)); }catch(e){}
+  const api=`https://api.github.com/repos/${encodeURIComponent(o)}/${encodeURIComponent(r)}/contents/${path.split('/').map(encodeURIComponent).join('/')}`;
+  const H={'Authorization':'Bearer '+tok,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};
+  $('#publishBtn').disabled=true; log(L,[['','Публікую…']]);
+  try{
+    let sha; const g=await fetch(api+'?ref='+encodeURIComponent(br),{headers:H,cache:'no-store'});
+    if(g.ok) sha=(await g.json()).sha; else if(g.status!==404) throw new Error(`GitHub ${g.status}: ${(await g.json().catch(()=>({}))).message||'не вдалося прочитати файл'}`);
+    const p=await fetch(api,{method:'PUT',headers:H,body:JSON.stringify({message:`Update predictions (${data.items.length}) via admin`,content:b64(cleanJson()),branch:br,...(sha?{sha}:{})})});
+    const j=await p.json().catch(()=>({}));
+    if(!p.ok) throw new Error(`GitHub ${p.status}: ${j.message||'помилка'}`);
+    original=JSON.parse(cleanJson()); data.items.forEach(i=>delete i._changed); dirty=false; render();
+    log(L,[['o','Готово! Файл записано в репозиторій.'],['','Сайт оновиться за 1–2 хвилини. Коміт: '+(j.commit?.html_url||'')]]);
+    $('#srcTag').textContent='опубліковано '+new Date().toLocaleTimeString();
+  }catch(err){
+    const hint=/401|Bad credentials/.test(err.message)?' Перевір токен.':/403|404/.test(err.message)?' Перевір назву репозиторію і що токен має доступ Contents: Read and write саме до нього.':'';
+    log(L,[['e','Не вдалося опублікувати. '+err.message+hint]]);
+  }finally{ $('#publishBtn').disabled=!dirty; }
+};
+addEventListener('beforeunload',e=>{ if(dirty){ e.preventDefault(); e.returnValue=''; } });
+
+/* ---- boot ---- */
+fetch('predictions.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
+  original=JSON.parse(JSON.stringify(d)); data=d; $('#srcTag').textContent=`на сайті · версія ${d.version||1} · ${d.updated||''}`; stats(); render();
+}).catch(()=>{ $('#srcTag').textContent='не вдалося завантажити predictions.json'; });
+</script>
+</body>
+</html>

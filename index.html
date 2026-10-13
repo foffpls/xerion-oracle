@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Xerion Oracle — передбачення дня</title>
+<meta name="description" content="Тапни по кулі та отримай своє передбачення на сьогодні від Xerion.">
+<meta name="theme-color" content="#0b0910">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Xerion Oracle — передбачення дня">
+<meta property="og:description" content="Тапни по кулі та дізнайся, що чекає тебе сьогодні. Prophecy of the day by Xerion.">
+<meta property="og:url" content="https://foffpls.github.io/xerion-oracle/">
+<meta property="og:image" content="https://foffpls.github.io/xerion-oracle/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0910; --bg2:#140c12; --ink:#f6efe9; --muted:#a99ea3; --faint:#6d6168;
+  --red:#ac0800; --red2:#e0331b; --glow:#ff4d2e; --gold:#ffc54d;
+  --card:rgba(255,255,255,.045); --line:rgba(255,255,255,.09);
+  --orb:min(78vw, 340px);
+  --display:"Unbounded", system-ui, sans-serif;
+  --body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body)}
+body{min-height:100svh;overflow-x:hidden;
+  background:
+    radial-gradient(120% 60% at 50% 38%, rgba(172,8,0,.22), transparent 60%),
+    radial-gradient(80% 50% at 85% 100%, rgba(224,51,27,.10), transparent 70%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+}
+#stars{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:460px;margin:0 auto;padding:max(14px,env(safe-area-inset-top)) 16px max(28px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;min-height:100svh}
+header{width:100%;display:flex;align-items:center;justify-content:space-between;height:48px}
+header a{display:flex;align-items:center}
+header img{height:30px;width:auto;display:block}
+.lang{display:flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang button{all:unset;cursor:pointer;font:700 12px/1 var(--body);letter-spacing:.06em;padding:8px 11px;border-radius:999px;color:var(--muted);transition:.2s}
+.lang button[aria-pressed="true"]{background:var(--red);color:#fff}
+h1{font:700 clamp(20px,6vw,26px)/1.15 var(--display);text-align:center;margin:18px 0 6px;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:14px;text-align:center;margin:0 0 6px;min-height:20px}
+
+/* ---------- ORB ---------- */
+.stage{position:relative;width:var(--orb);height:calc(var(--orb) * 1.16);margin:14px 0 2px;display:flex;justify-content:center}
+.orb{all:unset;position:relative;width:var(--orb);height:var(--orb);border-radius:50%;cursor:pointer;z-index:2;
+  animation:float 6s ease-in-out infinite;transform-origin:50% 60%}
+.orb:focus-visible{outline:2px solid var(--glow);outline-offset:6px}
+.orb .glass{position:absolute;inset:0;border-radius:50%;overflow:hidden;
+  background:radial-gradient(circle at 50% 55%, #2a0b0c 0%, #12070b 55%, #07050a 100%);
+  box-shadow:inset 0 -18px 50px rgba(255,77,46,.25), inset 0 10px 40px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.06), 0 30px 80px -20px rgba(172,8,0,.65);
+  transition:box-shadow .6s}
+.orb canvas{position:absolute;inset:0;width:100%;height:100%}
+.orb .shine{position:absolute;inset:0;border-radius:50%;pointer-events:none;
+  background:
+   radial-gradient(38% 26% at 34% 20%, rgba(255,255,255,.38), rgba(255,255,255,0) 70%),
+   radial-gradient(70% 70% at 50% 50%, transparent 62%, rgba(255,120,90,.12) 72%, rgba(0,0,0,.55) 100%);
+  mix-blend-mode:screen}
+.orb .rim{position:absolute;inset:-1px;border-radius:50%;pointer-events:none;
+  background:conic-gradient(from 200deg, transparent 0 40%, rgba(255,90,60,.55) 50%, transparent 60% 100%);
+  -webkit-mask:radial-gradient(circle, transparent 68%, #000 70%);mask:radial-gradient(circle, transparent 68%, #000 70%);
+  opacity:.55;animation:spin 14s linear infinite}
+.orb .veil{position:absolute;inset:0;border-radius:50%;pointer-events:none;background:radial-gradient(circle, rgba(8,4,8,.78) 0%, rgba(8,4,8,.55) 45%, transparent 72%);opacity:0;transition:opacity .9s}
+.orb.revealed .veil{opacity:1}
+.orb .msg{position:absolute;left:50%;top:50%;width:68%;height:62%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;text-align:center;pointer-events:none}
+.orb .msg p{margin:0;font:700 18px/1.28 var(--body);color:#fff4ee;text-shadow:0 0 18px rgba(255,77,46,.75),0 1px 2px rgba(0,0,0,.9);letter-spacing:.005em}
+.orb .msg p .w{display:inline-block;opacity:0;filter:blur(8px);transform:translateY(6px) scale(.96);animation:word .7s cubic-bezier(.2,.7,.2,1) forwards}
+.orb .hint{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;transition:opacity .4s}
+.orb .hint b{display:block;font:800 13px/1 var(--display);letter-spacing:.22em;text-transform:uppercase;color:#ffd9cf;text-shadow:0 0 14px rgba(255,77,46,.9);animation:pulse 2.2s ease-in-out infinite}
+.orb .hint svg{width:30px;height:30px;margin-bottom:10px;opacity:.85;animation:pulse 2.2s ease-in-out infinite}
+.orb.revealed .hint,.orb.busy .hint{opacity:0}
+.orb.busy{animation:shake .55s cubic-bezier(.36,.07,.19,.97) 3}
+.orb.busy .glass{box-shadow:inset 0 -18px 60px rgba(255,120,60,.6), inset 0 0 90px rgba(255,77,46,.45), 0 0 0 1px rgba(255,255,255,.1), 0 0 120px 10px rgba(255,77,46,.6)}
+.orb.wobble{animation:wobble .5s ease}
+.orb.rare .glass{box-shadow:inset 0 -18px 60px rgba(255,197,77,.4), inset 0 0 70px rgba(255,197,77,.25), 0 0 0 1px rgba(255,220,150,.25), 0 0 110px 8px rgba(255,197,77,.45)}
+.orb.rare .msg p{text-shadow:0 0 18px rgba(255,197,77,.9),0 1px 2px rgba(0,0,0,.9)}
+.base{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:62%;height:auto;z-index:1;filter:drop-shadow(0 18px 30px rgba(0,0,0,.6))}
+.floorglow{position:absolute;bottom:2%;left:50%;width:90%;height:12%;transform:translateX(-50%);background:radial-gradient(closest-side, rgba(255,77,46,.35), transparent);filter:blur(6px);z-index:0}
+
+.meta{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;min-height:30px;margin-top:6px;opacity:0;transform:translateY(6px);transition:.5s .2s}
+.meta.on{opacity:1;transform:none}
+.chip{font:700 11px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;padding:8px 11px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--muted)}
+.chip.rare{background:linear-gradient(90deg,#ffc54d,#ff8a3d);color:#2a1300;border:0}
+
+.panel{width:100%;margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;opacity:0;transform:translateY(10px);transition:.6s .35s;pointer-events:none}
+.panel.on{opacity:1;transform:none;pointer-events:auto}
+.timer{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.timer small{color:var(--muted);font-size:13px;line-height:1.3}
+.timer strong{font:700 20px/1 var(--display);font-variant-numeric:tabular-nums;letter-spacing:.02em;color:#fff}
+.share-t{margin:16px 0 10px;font-size:13px;color:var(--muted)}
+.share{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.share button{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:7px;padding:12px 4px 10px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid var(--line);font:600 11px/1 var(--body);color:var(--ink);transition:transform .15s, background .2s;text-align:center}
+.share button:active{transform:scale(.95)}
+.share button:hover{background:rgba(255,255,255,.09)}
+.share svg{width:24px;height:24px}
+.more{display:flex;gap:8px;margin-top:8px}
+.more button{all:unset;cursor:pointer;flex:1;text-align:center;padding:12px;border-radius:14px;font:700 13px/1 var(--body);background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.more button.primary{background:var(--red);border-color:var(--red);color:#fff}
+
+.motion{all:unset;cursor:pointer;margin-top:10px;font:600 12px/1 var(--body);color:var(--muted);padding:9px 13px;border-radius:999px;border:1px dashed rgba(255,255,255,.18);display:none;align-items:center;gap:8px}
+.motion svg{width:16px;height:16px}
+.motion.show{display:inline-flex}
+
+footer{margin-top:auto;padding-top:26px;text-align:center;color:var(--faint);font-size:12px;line-height:1.6}
+footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15)}
+
+.toast{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom));transform:translate(-50%,140%);background:#1d1418;border:1px solid var(--line);color:var(--ink);padding:12px 16px;border-radius:14px;font-size:14px;max-width:min(92vw,420px);text-align:center;z-index:50;box-shadow:0 10px 40px rgba(0,0,0,.5);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.toast.on{transform:translate(-50%,0)}
+.spark{position:fixed;width:6px;height:6px;border-radius:50%;pointer-events:none;z-index:40;background:var(--gold);box-shadow:0 0 10px var(--gold)}
+
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes word{to{opacity:1;filter:blur(0);transform:none}}
+@keyframes shake{
+  10%,90%{transform:translate(-2px,1px) rotate(-1deg)}
+  20%,80%{transform:translate(4px,-2px) rotate(2deg)}
+  30%,50%,70%{transform:translate(-7px,2px) rotate(-3deg)}
+  40%,60%{transform:translate(7px,-1px) rotate(3deg)}}
+@keyframes wobble{0%,100%{transform:none}25%{transform:rotate(-4deg)}75%{transform:rotate(4deg)}}
+@media (prefers-reduced-motion: reduce){
+  .orb,.orb .rim,.orb .hint b,.orb .hint svg{animation:none!important}
+  .orb .msg p .w{animation-duration:.01s}
+}
+@media (min-height:800px){ .stage{margin-top:22px} }
+</style>
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<main class="wrap">
+  <header>
+    <a href="https://xerion.team/" target="_blank" rel="noopener" aria-label="Xerion"><img src="logo.png" alt="Xerion" width="490" height="142"></a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="ua" aria-pressed="true">UA</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <h1 data-i18n="title">Передбачення дня</h1>
+  <p class="sub" id="sub" data-i18n="hint">Тапни по кулі або потруси телефон</p>
+
+  <div class="stage">
+    <div class="floorglow"></div>
+    <button class="orb" id="orb" type="button" aria-live="polite">
+      <span class="glass"><canvas id="orbfx"></canvas></span>
+      <span class="veil"></span>
+      <span class="rim"></span>
+      <span class="shine"></span>
+      <span class="hint" id="hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ffd9cf" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M4.2 7l1.7 1M18.1 16l1.7 1M3 12h2M19 12h2M4.2 17l1.7-1M18.1 8l1.7-1"/><circle cx="12" cy="12" r="3.2"/></svg>
+        <b data-i18n="tap">Тапни</b>
+      </span>
+      <span class="msg"><p id="msg"></p></span>
+    </button>
+    <svg class="base" viewBox="0 0 220 70" aria-hidden="true">
+      <defs>
+        <linearGradient id="bg1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3a1a1c"/><stop offset="1" stop-color="#120a0d"/></linearGradient>
+        <linearGradient id="bg2" x1="0" x2="1"><stop offset="0" stop-color="#1a0d10"/><stop offset=".5" stop-color="#4a2024"/><stop offset="1" stop-color="#1a0d10"/></linearGradient>
+      </defs>
+      <path d="M40 8 Q110 26 180 8 L196 46 Q110 64 24 46 Z" fill="url(#bg1)"/>
+      <path d="M24 46 Q110 64 196 46 L204 58 Q110 78 16 58 Z" fill="url(#bg2)"/>
+      <path d="M40 8 Q110 26 180 8" fill="none" stroke="#ac0800" stroke-width="2" opacity=".8"/>
+    </svg>
+  </div>
+
+  <div class="meta" id="meta"></div>
+  <button class="motion" id="motionBtn" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M3 9v6M21 9v6"/></svg>
+    <span data-i18n="enableShake">Увімкнути «потрусити»</span>
+  </button>
+
+  <section class="panel" id="panel" aria-live="polite">
+    <div class="timer">
+      <small data-i18n="next">Наступне передбачення<br>через</small>
+      <strong id="countdown">--:--:--</strong>
+    </div>
+    <div class="share-t" data-i18n="shareTitle">Поділись передбаченням</div>
+    <div class="share">
+      <button type="button" data-share="instagram" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>Instagram</button>
+      <button type="button" data-share="telegram" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.4 4.2 2.9 11.3c-1.2.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM8.6 14l9.2-5.8c.4-.3.8-.1.5.2l-7.6 6.9-.3 3.2L8.6 14Z"/></svg>Telegram</button>
+      <button type="button" data-share="threads" aria-label="Threads">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17.6 8.3C16.6 5.3 14.4 3.8 11.6 3.8 7 3.8 4.4 7.2 4.4 12s2.6 8.2 7.2 8.2c3.6 0 6.4-2.2 6.4-5.3 0-3.6-3.6-4.6-6.4-4.2-2.2.3-3.4 1.5-3.2 3 .2 1.6 1.8 2.3 3.4 2.2 2.6-.2 3.6-2.3 3.6-5.6"/></svg>Threads</button>
+      <button type="button" data-share="linkedin" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.46h-4v-4.84c0-1.16-.02-2.64-1.61-2.64-1.61 0-1.86 1.26-1.86 2.56v4.92h-4v-11Z"/></svg>LinkedIn</button>
+    </div>
+    <div class="more">
+      <button type="button" class="primary" data-share="image" data-i18n="saveImg">Зберегти картинку</button>
+      <button type="button" data-share="native" id="nativeBtn" data-i18n="more">Ще…</button>
+    </div>
+  </section>
+
+  <footer>
+    <span data-i18n="footer">Зроблено з любов'ю командою</span> <a href="https://xerion.team/" target="_blank" rel="noopener">xerion.team</a>
+  </footer>
+</main>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(() => {
+'use strict';
+const SITE = 'https://foffpls.github.io/xerion-oracle/';
+const STORY_QR = '111111100000010011111001001111111100000100011011101001110101000001101110101010010001101110101011101101110101100001110001010001011101101110101110110100100011101011101100000101001100111101110001000001111111101010101010101010101111111000000001011101100100101100000000101111100000111111101010001111100010110001010000010111111001101101010100110011000110100000110010110011111000011001110000111010011110100110101011100100110010100111011010000011100011111001111001001011101010111111010001010000111101010110101001111000010111111111011100101010101110110001010000110111001110111001001100011111101001101101010011100100001101000110111110100110100001110010101101101011111101110000100011110010000010000111011100111001001110101100001011000101101001110111000110101010010010010100101000011000100000101101101101100001100111111111011010111110000000000001010000010111000100010101111111100110111110101011101010110100000101100101010000111100011111101110101010111000111010111111011101110101011110111011111010010111101110101010110001000011001101100100000100100111010010111011011100111111101111111001100011111100010';
+const KEY = 'xerion-oracle.v1';
+
+/* ---------- i18n ---------- */
+const T = {
+  ua:{title:'Передбачення дня',hint:'Тапни по кулі або потруси телефон',hintDesk:'Клацни по кулі, щоб дізнатись майбутнє',tap:'Тапни',
+      revealing:'Куля зазирає в майбутнє…',done:'Твоє передбачення на сьогодні',again:'Куля вже сказала своє. Повертайся завтра!',
+      next:'Наступне передбачення<br>через',shareTitle:'Поділись передбаченням',saveImg:'Зберегти картинку',more:'Ще…',
+      footer:"Зроблено з любов'ю командою",enableShake:'Увімкнути «потрусити»',shakeOn:'Готово! Тепер можна трусити телефон',
+      shakeDenied:'Доступ до руху не надано — просто тапни по кулі',legendary:'Легендарне',no:'№',
+      copied:'Текст скопійовано — встав його у пост',imgSaved:'Картинку збережено — додай її в Instagram Stories',
+      shareText:(t)=>`Моє передбачення на сьогодні від кулі Xerion:\n«${t}»\n\nДізнайся своє:`,
+      cardTitle:'ПЕРЕДБАЧЕННЯ ДНЯ',cardCta:'Відскануй і дізнайся своє',loadErr:'Не вдалося завантажити передбачення. Онови сторінку.',
+      cats:{affiliate:'Афілейт',career:"Кар'єра",home:'Побут',money:'Гроші',tech:'Технології',food:'Кава і їжа',mood:'Настрій',social:'Люди',weekend:'Відпочинок',mystic:'Містика'}},
+  en:{title:'Prophecy of the day',hint:'Tap the orb or shake your phone',hintDesk:'Click the orb to see your future',tap:'Tap',
+      revealing:'The orb is looking into the future…',done:'Your prophecy for today',again:'The orb has spoken. Come back tomorrow!',
+      next:'Next prophecy<br>in',shareTitle:'Share your prophecy',saveImg:'Save image',more:'More…',
+      footer:'Made with love by the team at',enableShake:'Enable “shake”',shakeOn:'Done! Now you can shake your phone',
+      shakeDenied:'Motion access denied — just tap the orb',legendary:'Legendary',no:'#',
+      copied:'Text copied — paste it into your post',imgSaved:'Image saved — add it to your Instagram Story',
+      shareText:(t)=>`My prophecy for today from the Xerion orb:\n"${t}"\n\nGet yours:`,
+      cardTitle:'PROPHECY OF THE DAY',cardCta:'Scan to get yours',loadErr:'Could not load prophecies. Please refresh.',
+      cats:{affiliate:'Affiliate',career:'Career',home:'Home',money:'Money',tech:'Tech',food:'Coffee & food',mood:'Mood',social:'People',weekend:'Time off',mystic:'Mystic'}}
+};
+
+/* ---------- storage (safe) ---------- */
+const mem = {};
+function load(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return mem; } }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){ Object.assign(mem,S); } }
+const params = new URLSearchParams(location.search);
+if (params.has('reset')) { try{ localStorage.removeItem(KEY); }catch(e){} }
+let S = load();
+if (!S.seed) { S.seed = (crypto.getRandomValues ? crypto.getRandomValues(new Uint32Array(1))[0] : Math.random()*4e9|0).toString(36); }
+if (!Array.isArray(S.seen)) S.seen = [];
+if (!S.lang) S.lang = /^(uk|ru|be)/i.test(navigator.language||'') ? 'ua' : (/^en/i.test(navigator.language||'') ? 'en' : 'ua');
+save();
+
+/* ---------- helpers ---------- */
+const $ = s => document.querySelector(s);
+const today = () => { const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); };
+function hash(str){ let h=1779033703^str.length; for(let i=0;i<str.length;i++){h=Math.imul(h^str.charCodeAt(i),3432918353);h=h<<13|h>>>19;} return ()=>{h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return (h^=h>>>16)>>>0;}; }
+function rng(seedStr){ let a=hash(seedStr)(); return ()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;}; }
+const isTouch = matchMedia('(pointer:coarse)').matches;
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let toastT;
+function toast(msg){ const el=$('#toast'); el.textContent=msg; el.classList.add('on'); clearTimeout(toastT); toastT=setTimeout(()=>el.classList.remove('on'),3200); }
+
+/* ---------- data ---------- */
+let ITEMS = [];
+let current = null;
+let state = 'idle'; // idle | busy | revealed
+const preview = params.get('preview');
+
+function pickFor(date){
+  if (S.today && S.today.date===date){ const it = ITEMS.find(i=>i.id===S.today.id); if(it) return it; }
+  const seen = new Set(S.seen);
+  let pool = ITEMS.filter(i=>!seen.has(i.id));
+  if (!pool.length){ S.seen=[]; pool = ITEMS.slice(); }
+  pool.sort((a,b)=>a.id-b.id);
+  const r = rng(S.seed+'|'+date)();
+  return pool[Math.floor(r*pool.length)];
+}
+
+/* ---------- i18n apply ---------- */
+function L(){ return T[S.lang]||T.ua; }
+function applyLang(){
+  document.documentElement.lang = S.lang==='en'?'en':'uk';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const v=L()[el.dataset.i18n]; if(typeof v==='string') el.innerHTML=v; });
+  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.lang===S.lang)));
+  setSub();
+  if (state==='revealed' && current) showText(current, false);
+  renderMeta();
+  document.title = S.lang==='en' ? 'Xerion Oracle — prophecy of the day' : 'Xerion Oracle — передбачення дня';
+}
+function setSub(){
+  const sub=$('#sub');
+  sub.textContent = state==='revealed' ? L().done : state==='busy' ? L().revealing : (isTouch?L().hint:L().hintDesk);
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{ S.lang=b.dataset.lang; save(); applyLang(); }));
+
+/* ---------- text in orb ---------- */
+function fit(p){
+  const box=p.parentElement; let size=Math.min(22, box.clientWidth/9);
+  p.style.fontSize=size+'px';
+  while ((p.scrollHeight>box.clientHeight || p.scrollWidth>box.clientWidth) && size>10){ size-=.5; p.style.fontSize=size+'px'; }
+}
+function showText(item, animate){
+  const p=$('#msg'); const txt=item[S.lang]||item.ua;
+  p.innerHTML='';
+  txt.split(/\s+/).forEach((w,i)=>{ const s=document.createElement('span'); s.className='w'; s.textContent=w;
+    if(!animate||reduced){ s.style.animation='none'; s.style.opacity=1; s.style.filter='none'; s.style.transform='none'; }
+    else s.style.animationDelay=(i*0.07)+'s';
+    p.appendChild(s); p.appendChild(document.createTextNode(' ')); });
+  fit(p);
+  $('#orb').setAttribute('aria-label', txt);
+}
+function renderMeta(){
+  const m=$('#meta'); m.innerHTML='';
+  if (state!=='revealed'||!current) return;
+  const c=document.createElement('span'); c.className='chip'; c.textContent=L().cats[current.cat]||current.cat; m.appendChild(c);
+  if (current.rare){ const r=document.createElement('span'); r.className='chip rare'; r.textContent=L().legendary; m.appendChild(r); }
+  if (!preview){ const n=document.createElement('span'); n.className='chip'; n.textContent=L().no+' '+Math.max(1,S.seen.length)+' / '+ITEMS.length; m.appendChild(n); }
+}
+
+/* ---------- reveal flow ---------- */
+function reveal(){
+  if (!ITEMS.length) return;
+  const orb=$('#orb');
+  if (state==='busy') return;
+  if (state==='revealed'){ orb.classList.remove('wobble'); void orb.offsetWidth; orb.classList.add('wobble'); toast(L().again); return; }
+  state='busy'; setSub(); orb.classList.add('busy'); fx.boost(1);
+  if (navigator.vibrate) try{ navigator.vibrate([25,60,25,60,25,60,90]); }catch(e){}
+  const date=today();
+  current = preview ? (ITEMS.find(i=>String(i.id)===preview)||ITEMS[0]) : pickFor(date);
+  if (!preview){
+    S.today={date,id:current.id};
+    if (!S.seen.includes(current.id)) S.seen.push(current.id);
+    save();
+  }
+  setTimeout(()=>{
+    orb.classList.remove('busy'); orb.classList.add('revealed'); if(current.rare) orb.classList.add('rare');
+    fx.boost(0); fx.setRare(!!current.rare);
+    state='revealed'; setSub(); showText(current,true); renderMeta();
+    $('#meta').classList.add('on'); $('#panel').classList.add('on');
+    if (current.rare) sparkle();
+    tick();
+  }, reduced?300:1700);
+}
+$('#orb').addEventListener('click', reveal);
+
+function restoreToday(){
+  if (preview) return;
+  if (S.today && S.today.date===today()){
+    const it=ITEMS.find(i=>i.id===S.today.id); if(!it) return;
+    current=it; state='revealed';
+    const orb=$('#orb'); orb.classList.add('revealed'); if(it.rare){orb.classList.add('rare'); fx.setRare(true);}
+    showText(it,true); renderMeta(); setSub();
+    $('#meta').classList.add('on'); $('#panel').classList.add('on'); tick();
+  }
+}
+
+/* ---------- countdown ---------- */
+let tickT;
+function tick(){
+  clearTimeout(tickT);
+  const now=new Date(); const mid=new Date(now); mid.setHours(24,0,0,0);
+  let s=Math.max(0,Math.floor((mid-now)/1000));
+  const h=String(Math.floor(s/3600)).padStart(2,'0'), m=String(Math.floor(s%3600/60)).padStart(2,'0'), ss=String(s%60).padStart(2,'0');
+  $('#countdown').textContent=`${h}:${m}:${ss}`;
+  if (s<=0 && !preview){ location.reload(); return; }
+  tickT=setTimeout(tick, 1000 - (Date.now()%1000));
+}
+
+/* ---------- shake ---------- */
+let lastShake=0, hits=[];
+function onMotion(e){
+  const a=e.accelerationIncludingGravity||e.acceleration; if(!a) return;
+  const mag=Math.sqrt((a.x||0)**2+(a.y||0)**2+(a.z||0)**2);
+  const now=Date.now();
+  if (Math.abs(mag-9.8)>11){ hits.push(now); hits=hits.filter(t=>now-t<800); }
+  if (hits.length>=3 && now-lastShake>2500){ lastShake=now; hits=[]; reveal(); }
+}
+function enableMotion(){
+  window.addEventListener('devicemotion', onMotion);
+}
+if (typeof DeviceMotionEvent!=='undefined'){
+  if (typeof DeviceMotionEvent.requestPermission==='function'){
+    if (isTouch){ const b=$('#motionBtn'); b.classList.add('show');
+      b.addEventListener('click', async ()=>{ try{ const r=await DeviceMotionEvent.requestPermission(); if(r==='granted'){ enableMotion(); b.classList.remove('show'); toast(L().shakeOn);} else toast(L().shakeDenied);}catch(e){ toast(L().shakeDenied);} }); }
+  } else enableMotion();
+}
+
+/* ---------- orb fx (canvas) ---------- */
+const fx = (() => {
+  const cv=$('#orbfx'), ctx=cv.getContext('2d'); let W=0,R=0,dpr=1;
+  let speed=1, target=1, rare=false, t0=performance.now();
+  const P=[];
+  function size(){ dpr=Math.min(2,window.devicePixelRatio||1); W=cv.clientWidth*dpr; cv.width=cv.height=W; R=W/2; }
+  function seed(){ P.length=0; const n=isTouch?110:150; for(let i=0;i<n;i++){ P.push({a:Math.random()*Math.PI*2, r:Math.pow(Math.random(),.7)*.88, s:(.15+Math.random()*.6)*(Math.random()<.5?1:-1)*.004, z:Math.random(), h:Math.random()}); } }
+  size(); seed(); addEventListener('resize',()=>{size();});
+  function color(p,alpha){
+    if (rare) return `hsla(${38+p.h*14},100%,${58+p.z*20}%,${alpha})`;
+    const hue = p.h<.75 ? (2+p.h*22) : (340+p.h*12);
+    return `hsla(${hue},95%,${48+p.z*22}%,${alpha})`;
+  }
+  function frame(now){
+    const t=(now-t0)/1000; speed += (target-speed)*0.05;
+    ctx.clearRect(0,0,W,W);
+    ctx.globalCompositeOperation='lighter';
+    // nebula blobs
+    for(let i=0;i<3;i++){
+      const ang=t*0.15*speed*(i%2?1:-1)+i*2.1, rr=R*(.28+.1*i);
+      const x=R+Math.cos(ang)*rr*.6, y=R+Math.sin(ang)*rr*.5;
+      const g=ctx.createRadialGradient(x,y,0,x,y,R*.7);
+      g.addColorStop(0, rare?'rgba(255,190,80,.22)':'rgba(224,51,27,.24)'); g.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=g; ctx.fillRect(0,0,W,W);
+    }
+    for(const p of P){
+      p.a += p.s*speed*(1.6-p.r);
+      const rr=p.r*R*(1+0.04*Math.sin(t*1.3+p.h*9));
+      const x=R+Math.cos(p.a)*rr, y=R+Math.sin(p.a)*rr*.82 + Math.sin(t+p.h*6)*R*.02;
+      const sz=(0.6+p.z*1.9)*dpr*(1+ (speed-1)*.08);
+      const al=(.25+p.z*.6)*(speed>1.5?1:.85);
+      ctx.fillStyle=color(p,al); ctx.beginPath(); ctx.arc(x,y,sz,0,6.283); ctx.fill();
+    }
+    // core
+    const pulse=.5+.5*Math.sin(t*2.2);
+    const core=ctx.createRadialGradient(R,R*1.04,0,R,R*1.04,R*(.35+.06*pulse+(speed-1)*.04));
+    core.addColorStop(0, rare?'rgba(255,214,130,.5)':'rgba(255,110,70,.42)'); core.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=core; ctx.fillRect(0,0,W,W);
+    ctx.globalCompositeOperation='source-over';
+    if(!reduced || speed>1.1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  return { boost(on){ target=on?9:1; }, setRare(v){ rare=v; } };
+})();
+
+/* ---------- starfield ---------- */
+(() => {
+  const cv=$('#stars'), c=cv.getContext('2d'); let st=[];
+  function rs(){ const d=Math.min(2,devicePixelRatio||1); cv.width=innerWidth*d; cv.height=innerHeight*d; st=Array.from({length:70},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height,r:Math.random()*1.2*d+.3,p:Math.random()*6})); }
+  rs(); addEventListener('resize',rs);
+  function f(t){ c.clearRect(0,0,cv.width,cv.height); for(const s of st){ c.globalAlpha=.25+.35*Math.sin(t/1400+s.p)**2; c.fillStyle='#ffe9e2'; c.beginPath(); c.arc(s.x,s.y,s.r,0,6.283); c.fill(); } if(!reduced) requestAnimationFrame(f); }
+  requestAnimationFrame(f);
+})();
+
+function sparkle(){
+  if (reduced) return;
+  const r=$('#orb').getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height/2;
+  for(let i=0;i<36;i++){
+    const s=document.createElement('i'); s.className='spark'; document.body.appendChild(s);
+    const a=Math.random()*6.283, d=r.width*(.55+Math.random()*.5);
+    s.style.left=cx+'px'; s.style.top=cy+'px';
+    s.animate([{transform:'translate(-50%,-50%) scale(1)',opacity:1},{transform:`translate(${Math.cos(a)*d-3}px,${Math.sin(a)*d-3}px) scale(.2)`,opacity:0}],{duration:900+Math.random()*700,easing:'cubic-bezier(.2,.7,.2,1)'}).onfinish=()=>s.remove();
+  }
+}
+
+/* ---------- share card (1080x1920) ---------- */
+const imgCache={};
+function img(src){ return imgCache[src] || (imgCache[src]=new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=src; })); }
+function wrapLines(ctx, text, maxW){
+  const words=text.split(/\s+/), lines=[]; let line='';
+  for(const w of words){ const t=line?line+' '+w:w; if(ctx.measureText(t).width>maxW && line){ lines.push(line); line=w; } else line=t; }
+  if(line) lines.push(line); return lines;
+}
+async function makeCard(){
+  try{ await document.fonts.ready; }catch(e){}
+  const W=1080,H=1920, cv=document.createElement('canvas'); cv.width=W; cv.height=H; const c=cv.getContext('2d');
+  const gold=!!current.rare;
+  // background
+  let g=c.createLinearGradient(0,0,0,H); g.addColorStop(0,'#0b0910'); g.addColorStop(1,'#1a0c12'); c.fillStyle=g; c.fillRect(0,0,W,H);
+  g=c.createRadialGradient(W/2,880,50,W/2,880,900); g.addColorStop(0, gold?'rgba(255,180,60,.35)':'rgba(172,8,0,.45)'); g.addColorStop(1,'rgba(0,0,0,0)'); c.fillStyle=g; c.fillRect(0,0,W,H);
+  const rr=rng('card'+current.id); c.fillStyle='#ffe9e2';
+  for(let i=0;i<120;i++){ c.globalAlpha=.15+rr()*.5; c.beginPath(); c.arc(rr()*W, rr()*H, rr()*2.4+.4, 0, 6.283); c.fill(); }
+  c.globalAlpha=1;
+  // logo
+  try{ const lg=await img('logo.png'); const lw=380, lh=lw*lg.height/lg.width; c.drawImage(lg,(W-lw)/2,150,lw,lh); }catch(e){}
+  // title
+  c.textAlign='center'; c.fillStyle= gold?'#ffc54d':'#ff8f78';
+  c.font='700 40px Unbounded, Manrope, sans-serif';
+  if ('letterSpacing' in c) c.letterSpacing='8px';
+  c.fillText(L().cardTitle + (gold?' · ★':''), W/2, 370);
+  if ('letterSpacing' in c) c.letterSpacing='0px';
+  // orb
+  const cx=W/2, cy=900, R=380;
+  g=c.createRadialGradient(cx,cy+R*.1,R*.1,cx,cy,R); g.addColorStop(0,'#3a0f10'); g.addColorStop(.6,'#15070b'); g.addColorStop(1,'#07050a');
+  c.save(); c.shadowColor= gold?'rgba(255,197,77,.7)':'rgba(255,77,46,.7)'; c.shadowBlur=120; c.fillStyle=g; c.beginPath(); c.arc(cx,cy,R,0,6.283); c.fill(); c.restore();
+  c.save(); c.beginPath(); c.arc(cx,cy,R,0,6.283); c.clip(); c.globalCompositeOperation='lighter';
+  for(let i=0;i<260;i++){ const a=rr()*6.283, d=Math.pow(rr(),.7)*R*.92, z=rr();
+    c.fillStyle = gold?`hsla(${38+rr()*14},100%,${58+z*20}%,${.25+z*.5})`:`hsla(${rr()<.75?2+rr()*22:340+rr()*12},95%,${48+z*22}%,${.25+z*.5})`;
+    c.beginPath(); c.arc(cx+Math.cos(a)*d, cy+Math.sin(a)*d*.82, .8+z*3, 0, 6.283); c.fill(); }
+  c.globalCompositeOperation='source-over';
+  g=c.createRadialGradient(cx,cy,0,cx,cy,R*.8); g.addColorStop(0,'rgba(8,4,8,.8)'); g.addColorStop(.6,'rgba(8,4,8,.55)'); g.addColorStop(1,'rgba(8,4,8,0)'); c.fillStyle=g; c.fillRect(cx-R,cy-R,2*R,2*R);
+  g=c.createRadialGradient(cx-R*.32,cy-R*.6,0,cx-R*.32,cy-R*.6,R*.5); g.addColorStop(0,'rgba(255,255,255,.28)'); g.addColorStop(1,'rgba(255,255,255,0)'); c.fillStyle=g; c.fillRect(cx-R,cy-R,2*R,2*R);
+  c.restore();
+  c.lineWidth=3; c.strokeStyle= gold?'rgba(255,197,77,.6)':'rgba(255,90,60,.45)'; c.beginPath(); c.arc(cx,cy,R,0,6.283); c.stroke();
+  // text in orb
+  const txt=current[S.lang]||current.ua; let fs=58, lines;
+  for(;fs>=34;fs-=2){ c.font=`700 ${fs}px Manrope, sans-serif`; lines=wrapLines(c,txt,R*1.42); if(lines.length*fs*1.25<=R*1.25) break; }
+  c.fillStyle='#fff4ee'; c.shadowColor= gold?'rgba(255,197,77,.9)':'rgba(255,77,46,.9)'; c.shadowBlur=24;
+  const lh=fs*1.25, y0=cy-(lines.length-1)*lh/2+fs*.35;
+  lines.forEach((ln,i)=>c.fillText(ln,cx,y0+i*lh)); c.shadowBlur=0;
+  // pedestal
+  c.fillStyle='#2a1316'; c.beginPath(); c.ellipse(cx,cy+R+40,R*.62,46,0,0,6.283); c.fill();
+  c.fillStyle='#ac0800'; c.fillRect(cx-R*.5,cy+R+4,R,4);
+  // category + date
+  c.font='700 32px Manrope, sans-serif'; c.fillStyle='#a99ea3';
+  const d=new Date(); const ds=d.toLocaleDateString(S.lang==='en'?'en-GB':'uk-UA',{day:'numeric',month:'long',year:'numeric'});
+  c.fillText(`${(L().cats[current.cat]||'').toUpperCase()}  ·  ${ds}`, cx, 1420);
+  // QR + CTA
+  const q=Math.round(Math.sqrt(STORY_QR.length)), qs=220, cell=qs/q, qx=cx-qs/2, qy=1520;
+  c.fillStyle='#ffffff'; roundRect(c,qx-22,qy-22,qs+44,qs+44,26); c.fill();
+  c.fillStyle='#0b0910'; for(let y=0;y<q;y++) for(let x=0;x<q;x++) if(STORY_QR[y*q+x]==='1') c.fillRect(qx+x*cell,qy+y*cell,cell+.6,cell+.6);
+  c.font='600 30px Manrope, sans-serif'; c.fillStyle='#f6efe9'; c.fillText(L().cardCta, cx, 1840);
+  return new Promise(res=>cv.toBlob(res,'image/png'));
+}
+function roundRect(c,x,y,w,h,r){ c.beginPath(); c.moveTo(x+r,y); c.arcTo(x+w,y,x+w,y+h,r); c.arcTo(x+w,y+h,x,y+h,r); c.arcTo(x,y+h,x,y,r); c.arcTo(x,y,x+w,y,r); c.closePath(); }
+
+function shareUrl(src){ return SITE+'?src='+src; }
+function shareText(){ return L().shareText(current[S.lang]||current.ua); }
+async function copy(t){ try{ await navigator.clipboard.writeText(t); return true; }catch(e){ return false; } }
+function download(blob){ const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='xerion-oracle-'+today()+'.png'; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();},1500); }
+async function shareImage(){
+  const blob=await makeCard(); const file=new File([blob],'xerion-oracle.png',{type:'image/png'});
+  if (navigator.canShare && navigator.canShare({files:[file]})){
+    try{ await navigator.share({files:[file]}); return; }catch(e){ if(e.name==='AbortError') return; }
+  }
+  download(blob); toast(L().imgSaved);
+}
+async function doShare(kind){
+  if (!current) return;
+  const text=shareText();
+  switch(kind){
+    case 'instagram': case 'image': return shareImage();
+    case 'telegram': return open('https://t.me/share/url?url='+encodeURIComponent(shareUrl('telegram'))+'&text='+encodeURIComponent(text),'_blank','noopener');
+    case 'threads': return open('https://www.threads.net/intent/post?text='+encodeURIComponent(text+' '+shareUrl('threads')),'_blank','noopener');
+    case 'linkedin': { const ok=await copy(text+' '+shareUrl('linkedin')); if(ok) toast(L().copied);
+      setTimeout(()=>open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(shareUrl('linkedin')),'_blank','noopener'), ok?900:0); return; }
+    case 'native': {
+      if (navigator.share){ try{ await navigator.share({title:'Xerion Oracle',text,url:shareUrl('native')}); }catch(e){} }
+      else if (await copy(text+' '+shareUrl('copy'))) toast(L().copied);
+      return; }
+  }
+}
+document.querySelectorAll('[data-share]').forEach(b=>b.addEventListener('click',()=>doShare(b.dataset.share)));
+
+/* ---------- boot ---------- */
+applyLang();
+fetch('predictions.json',{cache:'no-cache'}).then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(d=>{
+  ITEMS=(d.items||[]).filter(i=>i && i.id!=null && (i.ua||i.en)).map(i=>({...i, id:Number(i.id), ua:i.ua||i.en, en:i.en||i.ua}));
+  restoreToday();
+  if (preview) reveal();
+}).catch(()=>{ $('#sub').textContent=L().loadErr; });
+addEventListener('resize',()=>{ if(state==='revealed') fit($('#msg')); });
+})();
+</script>
+</body>
+</html>
