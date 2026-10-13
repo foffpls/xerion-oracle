@@ -215,7 +215,7 @@ async function readXlsx(buf){
 }
 
 /* ================= data ================= */
-const CATS=['affiliate','career','home','money','tech','food','mood','social','weekend','mystic'];
+const CATS=['meme','career','home','money','food','mood','social','weekend','adventure','energy','mystic'];
 function stats(){
   const it=data.items, by={}; it.forEach(i=>by[i.cat]=(by[i.cat]||0)+1);
   $('#stats').innerHTML=`<div class="stat"><b>${it.length}</b><span>передбачень</span></div><div class="stat"><b>${it.filter(i=>i.rare).length}</b><span>легендарних</span></div>`+
