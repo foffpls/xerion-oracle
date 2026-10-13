@@ -24,11 +24,16 @@
   --bg:#0b0910; --bg2:#140c12; --ink:#f6efe9; --muted:#a99ea3; --faint:#6d6168;
   --red:#ac0800; --red2:#e0331b; --glow:#ff4d2e; --gold:#ffc54d;
   --card:rgba(255,255,255,.045); --line:rgba(255,255,255,.09);
-  --orb:min(78vw, 340px);
+  --orb:clamp(170px, min(84vw, calc((100vh - 250px) / 1.16)), 480px);
+  --orb:clamp(170px, min(84vw, calc((100svh - 250px) / 1.16)), 480px);
   --display:"Unbounded", system-ui, sans-serif;
   --body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+@property --rimA{syntax:'<angle>';inherits:false;initial-value:200deg}
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body)}
 body{min-height:100svh;overflow-x:hidden;
   background:
@@ -37,18 +42,20 @@ body{min-height:100svh;overflow-x:hidden;
     linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
 }
 #stars{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
-.wrap{position:relative;z-index:1;max-width:460px;margin:0 auto;padding:max(14px,env(safe-area-inset-top)) 16px max(28px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;min-height:100svh}
-header{width:100%;display:flex;align-items:center;justify-content:space-between;height:48px}
+.wrap{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:max(14px,env(safe-area-inset-top)) 16px max(28px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;min-height:100svh}
+header{grid-area:header;width:100%;display:flex;align-items:center;justify-content:space-between;height:48px}
 header a{display:flex;align-items:center}
 header img{height:30px;width:auto;display:block}
 .lang{display:flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px}
 .lang button{all:unset;cursor:pointer;font:700 12px/1 var(--body);letter-spacing:.06em;padding:8px 11px;border-radius:999px;color:var(--muted);transition:.2s}
 .lang button[aria-pressed="true"]{background:var(--red);color:#fff}
-h1{font:700 clamp(20px,6vw,26px)/1.15 var(--display);text-align:center;margin:18px 0 6px;letter-spacing:-.01em}
-.sub{color:var(--muted);font-size:14px;text-align:center;margin:0 0 6px;min-height:20px}
+.intro{grid-area:intro;width:100%}
+h1{font:700 clamp(19px,5.6vw,30px)/1.15 var(--display);text-align:center;margin:clamp(8px,2.2svh,22px) 0 6px;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:clamp(13px,3.6vw,15px);text-align:center;margin:0 0 6px;min-height:20px}
+.info{grid-area:info;width:100%;display:flex;flex-direction:column;align-items:center}
 
 /* ---------- ORB ---------- */
-.stage{position:relative;width:var(--orb);height:calc(var(--orb) * 1.16);margin:14px 0 2px;display:flex;justify-content:center}
+.stage{grid-area:stage;position:relative;width:var(--orb);height:calc(var(--orb) * 1.16);margin:clamp(6px,1.8svh,22px) 0 2px;display:flex;justify-content:center;flex-shrink:0}
 .orb{all:unset;position:relative;width:var(--orb);height:var(--orb);border-radius:50%;cursor:pointer;z-index:2;
   animation:float 6s ease-in-out infinite;transform-origin:50% 60%}
 .orb:focus-visible{outline:2px solid var(--glow);outline-offset:6px}
@@ -63,17 +70,17 @@ h1{font:700 clamp(20px,6vw,26px)/1.15 var(--display);text-align:center;margin:18
    radial-gradient(70% 70% at 50% 50%, transparent 62%, rgba(255,120,90,.12) 72%, rgba(0,0,0,.55) 100%);
   mix-blend-mode:screen}
 .orb .rim{position:absolute;inset:-1px;border-radius:50%;pointer-events:none;
-  background:conic-gradient(from 200deg, transparent 0 40%, rgba(255,90,60,.55) 50%, transparent 60% 100%);
+  background:conic-gradient(from var(--rimA,200deg), transparent 0 40%, rgba(255,90,60,.55) 50%, transparent 60% 100%);
   -webkit-mask:radial-gradient(circle, transparent 68%, #000 70%);mask:radial-gradient(circle, transparent 68%, #000 70%);
-  opacity:.55;animation:spin 14s linear infinite}
+  opacity:.55;animation:rimspin 14s linear infinite}
 .orb .veil{position:absolute;inset:0;border-radius:50%;pointer-events:none;background:radial-gradient(circle, rgba(8,4,8,.78) 0%, rgba(8,4,8,.55) 45%, transparent 72%);opacity:0;transition:opacity .9s}
 .orb.revealed .veil{opacity:1}
 .orb .msg{position:absolute;left:50%;top:50%;width:68%;height:62%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;text-align:center;pointer-events:none}
 .orb .msg p{margin:0;font:700 18px/1.28 var(--body);color:#fff4ee;text-shadow:0 0 18px rgba(255,77,46,.75),0 1px 2px rgba(0,0,0,.9);letter-spacing:.005em}
 .orb .msg p .w{display:inline-block;opacity:0;filter:blur(8px);transform:translateY(6px) scale(.96);animation:word .7s cubic-bezier(.2,.7,.2,1) forwards}
 .orb .hint{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;transition:opacity .4s}
-.orb .hint b{display:block;font:800 13px/1 var(--display);letter-spacing:.22em;text-transform:uppercase;color:#ffd9cf;text-shadow:0 0 14px rgba(255,77,46,.9);animation:pulse 2.2s ease-in-out infinite}
-.orb .hint svg{width:30px;height:30px;margin-bottom:10px;opacity:.85;animation:pulse 2.2s ease-in-out infinite}
+.orb .hint b{display:block;font:800 clamp(11px, calc(var(--orb) * .04), 17px)/1 var(--display);letter-spacing:.22em;text-transform:uppercase;color:#ffd9cf;text-shadow:0 0 14px rgba(255,77,46,.9);animation:pulse 2.2s ease-in-out infinite}
+.orb .hint svg{width:clamp(24px, calc(var(--orb) * .09), 42px);height:clamp(24px, calc(var(--orb) * .09), 42px);margin-bottom:10px;opacity:.85;animation:pulse 2.2s ease-in-out infinite}
 .orb.revealed .hint,.orb.busy .hint{opacity:0}
 .orb.busy{animation:shake .55s cubic-bezier(.36,.07,.19,.97) 3}
 .orb.busy .glass{box-shadow:inset 0 -18px 60px rgba(255,120,60,.6), inset 0 0 90px rgba(255,77,46,.45), 0 0 0 1px rgba(255,255,255,.1), 0 0 120px 10px rgba(255,77,46,.6)}
@@ -88,17 +95,18 @@ h1{font:700 clamp(20px,6vw,26px)/1.15 var(--display);text-align:center;margin:18
 .chip{font:700 11px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;padding:8px 11px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--muted)}
 .chip.rare{background:linear-gradient(90deg,#ffc54d,#ff8a3d);color:#2a1300;border:0}
 
-.panel{width:100%;margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;opacity:0;transform:translateY(10px);transition:.6s .35s;pointer-events:none}
+.panel{width:100%;max-width:480px;margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;opacity:0;transform:translateY(10px);transition:.6s .35s;pointer-events:none}
 .panel.on{opacity:1;transform:none;pointer-events:auto}
 .timer{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.timer small{color:var(--muted);font-size:13px;line-height:1.3}
+.timer small{color:var(--muted);font-size:13px;line-height:1.3;max-width:15em}
 .timer strong{font:700 20px/1 var(--display);font-variant-numeric:tabular-nums;letter-spacing:.02em;color:#fff}
 .share-t{margin:16px 0 10px;font-size:13px;color:var(--muted)}
-.share{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.share button{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:7px;padding:12px 4px 10px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid var(--line);font:600 11px/1 var(--body);color:var(--ink);transition:transform .15s, background .2s;text-align:center}
+.share{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.share button{all:unset;min-width:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:7px;padding:12px 4px 10px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid var(--line);font:600 11px/1 var(--body);color:var(--ink);transition:transform .15s, background .2s;text-align:center}
 .share button:active{transform:scale(.95)}
 .share button:hover{background:rgba(255,255,255,.09)}
-.share svg{width:24px;height:24px}
+.share svg{width:24px;height:24px;flex-shrink:0}
+.share .lbl{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .more{display:flex;gap:8px;margin-top:8px}
 .more button{all:unset;cursor:pointer;flex:1;text-align:center;padding:12px;border-radius:14px;font:700 13px/1 var(--body);background:rgba(255,255,255,.05);border:1px solid var(--line)}
 .more button.primary{background:var(--red);border-color:var(--red);color:#fff}
@@ -107,15 +115,15 @@ h1{font:700 clamp(20px,6vw,26px)/1.15 var(--display);text-align:center;margin:18
 .motion svg{width:16px;height:16px}
 .motion.show{display:inline-flex}
 
-footer{margin-top:auto;padding-top:26px;text-align:center;color:var(--faint);font-size:12px;line-height:1.6}
+footer{grid-area:footer;margin-top:auto;padding-top:26px;text-align:center;color:var(--faint);font-size:12px;line-height:1.6}
 footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15)}
 
-.toast{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom));transform:translate(-50%,140%);background:#1d1418;border:1px solid var(--line);color:var(--ink);padding:12px 16px;border-radius:14px;font-size:14px;max-width:min(92vw,420px);text-align:center;z-index:50;box-shadow:0 10px 40px rgba(0,0,0,.5);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.toast.on{transform:translate(-50%,0)}
+.toast{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom));transform:translate(-50%,calc(100% + 60px));visibility:hidden;background:#1d1418;border:1px solid var(--line);color:var(--ink);padding:12px 16px;border-radius:14px;font-size:14px;max-width:min(92vw,420px);text-align:center;z-index:50;box-shadow:0 10px 40px rgba(0,0,0,.5);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.toast.on{transform:translate(-50%,0);visibility:visible}
 .spark{position:fixed;width:6px;height:6px;border-radius:50%;pointer-events:none;z-index:40;background:var(--gold);box-shadow:0 0 10px var(--gold)}
 
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes rimspin{to{--rimA:560deg}}
 @keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
 @keyframes word{to{opacity:1;filter:blur(0);transform:none}}
 @keyframes shake{
@@ -128,7 +136,91 @@ footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(25
   .orb,.orb .rim,.orb .hint b,.orb .hint svg{animation:none!important}
   .orb .msg p .w{animation-duration:.01s}
 }
-@media (min-height:800px){ .stage{margin-top:22px} }
+/* ---------- responsive ---------- */
+@media (max-width:359px){
+  .wrap{padding-left:12px;padding-right:12px}
+  header img{height:24px}
+  .lang button{padding:7px 9px;font-size:11px}
+  .panel{padding:12px;border-radius:18px}
+  .timer small{font-size:12px}
+  .timer strong{font-size:17px}
+  .share{gap:6px}
+  .share button{font-size:10px;padding:10px 2px 8px;gap:5px;border-radius:13px}
+  .share svg{width:21px;height:21px}
+  .more button{font-size:12px;padding:11px 8px}
+  .chip{font-size:10px;padding:7px 9px}
+}
+@media (min-width:600px) and (orientation:portrait){
+  header img{height:36px}
+  .panel{padding:20px}
+  .share button{font-size:12px;padding:14px 4px 12px}
+  .share svg{width:28px;height:28px}
+}
+/* landscape phones, tablets, desktops: orb left, info right */
+@media (orientation:landscape) and (min-width:560px){
+  :root{
+    --orb:clamp(150px, min(44vw, calc((100vh - 160px) / 1.16)), 600px);
+    --orb:clamp(150px, min(44vw, calc((100svh - 160px) / 1.16)), 600px);
+  }
+  .wrap{max-width:1240px;display:grid;
+    grid-template-columns:var(--orb) minmax(250px,460px);justify-content:center;
+    grid-template-rows:auto 1fr auto auto 1fr auto;
+    grid-template-areas:"header header" "stage ." "stage intro" "stage info" "stage ." "footer footer";
+    column-gap:clamp(20px,6vw,120px);align-items:center;
+    padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+  .stage{justify-self:center;align-self:center;margin:8px 0}
+  .intro{align-self:end}
+  .info{align-self:start;align-items:stretch}
+  h1,.sub{text-align:left}
+  h1{font-size:clamp(20px,2.6vw,36px);margin-top:0}
+  .sub{font-size:clamp(13px,1.3vw,16px)}
+  .meta{justify-content:flex-start}
+  .motion{align-self:flex-start}
+  .panel{max-width:none}
+  footer{padding-top:14px}
+}
+@media (orientation:landscape) and (min-width:560px) and (max-height:500px){
+  :root{
+    --orb:clamp(150px, min(44vw, calc((100vh - 84px) / 1.16)), 400px);
+    --orb:clamp(150px, min(44vw, calc((100svh - 84px) / 1.16)), 400px);
+  }
+  .stage{margin:2px 0}
+  .wrap{padding-top:max(6px,env(safe-area-inset-top));padding-bottom:max(8px,env(safe-area-inset-bottom))}
+  header{height:38px}
+  header img{height:24px}
+  h1{font-size:19px;margin-bottom:2px}
+  .sub{font-size:13px;margin-bottom:2px}
+  .meta{min-height:0;margin-top:4px}
+  .chip{padding:6px 9px;font-size:10px}
+  .panel{margin-top:8px;padding:10px 12px;border-radius:16px}
+  .timer strong{font-size:17px}
+  .share-t{margin:8px 0 6px;font-size:12px}
+  .share{gap:6px}
+  .share button{padding:9px 4px;border-radius:12px}
+  .share .lbl{display:none}
+  .share svg{width:20px;height:20px}
+  .more{margin-top:6px}
+  .more button{padding:9px}
+  footer{padding-top:6px;font-size:11px}
+}
+@media (orientation:landscape) and (min-width:1800px) and (min-height:1000px){
+  :root{--orb:clamp(150px, min(40vw, calc((100svh - 200px) / 1.16)), 780px)}
+  .wrap{max-width:1800px;grid-template-columns:var(--orb) minmax(250px,600px)}
+  h1{font-size:46px} .sub{font-size:19px}
+  .chip{font-size:13px;padding:10px 14px}
+  .panel{padding:26px;border-radius:28px}
+  .timer small{font-size:16px} .timer strong{font-size:28px}
+  .share-t{font-size:16px;margin:22px 0 14px}
+  .share{gap:12px} .share button{font-size:14px;padding:18px 6px 16px;gap:10px;border-radius:20px}
+  .share svg{width:32px;height:32px}
+  .more button{font-size:16px;padding:16px;border-radius:18px}
+  footer{font-size:14px}
+}
+@media (min-width:1100px) and (min-height:700px){
+  header{height:64px}
+  header img{height:40px}
+  .lang button{font-size:13px;padding:9px 13px}
+}
 </style>
 </head>
 <body>
@@ -142,8 +234,10 @@ footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(25
     </div>
   </header>
 
+  <div class="intro">
   <h1 data-i18n="title">Передбачення дня</h1>
   <p class="sub" id="sub" data-i18n="hint">Тапни по кулі або потруси телефон</p>
+  </div>
 
   <div class="stage">
     <div class="floorglow"></div>
@@ -169,6 +263,7 @@ footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(25
     </svg>
   </div>
 
+  <div class="info">
   <div class="meta" id="meta"></div>
   <button class="motion" id="motionBtn" type="button">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M3 9v6M21 9v6"/></svg>
@@ -177,25 +272,26 @@ footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(25
 
   <section class="panel" id="panel" aria-live="polite">
     <div class="timer">
-      <small data-i18n="next">Наступне передбачення<br>через</small>
+      <small data-i18n="next">Наступне передбачення через</small>
       <strong id="countdown">--:--:--</strong>
     </div>
     <div class="share-t" data-i18n="shareTitle">Поділись передбаченням</div>
     <div class="share">
       <button type="button" data-share="instagram" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>Instagram</button>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span class="lbl">Instagram</span></button>
       <button type="button" data-share="telegram" aria-label="Telegram">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.4 4.2 2.9 11.3c-1.2.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM8.6 14l9.2-5.8c.4-.3.8-.1.5.2l-7.6 6.9-.3 3.2L8.6 14Z"/></svg>Telegram</button>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.4 4.2 2.9 11.3c-1.2.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM8.6 14l9.2-5.8c.4-.3.8-.1.5.2l-7.6 6.9-.3 3.2L8.6 14Z"/></svg><span class="lbl">Telegram</span></button>
       <button type="button" data-share="threads" aria-label="Threads">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17.6 8.3C16.6 5.3 14.4 3.8 11.6 3.8 7 3.8 4.4 7.2 4.4 12s2.6 8.2 7.2 8.2c3.6 0 6.4-2.2 6.4-5.3 0-3.6-3.6-4.6-6.4-4.2-2.2.3-3.4 1.5-3.2 3 .2 1.6 1.8 2.3 3.4 2.2 2.6-.2 3.6-2.3 3.6-5.6"/></svg>Threads</button>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17.6 8.3C16.6 5.3 14.4 3.8 11.6 3.8 7 3.8 4.4 7.2 4.4 12s2.6 8.2 7.2 8.2c3.6 0 6.4-2.2 6.4-5.3 0-3.6-3.6-4.6-6.4-4.2-2.2.3-3.4 1.5-3.2 3 .2 1.6 1.8 2.3 3.4 2.2 2.6-.2 3.6-2.3 3.6-5.6"/></svg><span class="lbl">Threads</span></button>
       <button type="button" data-share="linkedin" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.46h-4v-4.84c0-1.16-.02-2.64-1.61-2.64-1.61 0-1.86 1.26-1.86 2.56v4.92h-4v-11Z"/></svg>LinkedIn</button>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.46h-4v-4.84c0-1.16-.02-2.64-1.61-2.64-1.61 0-1.86 1.26-1.86 2.56v4.92h-4v-11Z"/></svg><span class="lbl">LinkedIn</span></button>
     </div>
     <div class="more">
       <button type="button" class="primary" data-share="image" data-i18n="saveImg">Зберегти картинку</button>
       <button type="button" data-share="native" id="nativeBtn" data-i18n="more">Ще…</button>
     </div>
   </section>
+  </div>
 
   <footer>
     <span data-i18n="footer">Зроблено з любов'ю командою</span> <a href="https://xerion.team/" target="_blank" rel="noopener">xerion.team</a>
@@ -214,7 +310,7 @@ const KEY = 'xerion-oracle.v1';
 const T = {
   ua:{title:'Передбачення дня',hint:'Тапни по кулі або потруси телефон',hintDesk:'Клацни по кулі, щоб дізнатись майбутнє',tap:'Тапни',
       revealing:'Куля зазирає в майбутнє…',done:'Твоє передбачення на сьогодні',again:'Куля вже сказала своє. Повертайся завтра!',
-      next:'Наступне передбачення<br>через',shareTitle:'Поділись передбаченням',saveImg:'Зберегти картинку',more:'Ще…',
+      next:'Наступне передбачення через',shareTitle:'Поділись передбаченням',saveImg:'Зберегти картинку',more:'Ще…',
       footer:"Зроблено з любов'ю командою",enableShake:'Увімкнути «потрусити»',shakeOn:'Готово! Тепер можна трусити телефон',
       shakeDenied:'Доступ до руху не надано — просто тапни по кулі',legendary:'Легендарне',no:'№',
       copied:'Текст скопійовано — встав його у пост',imgSaved:'Картинку збережено — додай її в Instagram Stories',
@@ -223,7 +319,7 @@ const T = {
       cats:{affiliate:'Афілейт',career:"Кар'єра",home:'Побут',money:'Гроші',tech:'Технології',food:'Кава і їжа',mood:'Настрій',social:'Люди',weekend:'Відпочинок',mystic:'Містика'}},
   en:{title:'Prophecy of the day',hint:'Tap the orb or shake your phone',hintDesk:'Click the orb to see your future',tap:'Tap',
       revealing:'The orb is looking into the future…',done:'Your prophecy for today',again:'The orb has spoken. Come back tomorrow!',
-      next:'Next prophecy<br>in',shareTitle:'Share your prophecy',saveImg:'Save image',more:'More…',
+      next:'Next prophecy in',shareTitle:'Share your prophecy',saveImg:'Save image',more:'More…',
       footer:'Made with love by the team at',enableShake:'Enable “shake”',shakeOn:'Done! Now you can shake your phone',
       shakeDenied:'Motion access denied — just tap the orb',legendary:'Legendary',no:'#',
       copied:'Text copied — paste it into your post',imgSaved:'Image saved — add it to your Instagram Story',
@@ -289,7 +385,7 @@ document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',
 
 /* ---------- text in orb ---------- */
 function fit(p){
-  const box=p.parentElement; let size=Math.min(22, box.clientWidth/9);
+  const box=p.parentElement; let size=Math.min(50, box.clientWidth/8.6);
   p.style.fontSize=size+'px';
   while ((p.scrollHeight>box.clientHeight || p.scrollWidth>box.clientWidth) && size>10){ size-=.5; p.style.fontSize=size+'px'; }
 }
