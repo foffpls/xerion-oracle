@@ -395,7 +395,7 @@ footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(25
 const SITE = 'https://foffpls.github.io/xerion-oracle/';
 const STORY_QR = '111111100000010011111001001111111100000100011011101001110101000001101110101010010001101110101011101101110101100001110001010001011101101110101110110100100011101011101100000101001100111101110001000001111111101010101010101010101111111000000001011101100100101100000000101111100000111111101010001111100010110001010000010111111001101101010100110011000110100000110010110011111000011001110000111010011110100110101011100100110010100111011010000011100011111001111001001011101010111111010001010000111101010110101001111000010111111111011100101010101110110001010000110111001110111001001100011111101001101101010011100100001101000110111110100110100001110010101101101011111101110000100011110010000010000111011100111001001110101100001011000101101001110111000110101010010010010100101000011000100000101101101101100001100111111111011010111110000000000001010000010111000100010101111111100110111110101011101010110100000101100101010000111100011111101110101010111000111010111111011101110101011110111011111010010111101110101010110001000011001101100100000100100111010010111011011100111111101111111001100011111100010';
 const KEY = 'xerion-oracle.v1';
-const VERSION = 'v3 · 13.10.2026';
+const VERSION = 'v4 · 13.10.2026';
 
 /* ---------- i18n ---------- */
 const T = {
@@ -474,14 +474,40 @@ let current = null;
 let state = 'idle'; // idle | busy | revealed
 const preview = params.get('preview');
 
+/* Device key: built only from stable device characteristics, so it stays the same
+   after closing the page, clearing site data, in private/incognito mode and in in-app browsers.
+   The daily prophecy depends ONLY on this key + the date, so re-opening can never re-roll it. */
+let DEVICE='';
+async function deviceKey(){
+  const n=navigator, sc=screen||{};
+  const parts=[
+    n.userAgent||'', n.platform||'', (n.languages||[n.language||'']).join(','),
+    Intl.DateTimeFormat().resolvedOptions().timeZone||'',
+    [sc.width||0, sc.height||0].sort((a,b)=>a-b).join('x'), sc.colorDepth||0, window.devicePixelRatio||1,
+    n.hardwareConcurrency||0, n.deviceMemory||0, n.maxTouchPoints||0
+  ];
+  try{
+    if(n.userAgentData && n.userAgentData.getHighEntropyValues){
+      const h=await Promise.race([n.userAgentData.getHighEntropyValues(['model','platformVersion','fullVersionList']), new Promise(r=>setTimeout(()=>r(null),800))]);
+      if(h) parts.push(h.model||'', h.platformVersion||'');
+    }
+  }catch(e){}
+  const f=hash(parts.join('|')); return f().toString(36)+f().toString(36);
+}
+const DAY0=Date.UTC(2026,0,1);
+function dayIndex(date){ const [y,m,d]=date.split('-').map(Number); return Math.round((Date.UTC(y,m-1,d)-DAY0)/864e5); }
+let ORDER=null;
+function order(){
+  if(ORDER) return ORDER;
+  const ids=ITEMS.map(i=>i.id).sort((a,b)=>a-b), r=rng('order|'+DEVICE);
+  for(let i=ids.length-1;i>0;i--){ const j=Math.floor(r()*(i+1)); [ids[i],ids[j]]=[ids[j],ids[i]]; }
+  return (ORDER=ids);
+}
 function pickFor(date){
+  // a prophecy already shown today on this device always wins
   if (S.today && S.today.date===date){ const it = ITEMS.find(i=>i.id===S.today.id); if(it) return it; }
-  const seen = new Set(S.seen);
-  let pool = ITEMS.filter(i=>!seen.has(i.id));
-  if (!pool.length){ S.seen=[]; pool = ITEMS.slice(); }
-  pool.sort((a,b)=>a.id-b.id);
-  const r = rng(S.seed+'|'+date)();
-  return pool[Math.floor(r*pool.length)];
+  const ids=order(); const k=((dayIndex(date)%ids.length)+ids.length)%ids.length;
+  return ITEMS.find(i=>i.id===ids[k]) || ITEMS[0];
 }
 
 /* ---------- i18n apply ---------- */
@@ -527,7 +553,7 @@ function renderMeta(){
 
 /* ---------- reveal flow ---------- */
 function reveal(){
-  if (!ITEMS.length) return;
+  if (!ITEMS.length || (!DEVICE && !preview)) return;
   const orb=$('#orb');
   if (state==='busy') return;
   if (state==='revealed' && preview==='random'){ orb.classList.remove('revealed','rare'); fx.setRare(false); state='idle'; }
@@ -900,8 +926,7 @@ $('#ver').textContent=VERSION;
 applyLang();
 fetch('predictions.json',{cache:'no-cache'}).then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(d=>{
   ITEMS=(d.items||[]).filter(i=>i && i.id!=null && (i.ua||i.en)).map(i=>({...i, id:Number(i.id), ua:i.ua||i.en, en:i.en||i.ua}));
-  restoreToday();
-  if (preview && preview!=='random') reveal();
+  return deviceKey().then(k=>{ DEVICE=k; restoreToday(); if (preview && preview!=='random') reveal(); });
 }).catch(()=>{ $('#sub').textContent=L().loadErr; });
 addEventListener('resize',()=>{ if(state==='revealed') fit($('#msg')); });
 })();
