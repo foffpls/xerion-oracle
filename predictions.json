@@ -1,2561 +1,2561 @@
 {
- "version": 1,
+ "version": 3,
  "updated": "2026-10-13",
  "items": [
   {
    "id": 1,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні твій ROI буде вищим за твій рівень кави в крові. А це рекорд.",
-   "en": "Today your ROI will be higher than your caffeine level. That's a record."
-  },
-  {
-   "id": 2,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Креатив, який ти вважав найгіршим, сьогодні принесе найбільше лідів. Не питай чому.",
-   "en": "The creative you thought was the worst will bring the most leads today. Don't ask why."
-  },
-  {
-   "id": 3,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Модерація пропустить твою рекламу з першого разу. Збережи скріншот — ніхто не повірить.",
-   "en": "Moderation will approve your ad on the first try. Screenshot it — nobody will believe you."
-  },
-  {
-   "id": 4,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні кабінет не забанять. Але він про це подумає.",
-   "en": "Your ad account won't get banned today. But it will think about it."
-  },
-  {
-   "id": 5,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твій CTR сьогодні засяє, як екран телефону о третій ночі.",
-   "en": "Your CTR will shine today like a phone screen at 3 a.m."
-  },
-  {
-   "id": 6,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Офер, від якого всі відмовились, сьогодні стане твоїм золотим конем.",
-   "en": "The offer everyone gave up on will become your golden horse today."
-  },
-  {
-   "id": 7,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти нарешті зрозумієш, що означає «постбек не прийшов». Але не чому.",
-   "en": "Today you'll finally understand what \"postback didn't fire\" means. But not why."
-  },
-  {
-   "id": 8,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твій апрув сьогодні буде таким високим, що менеджер перепитає двічі.",
-   "en": "Your approval rate will be so high today, your manager will ask twice."
-  },
-  {
-   "id": 9,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Зірки кажуть: тестуй ще один креатив. Зірки завжди так кажуть.",
-   "en": "The stars say: test one more creative. The stars always say that."
-  },
-  {
-   "id": 10,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти знайдеш зв'язку, що працює. Головне — нікому не розповідай до обіду.",
-   "en": "Today you'll find a bundle that works. Just don't tell anyone before lunch."
-  },
-  {
-   "id": 11,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Трафік сьогодні піде сам. Ти тільки не заважай.",
-   "en": "Traffic will flow by itself today. Just don't get in its way."
-  },
-  {
-   "id": 12,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти скажеш «давайте масштабувати» і цього разу це буде правдою.",
-   "en": "Today you'll say \"let's scale\" and this time you'll mean it."
-  },
-  {
-   "id": 13,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твій лендинг завантажиться за одну секунду. Навіть на 3G у ліфті.",
-   "en": "Your landing page will load in one second. Even on 3G in an elevator."
-  },
-  {
-   "id": 14,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні піксель спрацює з першого разу. Запиши дату — це свято.",
-   "en": "Today the pixel will fire on the first try. Mark the date — it's a holiday."
-  },
-  {
-   "id": 15,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Кулю не обдуриш: сьогодні твій CPA буде нижчим, ніж очікування бухгалтерії.",
-   "en": "The orb can't be fooled: today your CPA will be lower than accounting's expectations."
-  },
-  {
-   "id": 16,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти побачиш у статистиці зелене. Не плутай з кольором чаю.",
-   "en": "Today you'll see green in your stats. Don't confuse it with your tea."
-  },
-  {
-   "id": 17,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твій кращий креатив сьогодні народиться з фрази «а давайте просто спробуємо».",
-   "en": "Your best creative will be born today from the phrase \"let's just try it\"."
-  },
-  {
-   "id": 18,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ліди підуть, як люди на безкоштовну піцу в офісі.",
-   "en": "Leads will come today like people to free pizza in the office."
-  },
-  {
-   "id": 19,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні жоден трекер не впаде. Ну, принаймні не той, що в тебе.",
-   "en": "No tracker will go down today. Well, at least not yours."
-  },
-  {
-   "id": 20,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Ти напишеш текст для оголошення з першого разу. Модерація заплаче від щастя.",
-   "en": "You'll write ad copy on the first try. Moderation will cry tears of joy."
-  },
-  {
-   "id": 21,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти відкриєш таблицю і вона не зависне. Магія існує.",
-   "en": "Today you'll open a spreadsheet and it won't freeze. Magic is real."
-  },
-  {
-   "id": 22,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твій новий гео сьогодні виявиться прихованою скарбницею.",
-   "en": "Your new GEO will turn out to be a hidden treasure today."
-  },
-  {
-   "id": 23,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні спліт-тест скаже, що обидва варіанти хороші. Обирай серцем.",
-   "en": "Today the split test will say both versions are good. Choose with your heart."
-  },
-  {
-   "id": 24,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Куля бачить у твоєму майбутньому профіт. І трохи дебагу.",
-   "en": "The orb sees profit in your future. And a little debugging."
-  },
-  {
-   "id": 25,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти напишеш «все стабільно» і це не зурочить. Мабуть.",
-   "en": "Today you'll type \"all stable\" and it won't jinx it. Probably."
-  },
-  {
-   "id": 26,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твої креативи сьогодні настільки гарні, що їх захочуть повісити в рамочку.",
-   "en": "Your creatives will be so good today, someone will want to frame them."
-  },
-  {
-   "id": 27,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні відкрутка буде рівною, як твій пробор після барбера.",
-   "en": "Today your spend will be as smooth as your hair after the barber."
-  },
-  {
-   "id": 28,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "День ідеальний, щоб вимкнути все, що не конвертить. Включно з поганим настроєм.",
-   "en": "A perfect day to turn off everything that doesn't convert. Including a bad mood."
-  },
-  {
-   "id": 29,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти зрозумієш аналітику з першого погляду. Другий погляд не знадобиться.",
-   "en": "Today you'll understand analytics at first glance. No second glance needed."
-  },
-  {
-   "id": 30,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твоя кампанія сьогодні вийде з навчання швидше, ніж ти з наради.",
-   "en": "Your campaign will exit the learning phase faster than you exit the meeting."
-  },
-  {
-   "id": 31,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні аудиторія сама тебе знайде. Не ховайся.",
-   "en": "Today the audience will find you by itself. Don't hide."
-  },
-  {
-   "id": 32,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Ти сьогодні вгадаєш з креативом так, ніби читав думки юзерів.",
-   "en": "You'll nail the creative today as if you read users' minds."
-  },
-  {
-   "id": 33,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні жодна платформа не змінить правила. Принаймні до вечора.",
-   "en": "No platform will change its rules today. At least not before evening."
-  },
-  {
-   "id": 34,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні твій лід дійде до депозиту швидше, ніж кур'єр з обідом.",
-   "en": "Today your lead will reach a deposit faster than the courier with lunch."
-  },
-  {
-   "id": 35,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Куля шепоче: «Не чіпай кампанію, яка працює». Куля мудра.",
-   "en": "The orb whispers: \"Don't touch the campaign that works.\" The orb is wise."
-  },
-  {
-   "id": 36,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти знайдеш баг до того, як він знайде тебе.",
-   "en": "Today you'll find the bug before it finds you."
-  },
-  {
-   "id": 37,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твоя воронка сьогодні буде гладкою, як свіжовимита підлога в офісі.",
-   "en": "Your funnel will be as smooth as a freshly mopped office floor."
-  },
-  {
-   "id": 38,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні кожен клік — з характером. І з конверсією.",
-   "en": "Today every click has character. And a conversion."
-  },
-  {
-   "id": 39,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти скажеш «я ж казав» щодо свого гео. І матимеш рацію.",
-   "en": "Today you'll say \"told you so\" about your GEO. And you'll be right."
-  },
-  {
-   "id": 40,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твій прелендинг сьогодні отримає більше уваги, ніж мем у загальному чаті.",
-   "en": "Your prelander will get more attention today than a meme in the team chat."
-  },
-  {
-   "id": 41,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти знайдеш ідеальну аудиторію. Вона весь цей час була в лукалайку.",
-   "en": "Today you'll find the perfect audience. It was in the lookalike all along."
-  },
-  {
-   "id": 42,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Креатив з котом сьогодні переможе. Як і завжди.",
-   "en": "The creative with a cat will win today. As always."
-  },
-  {
-   "id": 43,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні бюджет витратиться рівно настільки, наскільки треба. Фантастика? Ні, передбачення.",
-   "en": "Today the budget will be spent exactly as needed. Fantasy? No, a prophecy."
-  },
-  {
-   "id": 44,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твої цифри сьогодні будуть такі красиві, що їх захочеться показати мамі.",
-   "en": "Your numbers will be so pretty today you'll want to show them to your mom."
-  },
-  {
-   "id": 45,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти не перевірятимеш статистику кожні 5 хвилин. Кожні 6 — вже прогрес.",
-   "en": "Today you won't check stats every 5 minutes. Every 6 is already progress."
-  },
-  {
-   "id": 46,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні найкращий час, щоб запустити тест, який ти відкладав з минулого кварталу.",
-   "en": "Today is the best time to launch the test you've postponed since last quarter."
-  },
-  {
-   "id": 47,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твоя зв'язка сьогодні проживе довше, ніж кімнатна рослина в офісі.",
-   "en": "Your bundle will live longer today than the office houseplant."
-  },
-  {
-   "id": 48,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти зекономиш бюджет і нерви. Нерви — цінніші.",
-   "en": "Today you'll save budget and nerves. Nerves are worth more."
-  },
-  {
-   "id": 49,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Куля бачить зелену стрілку вгору. Можливо, це твій графік. Можливо, кнопка ліфта.",
-   "en": "The orb sees a green arrow going up. Maybe your chart. Maybe the elevator button."
-  },
-  {
-   "id": 50,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні твій оффер-менеджер відповість за хвилину. Насолоджуйся моментом.",
-   "en": "Today your offer manager will reply in a minute. Enjoy the moment."
-  },
-  {
-   "id": 51,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти зробиш звіт, який зрозуміє навіть кіт.",
-   "en": "Today you'll make a report even a cat could understand."
-  },
-  {
-   "id": 52,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твої UTM-мітки сьогодні будуть ідеальними. Жодного «utm_source=test2_final_final».",
-   "en": "Your UTM tags will be perfect today. No \"utm_source=test2_final_final\"."
-  },
-  {
-   "id": 53,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти вимкнеш кампанію вчасно, а не «ще годинку подивлюсь».",
-   "en": "Today you'll stop a campaign on time, not \"let me watch one more hour\"."
-  },
-  {
-   "id": 54,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні дзвінок від партнера принесе гарні новини і ще кращі ставки.",
-   "en": "Today a call from a partner will bring good news and even better payouts."
-  },
-  {
-   "id": 55,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твій креатив сьогодні стане вірусним. Принаймні в чаті команди.",
-   "en": "Your creative will go viral today. At least in the team chat."
-  },
-  {
-   "id": 56,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти зрозумієш, чому трафік з понеділка такий дивний. Відповідь: понеділок.",
-   "en": "Today you'll understand why Monday traffic is so weird. The answer: Monday."
-  },
-  {
-   "id": 57,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти скопіюєш не той ID і це випадково спрацює краще.",
-   "en": "Today you'll copy the wrong ID and it'll accidentally work better."
-  },
-  {
-   "id": 58,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Ліди сьогодні будуть якісні, як італійська кава.",
-   "en": "Today's leads will be as high-quality as Italian espresso."
-  },
-  {
-   "id": 59,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти напишеш заголовок, за який дадуть премію. Хоча б уявну.",
-   "en": "Today you'll write a headline worthy of an award. An imaginary one, at least."
-  },
-  {
-   "id": 60,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні жоден домен не потрапить у бан. Домени теж заслуговують на вихідний.",
-   "en": "No domain will get banned today. Domains deserve a day off too."
-  },
-  {
-   "id": 61,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твої конверсії сьогодні множитимуться, як вкладки в твоєму браузері.",
-   "en": "Your conversions will multiply today like tabs in your browser."
-  },
-  {
-   "id": 62,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні куля радить: менше емоцій, більше когорт.",
-   "en": "The orb advises today: fewer emotions, more cohorts."
-  },
-  {
-   "id": 63,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти побачиш дашборд, і дашборд посміхнеться тобі у відповідь.",
-   "en": "Today you'll look at the dashboard and the dashboard will smile back."
-  },
-  {
-   "id": 64,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Твоя ставка сьогодні буде саме такою, як треба. Аукціон у захваті.",
-   "en": "Your bid will be just right today. The auction is impressed."
-  },
-  {
-   "id": 65,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти нарешті дочитаєш правила рекламної платформи. Жартую. Але ти спробуєш.",
-   "en": "Today you'll finally finish reading the ad platform's rules. Kidding. But you'll try."
-  },
-  {
-   "id": 66,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні з'явиться ідея, яка змусить тебе сказати «чому ми раніше так не робили?»",
-   "en": "Today an idea will make you say \"why didn't we do this before?\""
-  },
-  {
-   "id": 67,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ретеншн буде таким, що юзери не захочуть іти. Як гості на дні народження.",
-   "en": "Retention will be so good today users won't want to leave. Like guests at a birthday party."
-  },
-  {
-   "id": 68,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти побачиш цифру з багатьма нулями. Сподіваємось, не в помилці.",
-   "en": "Today you'll see a number with lots of zeros. Hopefully not in an error code."
-  },
-  {
-   "id": 69,
-   "cat": "affiliate",
-   "rare": false,
-   "ua": "Сьогодні ти отримаєш виплату вчасно. Навіть раніше. Так, і таке буває.",
-   "en": "You'll get paid on time today. Even early. Yes, it happens."
-  },
-  {
-   "id": 70,
-   "cat": "affiliate",
-   "rare": true,
-   "ua": "Сьогодні ROI, апрув і настрій будуть зеленими одночасно. Таке буває раз на рік.",
-   "en": "Today ROI, approval rate and mood will all be green at once. This happens once a year."
-  },
-  {
-   "id": 71,
-   "cat": "affiliate",
-   "rare": true,
-   "ua": "Твоя зв'язка житиме вічно. Ну, як мінімум до наступного апдейту алгоритму.",
-   "en": "Your bundle will live forever. Well, at least until the next algorithm update."
-  },
-  {
-   "id": 72,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні нарада закінчиться на 10 хвилин раніше. Використай їх мудро — на каву.",
    "en": "Today a meeting will end 10 minutes early. Use them wisely — for coffee."
   },
   {
-   "id": 73,
+   "id": 2,
    "cat": "career",
    "rare": false,
    "ua": "Твій «швиденько гляну пошту» сьогодні справді триватиме дві хвилини.",
    "en": "Your \"quick email check\" will actually take two minutes today."
   },
   {
-   "id": 74,
+   "id": 3,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти скажеш «давайте я візьму це на себе». Подумай двічі.",
    "en": "Today you'll say \"I'll take care of it.\" Think twice."
   },
   {
-   "id": 75,
+   "id": 4,
    "cat": "career",
    "rare": false,
    "ua": "Хтось сьогодні похвалить твою роботу. Можливо, навіть уголос.",
    "en": "Someone will praise your work today. Maybe even out loud."
   },
   {
-   "id": 76,
+   "id": 5,
    "cat": "career",
    "rare": false,
-   "ua": "Сьогодні дедлайн виявиться не таким страшним, як його малювали в Jira.",
-   "en": "Today the deadline will be less scary than it looked in Jira."
+   "ua": "Сьогодні дедлайн виявиться не таким страшним, як його малювали в календарі.",
+   "en": "Today the deadline will be less scary than it looked on the calendar."
   },
   {
-   "id": 77,
+   "id": 6,
    "cat": "career",
    "rare": false,
    "ua": "Твоя ідея на мітингу сьогодні не потоне в «давайте обговоримо це пізніше».",
    "en": "Your idea in today's meeting won't drown in \"let's discuss it later\"."
   },
   {
-   "id": 78,
+   "id": 7,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти закриєш більше задач, ніж відкриєш. Історичний день.",
    "en": "Today you'll close more tasks than you open. A historic day."
   },
   {
-   "id": 79,
+   "id": 8,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ніхто не напише тобі «є хвилинка?». А якщо напише — то з хорошими новинами.",
    "en": "Nobody will message you \"got a minute?\" today. And if they do — good news."
   },
   {
-   "id": 80,
+   "id": 9,
    "cat": "career",
    "rare": false,
    "ua": "Куля бачить у твоєму календарі вільну годину. Захисти її будь-якою ціною.",
    "en": "The orb sees a free hour in your calendar. Defend it at all costs."
   },
   {
-   "id": 81,
+   "id": 10,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти нарешті відпишешся від розсилки, яку не читаєш з 2019 року.",
    "en": "Today you'll finally unsubscribe from the newsletter you haven't read since 2019."
   },
   {
-   "id": 82,
+   "id": 11,
    "cat": "career",
    "rare": false,
    "ua": "Твій бос сьогодні буде в гарному настрої. Скористайся цим. Розумно.",
    "en": "Your boss will be in a good mood today. Use it. Wisely."
   },
   {
-   "id": 83,
+   "id": 12,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти вимкнеш мікрофон вчасно. Усі твої таємниці в безпеці.",
    "en": "Today you'll mute your mic on time. All your secrets are safe."
   },
   {
-   "id": 84,
+   "id": 13,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти відповіси на лист, якому вже три тижні. Він здивується.",
    "en": "Today you'll reply to an email that's three weeks old. It'll be surprised."
   },
   {
-   "id": 85,
+   "id": 14,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти станеш героєм, бо знайдеш файл, який усі шукали.",
    "en": "Today you'll become a hero by finding the file everyone was looking for."
   },
   {
-   "id": 86,
+   "id": 15,
    "cat": "career",
    "rare": false,
    "ua": "Твій рівень продуктивності сьогодні: «я зробив усе, що планував, і ще трохи».",
    "en": "Your productivity level today: \"did everything I planned, and then some\"."
   },
   {
-   "id": 87,
+   "id": 16,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти дізнаєшся, що «невеличка правка» справді невеличка. Чудеса!",
    "en": "Today you'll learn that \"a tiny edit\" really is tiny. Miracles!"
   },
   {
-   "id": 88,
+   "id": 17,
    "cat": "career",
    "rare": false,
-   "ua": "Сьогодні колега поділиться з тобою печивом. Це знак. Знак дружби.",
-   "en": "Today a colleague will share cookies with you. It's a sign. A sign of friendship."
+   "ua": "Сьогодні колега надішле тобі в чат такий мем, що ти засмієшся вголос. Це знак дружби.",
+   "en": "Today a colleague will send you a meme in chat that makes you laugh out loud. A sign of friendship."
   },
   {
-   "id": 89,
+   "id": 18,
    "cat": "career",
    "rare": false,
-   "ua": "Твоя презентація сьогодні пройде без технічних проблем. Навіть HDMI спрацює.",
-   "en": "Your presentation will go without tech issues today. Even the HDMI will work."
+   "ua": "Твоя презентація на дзвінку пройде без жодного «а мене чути?». Навіть з першого разу.",
+   "en": "Your presentation on the call will go without a single \"can you hear me?\". On the first try, too."
   },
   {
-   "id": 90,
+   "id": 19,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти напишеш ідеальний лист з першого разу і не перечитуватимеш його 8 разів.",
    "en": "Today you'll write a perfect email on the first try and won't reread it 8 times."
   },
   {
-   "id": 91,
+   "id": 20,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти засвоїш нову навичку. Можливо, навіть корисну.",
    "en": "Today you'll learn a new skill. Maybe even a useful one."
   },
   {
-   "id": 92,
+   "id": 21,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти скажеш «ні» зайвій задачі. І світ не завалиться.",
    "en": "Today you'll say \"no\" to an extra task. And the world won't collapse."
   },
   {
-   "id": 93,
+   "id": 22,
    "cat": "career",
    "rare": false,
    "ua": "Куля передбачає: перший твій мітинг почнеться вчасно. Другий — ні, не жадібнічай.",
    "en": "The orb predicts: your first meeting will start on time. The second — no, don't be greedy."
   },
   {
-   "id": 94,
-   "cat": "career",
-   "rare": false,
-   "ua": "Сьогодні хтось нарешті прочитає документацію, яку ти писав. Ти не самотній.",
-   "en": "Today someone will finally read the documentation you wrote. You're not alone."
-  },
-  {
-   "id": 95,
+   "id": 23,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти будеш настільки зібраним, що навіть стікери на моніторі вирівняються.",
    "en": "You'll be so focused today even the sticky notes on your monitor will line up."
   },
   {
-   "id": 96,
+   "id": 24,
    "cat": "career",
    "rare": false,
    "ua": "Твоя продуктивність сьогодні зашкалить між 11:00 і 11:17. Не проґав.",
    "en": "Your productivity will peak today between 11:00 and 11:17. Don't miss it."
   },
   {
-   "id": 97,
+   "id": 25,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти отримаєш фідбек, який реально допоможе. А не «ну, норм».",
    "en": "Today you'll get feedback that actually helps. Not just \"it's fine\"."
   },
   {
-   "id": 98,
+   "id": 26,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти зрозумієш, хто такий «відповідальний за це». Спойлер: не ти.",
    "en": "Today you'll find out who's \"responsible for this\". Spoiler: not you."
   },
   {
-   "id": 99,
+   "id": 27,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти скажеш на мітингу щось розумне і всі закивають. Навіть ті, що з вимкненою камерою.",
    "en": "Today you'll say something smart in a meeting and everyone will nod. Even those with cameras off."
   },
   {
-   "id": 100,
+   "id": 28,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти зробиш задачу на «відмінно», а не на «аби відстали».",
    "en": "Today you'll do a task excellently, not just \"good enough to be left alone\"."
   },
   {
-   "id": 101,
+   "id": 29,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні на тебе чекає несподіване підвищення. Настрою. Але все одно приємно.",
    "en": "An unexpected promotion awaits you today. Of mood. Still nice though."
   },
   {
-   "id": 102,
+   "id": 30,
    "cat": "career",
    "rare": false,
-   "ua": "Твій онбординг новачка сьогодні буде таким добрим, що він залишиться назавжди.",
-   "en": "Your onboarding of a newbie will be so good today they'll stay forever."
+   "ua": "Сьогодні ти так тепло зустрінеш новачка, що він захоче залишитись назавжди.",
+   "en": "Today you'll welcome a newcomer so warmly they'll want to stay forever."
   },
   {
-   "id": 103,
+   "id": 31,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти нарешті закриєш ту вкладку з курсом, який почав рік тому. Або продовжиш. Куля не суддя.",
    "en": "Today you'll finally close the tab with that course you started a year ago. Or continue it. The orb doesn't judge."
   },
   {
-   "id": 104,
+   "id": 32,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ніхто не поставить мітинг на 17:55 у п'ятницю. Космос на твоєму боці.",
    "en": "Nobody will schedule a meeting at 5:55 p.m. on Friday. The cosmos is on your side."
   },
   {
-   "id": 105,
+   "id": 33,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти відкриєш папку «Важливе» і знайдеш там щось справді важливе.",
    "en": "Today you'll open the \"Important\" folder and find something actually important."
   },
   {
-   "id": 106,
+   "id": 34,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні твій «план Б» не знадобиться. Бо план А спрацює.",
    "en": "Your \"plan B\" won't be needed today. Plan A will work."
   },
   {
-   "id": 107,
+   "id": 35,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні хтось скаже «гарна ідея» на твою ідею. І не додасть «але».",
    "en": "Today someone will say \"good idea\" about your idea. And won't add \"but\"."
   },
   {
-   "id": 108,
+   "id": 36,
    "cat": "career",
    "rare": false,
-   "ua": "Сьогодні ти будеш працювати так ефективно, що Slack засумує за тобою.",
-   "en": "You'll work so efficiently today that Slack will miss you."
+   "ua": "Сьогодні ти будеш працювати так ефективно, що робочий чат засумує за тобою.",
+   "en": "You'll work so efficiently today that the team chat will miss you."
   },
   {
-   "id": 109,
+   "id": 37,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти зрозумієш, що працюєш у класній команді. Ну, ти й так знав.",
    "en": "Today you'll realize you work in a great team. Well, you already knew."
   },
   {
-   "id": 110,
+   "id": 38,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти не загубиш жодного пароля. Навіть від Wi-Fi.",
    "en": "You won't lose a single password today. Not even the Wi-Fi one."
   },
   {
-   "id": 111,
+   "id": 39,
    "cat": "career",
    "rare": false,
    "ua": "Твій «я на 5 хвилин» сьогодні дійсно буде 5 хвилин. Колеги в шоці.",
    "en": "Your \"be back in 5\" will actually be 5 minutes today. Colleagues are shocked."
   },
   {
-   "id": 112,
+   "id": 40,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти побачиш у своєму туду-листі пусто. Не панікуй, це успіх.",
    "en": "Today you'll see your to-do list empty. Don't panic, it's success."
   },
   {
-   "id": 113,
+   "id": 41,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти станеш тим колегою, якого всі хочуть у свій проєкт.",
    "en": "Today you'll become the colleague everyone wants on their project."
   },
   {
-   "id": 114,
+   "id": 42,
    "cat": "career",
    "rare": false,
-   "ua": "Сьогодні принтер працюватиме з першого разу. Не звикай.",
-   "en": "Today the printer will work on the first try. Don't get used to it."
+   "ua": "Сьогодні сусіди не почнуть ремонт саме під час твого важливого дзвінка. Тиша — твоя.",
+   "en": "Today the neighbors won't start renovating during your important call. The silence is yours."
   },
   {
-   "id": 115,
+   "id": 43,
    "cat": "career",
    "rare": false,
-   "ua": "Сьогодні ти зробиш перерву вчасно і повернешся ще кращим. Як апдейт.",
-   "en": "Today you'll take a break on time and come back even better. Like an update."
+   "ua": "Сьогодні ти підключишся до дзвінка підготовленим. Інші будуть заздрити.",
+   "en": "Today you'll join a call fully prepared. Others will be jealous."
   },
   {
-   "id": 116,
-   "cat": "career",
-   "rare": false,
-   "ua": "Сьогодні твоя таблиця збереться без жодної помилки #REF!. Святкуй.",
-   "en": "Today your spreadsheet will calculate without a single #REF! error. Celebrate."
-  },
-  {
-   "id": 117,
-   "cat": "career",
-   "rare": false,
-   "ua": "Сьогодні ти прийдеш на мітинг підготовленим. Інші будуть заздрити.",
-   "en": "Today you'll come to a meeting prepared. Others will be jealous."
-  },
-  {
-   "id": 118,
+   "id": 44,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти делегуєш задачу і її зроблять краще, ніж ти очікував.",
    "en": "Today you'll delegate a task and it'll be done better than you expected."
   },
   {
-   "id": 119,
+   "id": 45,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні на мітингу хтось скаже «це можна було листом». І буде правий.",
    "en": "In today's meeting someone will say \"this could've been an email\". And they'll be right."
   },
   {
-   "id": 120,
-   "cat": "career",
-   "rare": false,
-   "ua": "Сьогодні твій код-рев'ю пройде без жодного коментаря. Або з одним: «Топ!»",
-   "en": "Your code review will pass with zero comments today. Or just one: \"Awesome!\""
-  },
-  {
-   "id": 121,
+   "id": 46,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти розкажеш ідею, і її реалізують ще до кінця тижня. Без тебе. Насолоджуйся.",
    "en": "Today you'll share an idea and it'll be implemented by the end of the week. Without you. Enjoy."
   },
   {
-   "id": 122,
+   "id": 47,
    "cat": "career",
    "rare": false,
-   "ua": "Сьогодні твій кар'єрний ріст піде вгору. Хоча б на один поверх — офісний.",
-   "en": "Your career will go up today. At least one floor — in the office building."
+   "ua": "Сьогодні твій кар'єрний ріст піде вгору. Хоча б як робоче крісло, якщо підкрутити важіль.",
+   "en": "Your career will go up today. At least like your desk chair, if you pull the lever."
   },
   {
-   "id": 123,
+   "id": 48,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти напишеш «ок» без крапки, і ніхто не подумає, що ти злишся.",
    "en": "Today you'll write \"ok\" without a period and nobody will think you're mad."
   },
   {
-   "id": 124,
+   "id": 49,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні тобі нарешті дадуть доступ, який ти просив з минулого місяця.",
    "en": "Today you'll finally get the access you've been requesting since last month."
   },
   {
-   "id": 125,
+   "id": 50,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти відчуєш себе експертом. І це буде заслужено.",
    "en": "Today you'll feel like an expert. And you'll deserve it."
   },
   {
-   "id": 126,
+   "id": 51,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні твоє резюме само себе оновить. Жартую. Але воно тобі не знадобиться.",
    "en": "Today your resume will update itself. Kidding. But you won't need it."
   },
   {
-   "id": 127,
+   "id": 52,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні ти скажеш «я подумаю» і реально подумаєш. Неочікувано.",
    "en": "Today you'll say \"I'll think about it\" and actually think. Unexpected."
   },
   {
-   "id": 128,
+   "id": 53,
    "cat": "career",
    "rare": false,
    "ua": "Твоя робота сьогодні буде помітною. Особливо якщо вимкнеш режим невидимки в месенджері.",
    "en": "Your work will be noticed today. Especially if you turn off invisible mode in the messenger."
   },
   {
-   "id": 129,
+   "id": 54,
    "cat": "career",
    "rare": false,
    "ua": "Сьогодні мотивація прийде сама, без дедлайну. Звучить як фантастика, але куля не бреше.",
    "en": "Motivation will come by itself today, without a deadline. Sounds like fiction, but the orb doesn't lie."
   },
   {
-   "id": 130,
+   "id": 55,
    "cat": "career",
    "rare": false,
-   "ua": "Сьогодні ти підеш з роботи вчасно і не відчуєш провини. Це і є кар'єрне зростання.",
-   "en": "Today you'll leave work on time without guilt. That's real career growth."
+   "ua": "Сьогодні ти закриєш ноутбук вчасно і не відчуєш провини. Це і є кар'єрне зростання.",
+   "en": "Today you'll close your laptop on time without guilt. That's real career growth."
   },
   {
-   "id": 131,
+   "id": 56,
    "cat": "career",
    "rare": true,
-   "ua": "Сьогодні в тебе нуль мітингів, нуль багів і безкоштовний обід. Збережи цей день у пам'яті.",
-   "en": "Zero meetings, zero bugs and a free lunch today. Save this day in your memory."
+   "ua": "Сьогодні в тебе нуль мітингів, нуль дедлайнів і безкоштовний обід. Збережи цей день у пам'яті.",
+   "en": "Zero meetings, zero deadlines and a free lunch today. Save this day in your memory."
   },
   {
-   "id": 132,
+   "id": 57,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти знайдеш другу шкарпетку. Пара возз'єднається.",
    "en": "Today you'll find your other sock. The pair will be reunited."
   },
   {
-   "id": 133,
+   "id": 58,
    "cat": "home",
    "rare": false,
    "ua": "Пральна машина сьогодні не з'їсть жодної речі. Вона на дієті.",
    "en": "The washing machine won't eat any clothes today. It's on a diet."
   },
   {
-   "id": 134,
+   "id": 59,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти помиєш посуд одразу, а не «потім». Кухня запам'ятає цей день.",
    "en": "Today you'll wash the dishes right away, not \"later\". The kitchen will remember this day."
   },
   {
-   "id": 135,
+   "id": 60,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти прокинешся за хвилину до будильника і почуватимешся генієм.",
    "en": "Today you'll wake up a minute before the alarm and feel like a genius."
   },
   {
-   "id": 136,
+   "id": 61,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні кур'єр приїде точно у вказаний проміжок. Не моргай — проґавиш.",
    "en": "Today the courier will arrive exactly in the stated window. Don't blink."
   },
   {
-   "id": 137,
+   "id": 62,
    "cat": "home",
    "rare": false,
    "ua": "Твій кіт сьогодні подивиться на тебе з повагою. Принаймні 3 секунди.",
    "en": "Your cat will look at you with respect today. For at least 3 seconds."
   },
   {
-   "id": 138,
+   "id": 63,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти знайдеш гроші в кишені старої куртки. Мінімум на каву.",
    "en": "Today you'll find money in an old jacket pocket. Enough for a coffee at least."
   },
   {
-   "id": 139,
+   "id": 64,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні пульт від телевізора буде саме там, де ти його шукаєш.",
    "en": "Today the TV remote will be exactly where you look for it."
   },
   {
-   "id": 140,
+   "id": 65,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти нарешті розбереш ту шухляду з «усім підряд». Або хоча б відкриєш.",
    "en": "Today you'll finally sort out the junk drawer. Or at least open it."
   },
   {
-   "id": 141,
+   "id": 66,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні сусіди не свердлитимуть. Але це не точно.",
    "en": "The neighbors won't drill today. But no guarantees."
   },
   {
-   "id": 142,
+   "id": 67,
    "cat": "home",
    "rare": false,
    "ua": "Твоя рослина сьогодні випустить новий листок. Вона тобою пишається.",
    "en": "Your plant will grow a new leaf today. It's proud of you."
   },
   {
-   "id": 143,
+   "id": 68,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти ляжеш спати вчасно. Серіал зачекає. Він терплячий.",
    "en": "Today you'll go to bed on time. The series will wait. It's patient."
   },
   {
-   "id": 144,
+   "id": 69,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні зарядка для телефону буде саме там, де ти її залишив. Неймовірно.",
    "en": "Today your phone charger will be right where you left it. Incredible."
   },
   {
-   "id": 145,
+   "id": 70,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти відкриєш холодильник і знайдеш там щось смачне. Що сам купив учора.",
    "en": "Today you'll open the fridge and find something tasty. That you bought yesterday."
   },
   {
-   "id": 146,
+   "id": 71,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні у ліфті з тобою їхатиме приємна людина. Або ніхто. Обидва варіанти — топ.",
    "en": "A nice person will ride the elevator with you today. Or nobody. Both are great."
   },
   {
-   "id": 147,
+   "id": 72,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти розплутаєш навушники з першої спроби. Хоча вони бездротові.",
    "en": "Today you'll untangle your earphones on the first try. Even though they're wireless."
   },
   {
-   "id": 148,
+   "id": 73,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти не забудеш ключі. А якщо забудеш — двері будуть відчинені. Жартую, візьми ключі.",
    "en": "You won't forget your keys today. And if you do — the door will be open. Kidding, take your keys."
   },
   {
-   "id": 149,
+   "id": 74,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні все, що ти поставиш прати, висохне вчасно. Навіть рушники.",
    "en": "Everything you put in the wash will dry on time today. Even towels."
   },
   {
-   "id": 150,
+   "id": 75,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні твій пес зрозуміє команду з першого разу. Або вдасть, що зрозумів.",
    "en": "Your dog will understand a command on the first try today. Or pretend to."
   },
   {
-   "id": 151,
+   "id": 76,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти прибереш на столі, і там з'явиться місце для нових звершень.",
    "en": "Today you'll clean your desk and make room for new achievements."
   },
   {
-   "id": 152,
+   "id": 77,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти зробиш ранкову зарядку. Хоча б потягнешся. Зараховано.",
    "en": "Today you'll do morning exercises. Or at least stretch. That counts."
   },
   {
-   "id": 153,
+   "id": 78,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні твоя парасолька знадобиться саме тоді, коли вона буде з тобою.",
    "en": "Today your umbrella will be needed exactly when you have it with you."
   },
   {
-   "id": 154,
+   "id": 79,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні в магазині не буде черги на твоїй касі. Обирай сміливо.",
    "en": "Today your checkout line will be empty. Choose boldly."
   },
   {
-   "id": 155,
+   "id": 80,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти не купиш нічого зайвого. Ну, крім одного маленького смаколика.",
    "en": "Today you won't buy anything unnecessary. Well, except one small treat."
   },
   {
-   "id": 156,
+   "id": 81,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні твої рослини отримають воду, а ти — компліменти від них. Мовчазні.",
    "en": "Today your plants will get water and you'll get compliments from them. Silent ones."
   },
   {
-   "id": 157,
+   "id": 82,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти знайдеш у шафі річ, про яку давно забув, і вона буде модною знову.",
    "en": "Today you'll find something in your closet you forgot about, and it'll be trendy again."
   },
   {
-   "id": 158,
+   "id": 83,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні пилосос не застрягне під диваном. Він виріс.",
    "en": "The vacuum won't get stuck under the sofa today. It's grown up."
   },
   {
-   "id": 159,
+   "id": 84,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти прийдеш додому і там буде затишно. Бо ти вчора прибрав. Молодець.",
    "en": "Today you'll come home and it'll be cozy. Because you cleaned yesterday. Well done."
   },
   {
-   "id": 160,
+   "id": 85,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні твій трафік на дорогах буде як у неділю зранку.",
    "en": "Today your road traffic will be like a Sunday morning."
   },
   {
-   "id": 161,
+   "id": 86,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні батарейки в пульті не сядуть. Бережи цей момент.",
    "en": "The remote batteries won't die today. Cherish the moment."
   },
   {
-   "id": 162,
+   "id": 87,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти напишеш мамі першим. Вона буде щаслива. І ти теж.",
    "en": "Today you'll text your mom first. She'll be happy. So will you."
   },
   {
-   "id": 163,
+   "id": 88,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти нарешті зробиш те, що відкладав «на вихідні» вже три місяці.",
    "en": "Today you'll finally do the thing you've been postponing \"for the weekend\" for three months."
   },
   {
-   "id": 164,
+   "id": 89,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти вийдеш з дому вчасно, і тобі навіть не доведеться бігти.",
    "en": "Today you'll leave home on time and won't even have to run."
   },
   {
-   "id": 165,
+   "id": 90,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні у ванній закінчиться тільки те, що в тебе є в запасі.",
    "en": "Today the only thing to run out in the bathroom is something you have a spare of."
   },
   {
-   "id": 166,
+   "id": 91,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні твоя доставка прийде цілою. Навіть яйця.",
    "en": "Your delivery will arrive intact today. Even the eggs."
   },
   {
-   "id": 167,
+   "id": 92,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти помітиш, що у тебе дуже затишна квартира. Зроби фото на пам'ять.",
    "en": "Today you'll notice how cozy your home is. Take a photo to remember."
   },
   {
-   "id": 168,
+   "id": 93,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти загубиш тільки погані звички. Решта — на місці.",
    "en": "Today you'll only lose bad habits. Everything else stays put."
   },
   {
-   "id": 169,
+   "id": 94,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні Wi-Fi вдома працюватиме навіть у найдальшому кутку квартири.",
    "en": "Today home Wi-Fi will work even in the farthest corner of your place."
   },
   {
-   "id": 170,
+   "id": 95,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти прокинешся бадьорим, ніби спав 9 годин. Навіть якщо спав 6.",
    "en": "Today you'll wake up refreshed as if you slept 9 hours. Even if you slept 6."
   },
   {
-   "id": 171,
+   "id": 96,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти почуєш свою улюблену пісню там, де не очікуєш.",
    "en": "Today you'll hear your favorite song where you least expect it."
   },
   {
-   "id": 172,
+   "id": 97,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні твоя посилка прийде раніше. Пошта сьогодні в настрої.",
    "en": "Your package will arrive early today. The post office is in a good mood."
   },
   {
-   "id": 173,
+   "id": 98,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти спечеш щось, і воно навіть вийде. Як на картинці. Майже.",
    "en": "Today you'll bake something and it'll actually turn out. Like the picture. Almost."
   },
   {
-   "id": 174,
+   "id": 99,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти знайдеш відповідний контейнер для залишків їжі з першого разу. І кришку до нього.",
    "en": "Today you'll find the right container for leftovers on the first try. And its lid."
   },
   {
-   "id": 175,
+   "id": 100,
    "cat": "home",
    "rare": false,
    "ua": "Сьогодні ти увімкнеш серіал і одразу знайдеш, що подивитись. Без години скролу.",
    "en": "Today you'll open a streaming app and instantly find something to watch. No hour of scrolling."
   },
   {
-   "id": 176,
+   "id": 101,
    "cat": "home",
    "rare": false,
-   "ua": "Сьогодні ніхто не з'їсть твій йогурт з офісного холодильника.",
-   "en": "Nobody will eat your yogurt from the office fridge today."
+   "ua": "Сьогодні ніхто вдома не з'їсть твій йогурт. Навіть кіт, хоч він і дуже старатиметься.",
+   "en": "Nobody at home will eat your yogurt today. Not even the cat, though it'll try hard."
   },
   {
-   "id": 177,
+   "id": 102,
    "cat": "home",
    "rare": true,
    "ua": "Сьогодні ти знайдеш усі загублені речі одночасно. Включно з мотивацією.",
    "en": "Today you'll find all your lost things at once. Including motivation."
   },
   {
-   "id": 178,
+   "id": 103,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні ти перевіриш баланс і посміхнешся. Не нервово — по-справжньому.",
    "en": "Today you'll check your balance and smile. Not nervously — for real."
   },
   {
-   "id": 179,
+   "id": 104,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні кешбек нарешті буде більшим, ніж 3 копійки.",
    "en": "Today your cashback will finally be more than 3 cents."
   },
   {
-   "id": 180,
+   "id": 105,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні ти не підпишешся на ще один сервіс «з безкоштовним пробним періодом».",
    "en": "Today you won't sign up for another service with a \"free trial\"."
   },
   {
-   "id": 181,
+   "id": 106,
    "cat": "money",
    "rare": false,
    "ua": "Куля бачить у тебе фінансову стабільність. І трохи імпульсивних покупок.",
    "en": "The orb sees financial stability for you. And a few impulse buys."
   },
   {
-   "id": 182,
+   "id": 107,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні знижка буде саме на те, що тобі справді потрібно.",
    "en": "Today the discount will be on exactly what you actually need."
   },
   {
-   "id": 183,
+   "id": 108,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні ти відкладеш трохи грошей. Майбутній ти вже аплодує.",
    "en": "Today you'll save a little money. Future you is already applauding."
   },
   {
-   "id": 184,
+   "id": 109,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні тобі повернуть борг. Той, про який ти вже забув.",
    "en": "Today someone will pay back a debt. The one you already forgot about."
   },
   {
-   "id": 185,
+   "id": 110,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні ти знайдеш, що скасувати в підписках, і заощадиш на піцу.",
    "en": "Today you'll find a subscription to cancel and save enough for pizza."
   },
   {
-   "id": 186,
+   "id": 111,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні кава буде за акцією. Всесвіт дбає про тебе.",
    "en": "Today coffee will be on sale. The universe cares about you."
   },
   {
-   "id": 187,
+   "id": 112,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні ти побачиш ціну і не скажеш «скільки-скільки?»",
    "en": "Today you'll see a price and won't say \"how much?!\""
   },
   {
-   "id": 188,
+   "id": 113,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні гроші прийдуть легко. Ну, хоча б думки про них.",
    "en": "Today money will come easily. Well, at least thoughts about it."
   },
   {
-   "id": 189,
+   "id": 114,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні твоя карта пройде з першого разу на будь-якому терміналі.",
    "en": "Today your card will go through on the first try at any terminal."
   },
   {
-   "id": 190,
+   "id": 115,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні ти вкладеш в себе. Книжка, курс чи смачний обід — усе рахується.",
    "en": "Today you'll invest in yourself. A book, a course or a good lunch — all count."
   },
   {
-   "id": 191,
+   "id": 116,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні ти не відкриєш маркетплейс «просто глянути». Сильно.",
    "en": "Today you won't open the marketplace \"just to look\". Strong."
   },
   {
-   "id": 192,
+   "id": 117,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні фінансовий план зійдеться з реальністю. Хоча б частково.",
    "en": "Today your financial plan will match reality. At least partly."
   },
   {
-   "id": 193,
+   "id": 118,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні тобі пощастить з курсом валют. Не питай, як.",
    "en": "Today you'll get lucky with the exchange rate. Don't ask how."
   },
   {
-   "id": 194,
+   "id": 119,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні ти розрахуєшся за обід і отримаєш точну решту. Без «можна потім».",
    "en": "Today you'll pay for lunch and get exact change. No \"I'll get you later\"."
   },
   {
-   "id": 195,
+   "id": 120,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні твій бюджет витримає навіть похід у супермаркет голодним.",
    "en": "Today your budget will survive even grocery shopping while hungry."
   },
   {
-   "id": 196,
+   "id": 121,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні ти зрозумієш, куди йдуть гроші. І вирішиш, що на каву — це нормально.",
    "en": "Today you'll figure out where your money goes. And decide coffee is fine."
   },
   {
-   "id": 197,
+   "id": 122,
    "cat": "money",
    "rare": false,
    "ua": "Сьогодні ти зробиш вигідну покупку. Таку вигідну, що розповідатимеш усім.",
    "en": "Today you'll make such a good deal you'll tell everyone about it."
   },
   {
-   "id": 198,
+   "id": 123,
    "cat": "money",
    "rare": true,
    "ua": "Сьогодні на рахунок прийде більше, ніж піде. Запиши в календар.",
    "en": "Today more will come into your account than goes out. Mark the calendar."
   },
   {
-   "id": 199,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні твій ноутбук не попросить оновитись посеред важливої задачі.",
-   "en": "Today your laptop won't ask to update in the middle of an important task."
-  },
-  {
-   "id": 200,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ти знайдеш потрібний файл з першого пошуку. Без «final_v3_новий».",
-   "en": "Today you'll find the right file on the first search. No \"final_v3_new\"."
-  },
-  {
-   "id": 201,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні Zoom запуститься без оновлень і з працюючим звуком. Унікальне явище.",
-   "en": "Today Zoom will start without updates and with working audio. A rare phenomenon."
-  },
-  {
-   "id": 202,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ти вперше за тиждень закриєш 30 вкладок і ні про що не пошкодуєш.",
-   "en": "Today, for the first time this week, you'll close 30 tabs and regret nothing."
-  },
-  {
-   "id": 203,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні Ctrl+Z врятує тобі день. Двічі.",
-   "en": "Today Ctrl+Z will save your day. Twice."
-  },
-  {
-   "id": 204,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні твій телефон доживе до вечора з 20% заряду. Справжня витривалість.",
-   "en": "Today your phone will make it to the evening with 20% battery. True endurance."
-  },
-  {
-   "id": 205,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ти введеш пароль правильно з першого разу. CAPS LOCK вимкнений.",
-   "en": "Today you'll type your password correctly the first time. CAPS LOCK is off."
-  },
-  {
-   "id": 206,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні капча повірить, що ти людина. З першої спроби.",
-   "en": "Today the captcha will believe you're human. On the first try."
-  },
-  {
-   "id": 207,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні принтер, ноутбук і проєктор будуть дружити. Рідкісний союз.",
-   "en": "Today the printer, laptop and projector will get along. A rare alliance."
-  },
-  {
-   "id": 208,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні «вимкни і ввімкни» знову спрацює. Класика не старіє.",
-   "en": "Today \"turn it off and on again\" will work again. Classics never get old."
-  },
-  {
-   "id": 209,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ти нарешті почистиш робочий стіл комп'ютера. Ну, від половини іконок.",
-   "en": "Today you'll finally clean your computer desktop. Well, half the icons."
-  },
-  {
-   "id": 210,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні AI зрозуміє тебе з першого промпту. Зрідка буває.",
-   "en": "Today AI will understand you from the first prompt. It happens sometimes."
-  },
-  {
-   "id": 211,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні твій код скомпілюється без помилок і ти запідозриш щось недобре.",
-   "en": "Today your code will compile with no errors and you'll suspect something's wrong."
-  },
-  {
-   "id": 212,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні жоден сервіс не впаде. Розробники нарешті виспались.",
-   "en": "No service will go down today. The developers finally got some sleep."
-  },
-  {
-   "id": 213,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ти не натиснеш «Відповісти всім» випадково. Колеги вдячні.",
-   "en": "Today you won't hit \"Reply all\" by accident. Your colleagues are grateful."
-  },
-  {
-   "id": 214,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні двофакторна аутентифікація пройде, і телефон буде під рукою.",
-   "en": "Today two-factor authentication will work, and your phone will be within reach."
-  },
-  {
-   "id": 215,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ти зробиш бекап. А завтра будеш радий, що зробив.",
-   "en": "Today you'll make a backup. Tomorrow you'll be glad you did."
-  },
-  {
-   "id": 216,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні Bluetooth-навушники підключаться до того пристрою, до якого треба.",
-   "en": "Today your Bluetooth earphones will connect to the right device."
-  },
-  {
-   "id": 217,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні твій інтернет буде швидшим за твої думки. Встигай.",
-   "en": "Today your internet will be faster than your thoughts. Keep up."
-  },
-  {
-   "id": 218,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ти знайдеш відповідь на Stack Overflow, яка справді працює.",
-   "en": "Today you'll find an answer on Stack Overflow that actually works."
-  },
-  {
-   "id": 219,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ніхто не попросить тебе «глянути комп'ютер, бо ти ж в IT».",
-   "en": "Nobody will ask you to \"take a look at their computer because you're in IT\" today."
-  },
-  {
-   "id": 220,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні Excel не перетворить твої числа на дати. Перемога.",
-   "en": "Today Excel won't turn your numbers into dates. Victory."
-  },
-  {
-   "id": 221,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ти вимкнеш сповіщення і отримаєш дві години чистого фокусу.",
-   "en": "Today you'll turn off notifications and get two hours of pure focus."
-  },
-  {
-   "id": 222,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні флешка вставиться правильною стороною з першої спроби.",
-   "en": "Today the USB will go in the right way on the first try."
-  },
-  {
-   "id": 223,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ти нарешті оновиш застосунок, який просить про це з минулого місяця.",
-   "en": "Today you'll finally update the app that's been begging since last month."
-  },
-  {
-   "id": 224,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні у тебе знайдеться вільне місце на диску. Звідки — загадка.",
-   "en": "Today you'll somehow have free disk space. Where it came from is a mystery."
-  },
-  {
-   "id": 225,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ти не загубиш курсор на двох моніторах. Ну, загубиш, але знайдеш швидко.",
-   "en": "Today you won't lose your cursor between two monitors. Well, you will, but you'll find it fast."
-  },
-  {
-   "id": 226,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні твій пароль буде надійним, а пам'ять — ще надійнішою.",
-   "en": "Today your password will be strong and your memory even stronger."
-  },
-  {
-   "id": 227,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні твій звук у дзвінку не буде як з підводного човна.",
-   "en": "Today your call audio won't sound like it's from a submarine."
-  },
-  {
-   "id": 228,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ти напишеш формулу в таблиці, і вона спрацює. Без жодного VLOOKUP-у в сльозах.",
-   "en": "Today you'll write a spreadsheet formula and it'll work. No VLOOKUP tears."
-  },
-  {
-   "id": 229,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ти відкриєш пошту і там буде нуль спаму. Куля сама здивована.",
-   "en": "Today you'll open your inbox and find zero spam. Even the orb is surprised."
-  },
-  {
-   "id": 230,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні ти розберешся з новою функцією швидше, ніж вийде туторіал.",
-   "en": "Today you'll figure out a new feature faster than a tutorial comes out."
-  },
-  {
-   "id": 231,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні твій браузер не з'їсть всю оперативну пам'ять. Він на дієті разом з пральною машиною.",
-   "en": "Today your browser won't eat all the RAM. It's on a diet with the washing machine."
-  },
-  {
-   "id": 232,
-   "cat": "tech",
-   "rare": false,
-   "ua": "Сьогодні жоден дедлайн не збігатиметься з оновленням Windows.",
-   "en": "Today no deadline will coincide with a Windows update."
-  },
-  {
-   "id": 233,
-   "cat": "tech",
-   "rare": true,
-   "ua": "Сьогодні все працює з першого разу. Не чіпай нічого. Просто насолоджуйся.",
-   "en": "Today everything works the first time. Don't touch anything. Just enjoy."
-  },
-  {
-   "id": 234,
+   "id": 124,
    "cat": "food",
    "rare": false,
    "ua": "Сьогоднішня кава буде саме такої температури, як треба. Не обпечешся.",
    "en": "Today's coffee will be exactly the right temperature. No burnt tongue."
   },
   {
-   "id": 235,
+   "id": 125,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні з цієї кружки твоя кава смакуватиме на 27% краще. Науково доведено кулею.",
    "en": "Coffee from this mug will taste 27% better today. Scientifically proven by the orb."
   },
   {
-   "id": 236,
+   "id": 126,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні хтось пригостить тебе солодким. Не відмовляйся — це карма.",
    "en": "Someone will treat you to something sweet today. Don't refuse — it's karma."
   },
   {
-   "id": 237,
+   "id": 127,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні ти обереш ідеальний обід і не пошкодуєш, глянувши на чужу тарілку.",
    "en": "Today you'll pick the perfect lunch and won't envy anyone else's plate."
   },
   {
-   "id": 238,
+   "id": 128,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні піца приїде гарячою, а кур'єр — усміхненим.",
    "en": "Today pizza will arrive hot and the courier will be smiling."
   },
   {
-   "id": 239,
+   "id": 129,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні ти вип'єш достатньо води. Твої клітини аплодують.",
    "en": "Today you'll drink enough water. Your cells are applauding."
   },
   {
-   "id": 240,
+   "id": 130,
    "cat": "food",
    "rare": false,
-   "ua": "Сьогодні в кавоварці не закінчиться вода саме на твоїй черзі.",
-   "en": "Today the coffee machine won't run out of water right on your turn."
+   "ua": "Сьогодні в кавоварці не закінчиться вода саме тоді, коли тобі найбільше треба кави.",
+   "en": "Today the coffee maker won't run out of water exactly when you need coffee the most."
   },
   {
-   "id": 241,
+   "id": 131,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні твій обід не охолоне, поки ти відповідаєш на «термінове» повідомлення.",
    "en": "Today your lunch won't get cold while you answer an \"urgent\" message."
   },
   {
-   "id": 242,
+   "id": 132,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні ти спробуєш нову страву і вона стане улюбленою.",
    "en": "Today you'll try a new dish and it'll become a favorite."
   },
   {
-   "id": 243,
+   "id": 133,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні ти зробиш ідеальну яєчню. Без шкаралупи. Навіть фотогенічну.",
    "en": "Today you'll make perfect eggs. No shells. Photogenic, even."
   },
   {
-   "id": 244,
+   "id": 134,
    "cat": "food",
    "rare": false,
-   "ua": "Сьогодні в офісі буде торт. Причина невідома, але хто питає?",
-   "en": "There'll be cake in the office today. Reason unknown, but who's asking?"
+   "ua": "Сьогодні в робочому чаті когось вітатимуть з днем народження. Торт віртуальний, радість справжня.",
+   "en": "Today someone in the team chat will be celebrating a birthday. The cake is virtual, the joy is real."
   },
   {
-   "id": 245,
+   "id": 135,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні ти не проллєш каву на клавіатуру. Клавіатура видихає.",
    "en": "Today you won't spill coffee on your keyboard. The keyboard exhales."
   },
   {
-   "id": 246,
+   "id": 136,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні твій чай завариться саме стільки, скільки треба. Ти не забудеш про нього.",
    "en": "Today your tea will steep just right. You won't forget about it."
   },
   {
-   "id": 247,
+   "id": 137,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні ти з'їси щось корисне. І щось смачне. Можливо, навіть одночасно.",
    "en": "Today you'll eat something healthy. And something tasty. Maybe at the same time."
   },
   {
-   "id": 248,
+   "id": 138,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні остання печивка в коробці дістанеться тобі. Доля так вирішила.",
    "en": "Today the last cookie in the box will be yours. Fate decided."
   },
   {
-   "id": 249,
+   "id": 139,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні ти не з'їси обід о 10 ранку. Ну, хіба половину.",
    "en": "Today you won't eat lunch at 10 a.m. Well, maybe half."
   },
   {
-   "id": 250,
+   "id": 140,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні в кафе запам'ятають твоє замовлення. Ти — постійний гість долі.",
    "en": "Today the café will remember your order. You're a regular of destiny."
   },
   {
-   "id": 251,
+   "id": 141,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні твоє «я тільки один шматочок» справді буде одним шматочком. Можливо.",
    "en": "Today your \"just one slice\" will really be one slice. Possibly."
   },
   {
-   "id": 252,
+   "id": 142,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні ти доп'єш каву гарячою. Вперше за місяць.",
    "en": "Today you'll finish your coffee while it's still hot. First time this month."
   },
   {
-   "id": 253,
+   "id": 143,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні в доставці нічого не переплутають. Навіть соус.",
    "en": "Today the delivery won't mix anything up. Not even the sauce."
   },
   {
-   "id": 254,
+   "id": 144,
    "cat": "food",
    "rare": false,
    "ua": "Ця кружка сьогодні принесе тобі удачу. Тільки не забудь її помити.",
    "en": "This mug will bring you luck today. Just don't forget to wash it."
   },
   {
-   "id": 255,
+   "id": 145,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні ти знайдеш ідеальне місце для обіду. Без черги і з видом.",
    "en": "Today you'll find the perfect lunch spot. No queue and with a view."
   },
   {
-   "id": 256,
+   "id": 146,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні твій смузі не буде схожий на болото. Ну, не дуже.",
    "en": "Today your smoothie won't look like a swamp. Well, not much."
   },
   {
-   "id": 257,
+   "id": 147,
    "cat": "food",
    "rare": false,
    "ua": "Сьогодні кава зарядить тебе так, що ти зробиш дві задачі за раз.",
    "en": "Today coffee will charge you up so much you'll do two tasks at once."
   },
   {
-   "id": 258,
+   "id": 148,
    "cat": "food",
    "rare": false,
-   "ua": "Сьогодні хтось нарешті помиє свою кружку в офісній раковині. Може, навіть ти.",
-   "en": "Today someone will finally wash their mug in the office sink. Maybe even you."
+   "ua": "Сьогодні ти нарешті помиєш ту кружку, що стоїть біля ноутбука з минулого тижня. Вона тобі вдячна.",
+   "en": "Today you'll finally wash the mug that's been next to your laptop since last week. It's grateful."
   },
   {
-   "id": 259,
+   "id": 149,
    "cat": "food",
    "rare": true,
    "ua": "Сьогодні кава безкоштовна, смачна і нескінченна. Принаймні в цій кружці.",
    "en": "Today coffee is free, delicious and endless. At least in this mug."
   },
   {
-   "id": 260,
+   "id": 150,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти будеш у чудовому настрої. А якщо ні — кава допоможе.",
    "en": "You'll be in a great mood today. And if not — coffee will help."
   },
   {
-   "id": 261,
+   "id": 151,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти посміхнешся незнайомцю, і він посміхнеться у відповідь. Магія.",
    "en": "Today you'll smile at a stranger and they'll smile back. Magic."
   },
   {
-   "id": 262,
+   "id": 152,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні все піде за планом. А якщо ні — план був поганий.",
    "en": "Today everything will go according to plan. And if not — it was a bad plan."
   },
   {
-   "id": 263,
+   "id": 153,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти будеш спокійним, як кіт на підвіконні.",
    "en": "Today you'll be as calm as a cat on a windowsill."
   },
   {
-   "id": 264,
+   "id": 154,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти зробиш щось уперше. І це буде круто.",
    "en": "Today you'll do something for the first time. And it'll be cool."
   },
   {
-   "id": 265,
+   "id": 155,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти нарешті перестанеш відкладати. Почнеш з завтра. Жартую — з сьогодні.",
    "en": "Today you'll finally stop procrastinating. Starting tomorrow. Kidding — today."
   },
   {
-   "id": 266,
+   "id": 156,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні твоя енергія буде на рівні «понеділок, але хороший».",
    "en": "Today your energy will be at the \"Monday, but a good one\" level."
   },
   {
-   "id": 267,
+   "id": 157,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти зрозумієш, що ти молодець. Навіть якщо ніхто не скаже — куля каже.",
    "en": "Today you'll realize you're doing great. Even if no one says it — the orb does."
   },
   {
-   "id": 268,
+   "id": 158,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні не буде жодних драм. Тільки комедія.",
    "en": "No drama today. Only comedy."
   },
   {
-   "id": 269,
+   "id": 159,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти будеш настільки продуктивним, що випередиш свій туду-лист.",
    "en": "You'll be so productive today you'll get ahead of your to-do list."
   },
   {
-   "id": 270,
+   "id": 160,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти скажеш правильні слова в правильний момент. Ну, в більшості випадків.",
    "en": "Today you'll say the right words at the right moment. Mostly."
   },
   {
-   "id": 271,
+   "id": 161,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні сонце світитиме саме тобі. Навіть якщо на вулиці хмарно.",
    "en": "Today the sun will shine just for you. Even if it's cloudy."
   },
   {
-   "id": 272,
+   "id": 162,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти будеш тим, хто розряджає атмосферу. Жартуй сміливо.",
    "en": "Today you'll be the one who lightens the mood. Joke boldly."
   },
   {
-   "id": 273,
+   "id": 163,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти відчуєш, що все під контролем. Насолоджуйся, поки триває.",
    "en": "Today you'll feel like everything is under control. Enjoy it while it lasts."
   },
   {
-   "id": 274,
+   "id": 164,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні жоден дрібний збій не зіпсує тобі день. Ти незламний.",
    "en": "No small glitch will ruin your day today. You're unbreakable."
   },
   {
-   "id": 275,
+   "id": 165,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти будеш генератором ідей. Записуй — потім знадобиться.",
    "en": "Today you'll be an idea generator. Write them down — you'll need them later."
   },
   {
-   "id": 276,
+   "id": 166,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти зробиш комусь день кращим. Навіть не помітиш, як.",
    "en": "Today you'll make someone's day better. You won't even notice how."
   },
   {
-   "id": 277,
+   "id": 167,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні тобі нарешті вистачить терпіння. На все. Майже.",
    "en": "Today you'll finally have enough patience. For everything. Almost."
   },
   {
-   "id": 278,
+   "id": 168,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти побачиш смішний мем саме тоді, коли він тобі потрібен.",
    "en": "Today you'll see a funny meme exactly when you need it."
   },
   {
-   "id": 279,
+   "id": 169,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти будеш впевненим у собі, як людина, що вперше налаштувала роутер.",
    "en": "Today you'll be as confident as someone who just set up a router for the first time."
   },
   {
-   "id": 280,
+   "id": 170,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні все складеться, як тетрис на першому рівні.",
    "en": "Today everything will fall into place like Tetris on level one."
   },
   {
-   "id": 281,
+   "id": 171,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні твій внутрішній критик піде у відпустку. Нарешті.",
    "en": "Today your inner critic will go on vacation. Finally."
   },
   {
-   "id": 282,
+   "id": 172,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні у тебе буде хороший день. Куля перевірила — сумнівів немає.",
    "en": "You'll have a good day today. The orb checked — no doubts."
   },
   {
-   "id": 283,
+   "id": 173,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти будеш швидшим за свої сумніви.",
    "en": "Today you'll be faster than your doubts."
   },
   {
-   "id": 284,
+   "id": 174,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні всі світлофори будуть зеленими. Принаймні у переносному сенсі.",
    "en": "Today all traffic lights will be green. Figuratively, at least."
   },
   {
-   "id": 285,
+   "id": 175,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти зрозумієш, що вчорашня проблема — це сьогоднішній досвід.",
    "en": "Today you'll realize yesterday's problem is today's experience."
   },
   {
-   "id": 286,
+   "id": 176,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти будеш у потоці. Не забудь вийти з нього на обід.",
    "en": "Today you'll be in the flow. Don't forget to step out for lunch."
   },
   {
-   "id": 287,
+   "id": 177,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні тобі не знадобиться другий будильник. Перший спрацює ідеально.",
    "en": "Today you won't need a second alarm. The first one will do the job."
   },
   {
-   "id": 288,
+   "id": 178,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти будеш сміятися так, що доведеться вимкнути мікрофон.",
    "en": "Today you'll laugh so hard you'll have to mute your mic."
   },
   {
-   "id": 289,
+   "id": 179,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти відчуєш, що можеш усе. Почни з маленького — з кави.",
    "en": "Today you'll feel like you can do anything. Start small — with coffee."
   },
   {
-   "id": 290,
+   "id": 180,
    "cat": "mood",
    "rare": false,
-   "ua": "Сьогодні твій настрій буде як Wi-Fi в офісі: стабільний і на повну.",
-   "en": "Today your mood will be like office Wi-Fi: stable and at full strength."
+   "ua": "Сьогодні твій настрій буде як ідеальний домашній Wi-Fi: стабільний і на повну.",
+   "en": "Today your mood will be like perfect home Wi-Fi: stable and at full strength."
   },
   {
-   "id": 291,
+   "id": 181,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти будеш вчасно. Скрізь. Навіть у власних планах.",
    "en": "You'll be on time today. Everywhere. Even in your own plans."
   },
   {
-   "id": 292,
+   "id": 182,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти нарешті відпочинеш без почуття провини. Ти це заслужив.",
    "en": "Today you'll finally rest without guilt. You've earned it."
   },
   {
-   "id": 293,
+   "id": 183,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти будеш героєм маленьких перемог. А з них складаються великі.",
    "en": "Today you'll be the hero of small wins. And big wins are made of them."
   },
   {
-   "id": 294,
+   "id": 184,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні все, що ти почнеш, ти доведеш до кінця. Навіть цей ковток кави.",
    "en": "Today you'll finish everything you start. Even this sip of coffee."
   },
   {
-   "id": 295,
+   "id": 185,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні у тебе буде відповідь на будь-яке «а що, якщо...».",
    "en": "Today you'll have an answer for every \"what if...\"."
   },
   {
-   "id": 296,
+   "id": 186,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти не перечитуватимеш повідомлення, яке вже відправив. Свобода!",
    "en": "Today you won't reread the message you already sent. Freedom!"
   },
   {
-   "id": 297,
+   "id": 187,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти будеш тим, на кого всі рівняються. Ну, хоча б твоя рослина.",
    "en": "Today you'll be the one everyone looks up to. Well, at least your plant."
   },
   {
-   "id": 298,
+   "id": 188,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ніщо не виведе тебе з рівноваги. Навіть «а можна ще одну правку?»",
    "en": "Nothing will throw you off balance today. Not even \"can we do one more edit?\""
   },
   {
-   "id": 299,
+   "id": 189,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти знайдеш рішення під час душу. Тримай ручку поблизу. Водостійку.",
    "en": "Today you'll find a solution in the shower. Keep a pen nearby. A waterproof one."
   },
   {
-   "id": 300,
+   "id": 190,
    "cat": "mood",
    "rare": false,
-   "ua": "Сьогодні ти відчуєш, що рухаєшся вперед. Навіть якщо просто йдеш до кавомашини.",
-   "en": "Today you'll feel like you're moving forward. Even if you're just walking to the coffee machine."
+   "ua": "Сьогодні ти відчуєш, що рухаєшся вперед. Навіть якщо просто йдеш на кухню по каву.",
+   "en": "Today you'll feel like you're moving forward. Even if you're just walking to the kitchen for coffee."
   },
   {
-   "id": 301,
+   "id": 191,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні ти зробиш паузу і помітиш, як усе класно. Подихай. Готово.",
    "en": "Today you'll pause and notice how good everything is. Breathe. Done."
   },
   {
-   "id": 302,
+   "id": 192,
    "cat": "mood",
    "rare": false,
    "ua": "Сьогодні твоя харизма працюватиме на 120%. Користуйся відповідально.",
    "en": "Your charisma will run at 120% today. Use it responsibly."
   },
   {
-   "id": 303,
+   "id": 193,
    "cat": "mood",
    "rare": true,
    "ua": "Сьогодні ти — найкраща версія себе. Навіть до першої кави.",
    "en": "Today you're the best version of yourself. Even before your first coffee."
   },
   {
-   "id": 304,
+   "id": 194,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні тобі напише давній друг. І не з проханням позичити.",
    "en": "An old friend will text you today. And not to borrow money."
   },
   {
-   "id": 305,
+   "id": 195,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні твій жарт у чаті зібере більше реакцій, ніж оголошення від HR.",
    "en": "Your joke in the chat will get more reactions today than an HR announcement."
   },
   {
-   "id": 306,
+   "id": 196,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні ти запам'ятаєш ім'я нової людини з першого разу.",
    "en": "Today you'll remember a new person's name on the first try."
   },
   {
-   "id": 307,
+   "id": 197,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні хтось скаже, що ти гарно виглядаєш. Це правда.",
    "en": "Today someone will say you look great. It's true."
   },
   {
-   "id": 308,
+   "id": 198,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні ти будеш душею компанії. Навіть якщо компанія — це ти і кіт.",
    "en": "Today you'll be the life of the party. Even if the party is you and the cat."
   },
   {
-   "id": 309,
+   "id": 199,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні в груповому чаті ніхто не напише «а хто що?» о 23:00.",
    "en": "Nobody will write \"so what's the plan?\" in the group chat at 11 p.m."
   },
   {
-   "id": 310,
+   "id": 200,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні ти отримаєш комплімент, який будеш згадувати весь тиждень.",
    "en": "Today you'll get a compliment you'll remember all week."
   },
   {
-   "id": 311,
+   "id": 201,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні твоє голосове повідомлення буде коротшим за хвилину. Друзі в захваті.",
    "en": "Today your voice message will be under a minute. Your friends are thrilled."
   },
   {
-   "id": 312,
+   "id": 202,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні ти зустрінеш когось, хто зробить твій день цікавішим.",
    "en": "Today you'll meet someone who makes your day more interesting."
   },
   {
-   "id": 313,
+   "id": 203,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні ти нарешті зустрінешся з друзями, з якими «треба якось бачитись».",
    "en": "Today you'll finally meet the friends you \"really need to see sometime\"."
   },
   {
-   "id": 314,
+   "id": 204,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні ти не залишиш нікого на «прочитано». Ти — приклад для наслідування.",
    "en": "Today you won't leave anyone on \"read\". You're a role model."
   },
   {
-   "id": 315,
+   "id": 205,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні твоя порада комусь дуже допоможе. Будь мудрим, як ця куля.",
    "en": "Today your advice will really help someone. Be wise, like this orb."
   },
   {
-   "id": 316,
+   "id": 206,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні ти скажеш «дякую» частіше, ніж зазвичай. І це повернеться.",
    "en": "Today you'll say \"thank you\" more than usual. And it'll come back to you."
   },
   {
-   "id": 317,
+   "id": 207,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні твій сторіс подивляться саме ті, кому ти хотів показати.",
    "en": "Today your story will be seen by exactly the people you wanted to show it to."
   },
   {
-   "id": 318,
+   "id": 208,
    "cat": "social",
    "rare": false,
    "ua": "Сьогодні ти обійматимешся з улюбленими людьми. Або з улюбленою подушкою.",
    "en": "Today you'll hug your favorite people. Or your favorite pillow."
   },
   {
-   "id": 319,
+   "id": 209,
    "cat": "weekend",
    "rare": false,
    "ua": "Вихідні будуть саме такими, як ти планував. Навіть погода погодиться.",
    "en": "The weekend will be exactly as you planned. Even the weather agrees."
   },
   {
-   "id": 320,
+   "id": 210,
    "cat": "weekend",
    "rare": false,
    "ua": "Сьогодні п'ятниця відчуватиметься ближче, ніж є насправді. Насолоджуйся.",
    "en": "Friday will feel closer today than it really is. Enjoy."
   },
   {
-   "id": 321,
+   "id": 211,
    "cat": "weekend",
    "rare": false,
    "ua": "Твоя наступна відпустка буде такою класною, що ти забудеш паролі.",
    "en": "Your next vacation will be so good you'll forget your passwords."
   },
   {
-   "id": 322,
+   "id": 212,
    "cat": "weekend",
    "rare": false,
    "ua": "Сьогодні ти спланеш вихідні і не перенесеш нічого на понеділок.",
    "en": "Today you'll plan your weekend and won't push anything to Monday."
   },
   {
-   "id": 323,
+   "id": 213,
    "cat": "weekend",
    "rare": false,
    "ua": "Сьогодні ти прогуляєшся і знайдеш нове улюблене місце в місті.",
    "en": "Today you'll go for a walk and find a new favorite spot in the city."
   },
   {
-   "id": 324,
+   "id": 214,
    "cat": "weekend",
    "rare": false,
    "ua": "Сьогодні ти нарешті подивишся той фільм зі списку «колись подивлюсь».",
    "en": "Today you'll finally watch that movie from your \"someday\" list."
   },
   {
-   "id": 325,
+   "id": 215,
    "cat": "weekend",
    "rare": false,
    "ua": "Сьогодні робочий день мине швидко, як вихідні. Але навпаки — приємно.",
    "en": "Today the workday will fly by like a weekend. In a good way."
   },
   {
-   "id": 326,
+   "id": 216,
    "cat": "weekend",
    "rare": false,
    "ua": "Сьогодні ти вирішиш, куди поїхати у відпустку. Квитки будуть дешевими.",
    "en": "Today you'll decide where to go on vacation. Tickets will be cheap."
   },
   {
-   "id": 327,
+   "id": 217,
    "cat": "weekend",
    "rare": false,
    "ua": "Сьогодні ввечері в тебе не буде жодних справ. Лише ти, диван і щастя.",
    "en": "You'll have nothing to do tonight. Just you, the sofa and happiness."
   },
   {
-   "id": 328,
+   "id": 218,
    "cat": "weekend",
    "rare": false,
    "ua": "Сьогодні ти відчуєш атмосферу вихідних посеред тижня. Без шкоди для дедлайнів.",
    "en": "Today you'll feel weekend vibes midweek. Without hurting deadlines."
   },
   {
-   "id": 329,
+   "id": 219,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля бачить у тебе вдалий день. Але перевір ще раз завтра — вона любить увагу.",
    "en": "The orb sees a lucky day for you. But check again tomorrow — it loves attention."
   },
   {
-   "id": 330,
+   "id": 220,
    "cat": "mystic",
    "rare": false,
    "ua": "Зірки зійшлися. Wi-Fi теж. Сьогодні все можливо.",
    "en": "The stars have aligned. So has the Wi-Fi. Anything is possible today."
   },
   {
-   "id": 331,
+   "id": 221,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля трохи затуманилась, але бачить чітко: сьогодні ти переможеш.",
    "en": "The orb is a bit cloudy, but it sees clearly: today you'll win."
   },
   {
-   "id": 332,
+   "id": 222,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля каже «так». Питання ти можеш придумати сам.",
    "en": "The orb says \"yes\". You can come up with the question yourself."
   },
   {
-   "id": 333,
+   "id": 223,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні Меркурій не ретроградний. Виправдання доведеться шукати інші.",
    "en": "Mercury isn't in retrograde today. You'll need other excuses."
   },
   {
-   "id": 334,
+   "id": 224,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля бачить у твоєму майбутньому каву. Багато кави. І успіх.",
    "en": "The orb sees coffee in your future. Lots of coffee. And success."
   },
   {
-   "id": 335,
+   "id": 225,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні твій шостий сенс підкаже правильне рішення. Слухай його, а не чат.",
    "en": "Today your sixth sense will suggest the right decision. Listen to it, not the chat."
   },
   {
-   "id": 336,
+   "id": 226,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля пророкує: ти повернешся сюди завтра. Вона ніколи не помиляється.",
    "en": "The orb prophesies: you'll come back here tomorrow. It's never wrong."
   },
   {
-   "id": 337,
+   "id": 227,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні Всесвіт на твоєму боці. Просто не заважай йому працювати.",
    "en": "Today the universe is on your side. Just let it do its job."
   },
   {
-   "id": 338,
+   "id": 228,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля чує, що ти хочеш перепитати. Відповідь та сама: все буде добре.",
    "en": "The orb hears you want to ask again. Same answer: everything will be fine."
   },
   {
-   "id": 339,
+   "id": 229,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні твоя інтуїція працюватиме краще за будь-яку аналітику. Майже.",
    "en": "Today your intuition will work better than any analytics. Almost."
   },
   {
-   "id": 340,
+   "id": 230,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля бачить число 7. Не знаємо, що воно означає, але звучить вдало.",
    "en": "The orb sees the number 7. Not sure what it means, but it sounds lucky."
   },
   {
-   "id": 341,
+   "id": 231,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні карма поверне тобі всі добрі справи. З відсотками.",
    "en": "Today karma will return all your good deeds. With interest."
   },
   {
-   "id": 342,
+   "id": 232,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля відпочиває, але залишила записку: «Ти впораєшся».",
    "en": "The orb is resting, but it left a note: \"You've got this.\""
   },
   {
-   "id": 343,
+   "id": 233,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні енергія космосу подвоїться в тебе в кружці.",
    "en": "Today cosmic energy will double inside your mug."
   },
   {
-   "id": 344,
+   "id": 234,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля передбачає удачу. Але тільки якщо ти допʼєш каву до дна.",
    "en": "The orb predicts luck. But only if you finish your coffee."
   },
   {
-   "id": 345,
+   "id": 235,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні знаки будуть усюди. Зелений смайлик у чаті — теж знак.",
    "en": "Signs will be everywhere today. A green emoji in the chat is a sign too."
   },
   {
-   "id": 346,
+   "id": 236,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля бачить, що ти читаєш передбачення замість роботи. Нічого, вона нікому не скаже.",
    "en": "The orb sees you reading prophecies instead of working. Don't worry, it won't tell."
   },
   {
-   "id": 347,
+   "id": 237,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні твоя удача на максимумі. Купи лотерейний квиток. Або хоча б пиріжок.",
    "en": "Your luck is maxed out today. Buy a lottery ticket. Or at least a pastry."
   },
   {
-   "id": 348,
+   "id": 238,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля каже: сьогодні буде гарний день. Завтра вона скаже те саме. Бо так і буде.",
    "en": "The orb says: today will be a good day. Tomorrow it'll say the same. Because it will be."
   },
   {
-   "id": 349,
+   "id": 239,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні все, що ти загадаєш, наблизиться на крок. Загадуй розумно.",
    "en": "Today everything you wish for will come one step closer. Wish wisely."
   },
   {
-   "id": 350,
+   "id": 240,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля трясеться від захвату: твій день буде легендарним. Майже.",
    "en": "The orb is shaking with excitement: your day will be legendary. Almost."
   },
   {
-   "id": 351,
+   "id": 241,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні сила xerion з тобою. Користуйся нею для добра.",
    "en": "Today the power of xerion is with you. Use it for good."
   },
   {
-   "id": 352,
+   "id": 242,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля шепоче: те, що ти задумав, — гарна ідея. Але спершу кава.",
    "en": "The orb whispers: what you're planning is a good idea. But coffee first."
   },
   {
-   "id": 353,
+   "id": 243,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні Всесвіт надішле тобі знак. Перевір пошту, месенджер і холодильник.",
    "en": "Today the universe will send you a sign. Check your email, messenger and fridge."
   },
   {
-   "id": 354,
+   "id": 244,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля бачить у тобі потенціал. Великий. Як твій список задач.",
    "en": "The orb sees potential in you. Huge. Like your task list."
   },
   {
-   "id": 355,
+   "id": 245,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні твій день буде на 100% вдалим. Похибка — одна пролита кава.",
    "en": "Today your day will be 100% successful. Margin of error: one spilled coffee."
   },
   {
-   "id": 356,
+   "id": 246,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля показує туман... ні, це пара від твоєї кави. Все чудово.",
    "en": "The orb shows fog... no, it's steam from your coffee. All good."
   },
   {
-   "id": 357,
+   "id": 247,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні те, що здається складним, виявиться простим. Як цей тап по кулі.",
    "en": "Today what seems hard will turn out easy. Like this tap on the orb."
   },
   {
-   "id": 358,
+   "id": 248,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля бачить успіх. Вона також бачить, що ти забув попити води. Попий.",
    "en": "The orb sees success. It also sees you forgot to drink water. Go drink."
   },
   {
-   "id": 359,
+   "id": 249,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні тобі пощастить у дрібницях. А з дрібниць складається щастя.",
    "en": "Today you'll get lucky in little things. And happiness is made of little things."
   },
   {
-   "id": 360,
+   "id": 250,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля пророкує: хтось сьогодні подумає про тебе з усмішкою.",
    "en": "The orb prophesies: someone will think of you with a smile today."
   },
   {
-   "id": 361,
+   "id": 251,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні зірки радять: менше скролити, більше жити. Але спочатку поділись передбаченням.",
    "en": "The stars advise today: scroll less, live more. But share this prophecy first."
   },
   {
-   "id": 362,
+   "id": 252,
    "cat": "mystic",
    "rare": false,
    "ua": "Куля бачить у твоєму майбутньому вихідні. Вони ближче, ніж здається.",
    "en": "The orb sees a weekend in your future. It's closer than it seems."
   },
   {
-   "id": 363,
+   "id": 253,
    "cat": "mystic",
    "rare": false,
    "ua": "Сьогодні твоя удача спрацює навіть без перезавантаження.",
    "en": "Today your luck will work even without a reboot."
   },
   {
-   "id": 364,
+   "id": 254,
    "cat": "mystic",
    "rare": true,
    "ua": "Куля бачить рідкісний збіг — удача, натхнення і вільний вечір в один день.",
    "en": "The orb sees a rare alignment — luck, inspiration and a free evening on the same day."
   },
   {
-   "id": 365,
+   "id": 255,
    "cat": "mystic",
    "rare": true,
    "ua": "Ти знайшов одне з найрідкісніших передбачень. Сьогодні все вийде. Абсолютно все.",
    "en": "You found one of the rarest prophecies. Today everything will work out. Absolutely everything."
+  },
+  {
+   "id": 256,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: якщо не знаєш, що робити, — зроби каву. Якщо знаєш — теж зроби каву.",
+   "en": "Tip of the day: if you don't know what to do, make coffee. If you do know — make coffee anyway."
+  },
+  {
+   "id": 257,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Ти не лінуєшся. Ти в режимі енергозбереження. Це преміум-функція.",
+   "en": "You're not lazy. You're in power-saving mode. It's a premium feature."
+  },
+  {
+   "id": 258,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти — головний герой. Жанр: комедія. Бюджет: кава.",
+   "en": "Today you're the main character. Genre: comedy. Budget: coffee."
+  },
+  {
+   "id": 259,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Куля проаналізувала твій день і каже: «Ну, могло бути й гірше». Це комплімент.",
+   "en": "The orb analyzed your day and says: \"Well, could be worse.\" That's a compliment."
+  },
+  {
+   "id": 260,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: роби вигляд, що все під контролем. Половина людей навколо робить так само.",
+   "en": "Tip of the day: act like everything's under control. Half the people around you are doing the same."
+  },
+  {
+   "id": 261,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти скажеш «я на хвилинку», і це буде найдовша хвилина тижня.",
+   "en": "Today you'll say \"just a minute\", and it'll be the longest minute of the week."
+  },
+  {
+   "id": 262,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Прогноз на день: 70% кави, 20% справ, 10% «а що я тут хотів?».",
+   "en": "Forecast for today: 70% coffee, 20% tasks, 10% \"wait, why did I come in here?\""
+  },
+  {
+   "id": 263,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні твій внутрішній голос нарешті скаже щось корисне. Не перебивай його.",
+   "en": "Today your inner voice will finally say something useful. Don't interrupt it."
+  },
+  {
+   "id": 264,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: якщо щось не виходить — зроби паузу. Якщо знову не виходить — зроби каву і паузу.",
+   "en": "Tip of the day: if something isn't working — take a break. If it still isn't — take coffee and a break."
+  },
+  {
+   "id": 265,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти будеш спокійним, як людина, що вже з'їла свій обід о 10:30.",
+   "en": "Today you'll be as calm as someone who already ate their lunch at 10:30."
+  },
+  {
+   "id": 266,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Куля каже: «Все буде добре». А ще куля каже: «Не забудь закрити вікно, бо продує».",
+   "en": "The orb says: \"Everything will be fine.\" The orb also says: \"Close the window, it's drafty.\""
+  },
+  {
+   "id": 267,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Ти сьогодні настільки крутий, що навіть дзеркало попросить автограф.",
+   "en": "You're so cool today even the mirror will ask for an autograph."
+  },
+  {
+   "id": 268,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: пий воду. Куля не знає, яка в тебе проблема, але вода точно не завадить.",
+   "en": "Tip of the day: drink water. The orb doesn't know your problem, but water won't hurt."
+  },
+  {
+   "id": 269,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти відкриєш холодильник утретє за годину. І там знову нічого не з'явиться. Стабільність!",
+   "en": "Today you'll open the fridge for the third time in an hour. Still nothing new. Stability!"
+  },
+  {
+   "id": 270,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти будеш як кіт: робитимеш тільки те, що хочеш, і всі все одно тебе любитимуть.",
+   "en": "Today you'll be like a cat: do only what you want, and everyone will still love you."
+  },
+  {
+   "id": 271,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Куля шукала для тебе погане передбачення, але не знайшла. Довелося видати хороше.",
+   "en": "The orb looked for a bad prophecy for you but couldn't find one. Had to give you a good one."
+  },
+  {
+   "id": 272,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: якщо втомився — відпочинь. Якщо відпочив — відпочинь ще трохи для профілактики.",
+   "en": "Tip of the day: if you're tired — rest. If you've rested — rest a bit more, just in case."
+  },
+  {
+   "id": 273,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти скажеш «я сам усе зроблю» і реально зробиш. Здивуєш навіть себе.",
+   "en": "Today you'll say \"I'll do it myself\" and actually do it. You'll surprise even yourself."
+  },
+  {
+   "id": 274,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Прогноз: зранку хмарно в голові, після кави — ясно, ближче до вечора — повний штиль.",
+   "en": "Forecast: cloudy in the head in the morning, clear after coffee, total calm by evening."
+  },
+  {
+   "id": 275,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти будеш героєм дня. Причина невідома, але ми не сперечаємося.",
+   "en": "You'll be the hero of the day. Reason unknown, but we're not arguing."
+  },
+  {
+   "id": 276,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Куля передбачає, що ти покажеш це передбачення комусь ще. Перевіримо?",
+   "en": "The orb predicts you'll show this prophecy to someone else. Shall we check?"
+  },
+  {
+   "id": 277,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: не все те золото, що блищить. Але кружка з кавою — майже золото.",
+   "en": "Tip of the day: not all that glitters is gold. But a mug of coffee comes close."
+  },
+  {
+   "id": 278,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти зробиш вигляд, що слухаєш, і випадково почуєш щось геніальне.",
+   "en": "Today you'll pretend to listen and accidentally hear something brilliant."
+  },
+  {
+   "id": 279,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Ти сьогодні — як п'ятниця: всі на тебе чекають.",
+   "en": "Today you're like Friday: everyone's waiting for you."
+  },
+  {
+   "id": 280,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Куля бачить у твоєму майбутньому диван. Він теж сумує за тобою.",
+   "en": "The orb sees a sofa in your future. It misses you too."
+  },
+  {
+   "id": 281,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: якщо план А не спрацював — у абетці ще 32 літери.",
+   "en": "Tip of the day: if plan A didn't work, the alphabet has 25 more letters."
+  },
+  {
+   "id": 282,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти знайдеш ідеальну відповідь у суперечці. Через годину після суперечки. Як завжди.",
+   "en": "Today you'll find the perfect comeback in an argument. An hour after the argument. As usual."
+  },
+  {
+   "id": 283,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Твій рівень чарівності сьогодні: «попросив пакетик кетчупу — отримав три».",
+   "en": "Your charm level today: \"asked for one ketchup packet — got three.\""
+  },
+  {
+   "id": 284,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти будеш як батарейка в пульті: тебе трохи потрусять, і ти знову працюєш.",
+   "en": "Today you'll be like a remote battery: a little shake and you're working again."
+  },
+  {
+   "id": 285,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Куля відмовляється робити прогноз, доки ти не посміхнешся. Так, ось так. Дякую.",
+   "en": "The orb refuses to predict until you smile. Yes, like that. Thank you."
+  },
+  {
+   "id": 286,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: сприймай понеділок як трейлер до п'ятниці.",
+   "en": "Tip of the day: treat Monday as the trailer for Friday."
+  },
+  {
+   "id": 287,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти напишеш довге повідомлення, зітреш і відправиш «ок». Мудро.",
+   "en": "Today you'll type a long message, delete it and send \"ok\". Wise."
+  },
+  {
+   "id": 288,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Прогноз на тиждень: ти встигнеш усе. Ну, все, що важливо. Решта почекає.",
+   "en": "Forecast for the week: you'll get everything done. Well, everything important. The rest can wait."
+  },
+  {
+   "id": 289,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти будеш настільки зібраним, що навіть шнурки не розв'яжуться.",
+   "en": "You'll be so together today even your shoelaces won't come undone."
+  },
+  {
+   "id": 290,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Куля провела опитування серед зірок. Усі за тебе. Одна утрималась, але вона просто спала.",
+   "en": "The orb polled the stars. All in your favor. One abstained, but it was asleep."
+  },
+  {
+   "id": 291,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: не порівнюй свій ранок із чужими фото в соцмережах. Там теж хтось розлив каву.",
+   "en": "Tip of the day: don't compare your morning to other people's photos online. Someone there spilled coffee too."
+  },
+  {
+   "id": 292,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти будеш як Wi-Fi у кав'ярні: усі тебе шукають і раді, коли знаходять.",
+   "en": "Today you'll be like café Wi-Fi: everyone's looking for you and happy when they find you."
+  },
+  {
+   "id": 293,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Ти сьогодні — як вихідний посеред тижня. Рідкісний і всім потрібний.",
+   "en": "Today you're like a day off midweek. Rare and needed by everyone."
+  },
+  {
+   "id": 294,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Куля каже: «Ти впораєшся». Куля не знає з чим, але вірить у тебе на всі 100.",
+   "en": "The orb says: \"You've got this.\" It doesn't know what \"this\" is, but believes in you 100%."
+  },
+  {
+   "id": 295,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: якщо день не задався — почни його заново після обіду. Так можна.",
+   "en": "Tip of the day: if the day isn't going well — restart it after lunch. That's allowed."
+  },
+  {
+   "id": 296,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти будеш тим, хто знає, де лежать ножиці. Усі прийдуть до тебе.",
+   "en": "Today you'll be the one who knows where the scissors are. Everyone will come to you."
+  },
+  {
+   "id": 297,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні все піде за планом. Тому про всяк випадок не роби жодних планів.",
+   "en": "Everything will go according to plan today. So just in case, don't make any plans."
+  },
+  {
+   "id": 298,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: дихай. Видихай. Тепер ще раз, але з усмішкою.",
+   "en": "Tip of the day: breathe in. Breathe out. Now again, with a smile."
+  },
+  {
+   "id": 299,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Куля бачить у тебе тиждень мрії. Бо ти його проспиш. Жартую — ти його підкориш.",
+   "en": "The orb sees a dream week for you. Because you'll sleep through it. Kidding — you'll own it."
+  },
+  {
+   "id": 300,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти нарешті зрозумієш, навіщо зайшов у кімнату. Через 15 хвилин, але зрозумієш.",
+   "en": "Today you'll finally remember why you walked into the room. 15 minutes later, but you will."
+  },
+  {
+   "id": 301,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Твоя суперсила сьогодні: говорити «так, звісно» з таким обличчям, що всі розуміють — ні.",
+   "en": "Your superpower today: saying \"yes, of course\" with a face that clearly means no."
+  },
+  {
+   "id": 302,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: якщо хтось сьогодні тебе дратує — уяви його в смішному капелюсі. Працює.",
+   "en": "Tip of the day: if someone annoys you today — picture them in a funny hat. It works."
+  },
+  {
+   "id": 303,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти будеш як ідеальний бутерброд: впаде, але маслом догори.",
+   "en": "Today you'll be like the perfect sandwich: if it falls, it lands butter side up."
+  },
+  {
+   "id": 304,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Куля відкрила тобі секрет успіху. Але він дуже секретний, тому лише натяк: кава.",
+   "en": "The orb revealed the secret of success to you. It's very secret, so just a hint: coffee."
+  },
+  {
+   "id": 305,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Прогноз: сьогодні у тебе буде відчуття, що ти все контролюєш. Насолоджуйся, воно ненадовго.",
+   "en": "Forecast: today you'll feel totally in control. Enjoy it, it won't last long."
+  },
+  {
+   "id": 306,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти будеш як бабуся з пирогами: всі навколо ситі й щасливі.",
+   "en": "Today you'll be like a grandma with pies: everyone around is full and happy."
+  },
+  {
+   "id": 307,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: вчися в кота. Поспав, поїв, подивився у вікно — і ти вже успішний.",
+   "en": "Tip of the day: learn from a cat. Nap, eat, look out the window — and you're already successful."
+  },
+  {
+   "id": 308,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні тобі скажуть «ти що, змінив зачіску?». Ні. Просто сяєш.",
+   "en": "Today someone will ask \"did you change your hair?\". No. You're just glowing."
+  },
+  {
+   "id": 309,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Куля знає твій пароль до щастя. Це «кава123». Не кажи нікому.",
+   "en": "The orb knows your password to happiness. It's \"coffee123\". Don't tell anyone."
+  },
+  {
+   "id": 310,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти будеш як свіжий хліб: теплий, приємний і всі хочуть шматочок.",
+   "en": "Today you'll be like fresh bread: warm, pleasant, and everyone wants a piece."
+  },
+  {
+   "id": 311,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: якщо не можеш перемогти хаос — очоль його.",
+   "en": "Tip of the day: if you can't beat the chaos — lead it."
+  },
+  {
+   "id": 312,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти почуєш фразу «а давай ще одну, остання». Не вір. Це ніколи не остання.",
+   "en": "Today you'll hear \"just one more, the last one\". Don't believe it. It's never the last one."
+  },
+  {
+   "id": 313,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Куля передбачає: ти зараз подумав «ну, а раптом правда». Правда.",
+   "en": "The orb predicts: you just thought \"what if it's true.\" It is."
+  },
+  {
+   "id": 314,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні твоя продуктивність — як у бджілки. А після обіду — як у ведмедика взимку.",
+   "en": "Today your productivity is like a bee's. And after lunch — like a bear's in winter."
+  },
+  {
+   "id": 315,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Порада дня: вдягни шкарпетки різного кольору. Хай доля знає, що ти не боїшся ризикувати.",
+   "en": "Tip of the day: wear mismatched socks. Let fate know you're not afraid of risks."
+  },
+  {
+   "id": 316,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Сьогодні ти відкриєш для себе нову улюблену фразу. Скоріше за все, це буде «а давай завтра».",
+   "en": "Today you'll discover a new favorite phrase. Most likely \"let's do it tomorrow\"."
+  },
+  {
+   "id": 317,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Куля каже: настав час відпочити. Куля завжди так каже, але сьогодні вона особливо переконлива.",
+   "en": "The orb says it's time to rest. It always says that, but today it's especially convincing."
+  },
+  {
+   "id": 318,
+   "cat": "meme",
+   "rare": false,
+   "ua": "Твій настрій сьогодні: як у людини, яка знайшла останнє вільне місце на парковці.",
+   "en": "Your mood today: like someone who just found the last free parking spot."
+  },
+  {
+   "id": 319,
+   "cat": "meme",
+   "rare": true,
+   "ua": "Куля оголошує тебе Людиною Дня. Нагорода — гордість і ще одна кава.",
+   "en": "The orb declares you Person of the Day. The prize: pride and one more coffee."
+  },
+  {
+   "id": 320,
+   "cat": "meme",
+   "rare": true,
+   "ua": "Ти знайшов секретне передбачення. Сьогодні можна все. Ну, майже все. Але багато що!",
+   "en": "You found a secret prophecy. Today anything goes. Well, almost anything. But a lot!"
+  },
+  {
+   "id": 321,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Сьогодні ти підеш новою дорогою додому і знайдеш щось цікаве.",
+   "en": "Today you'll take a new route home and find something interesting."
+  },
+  {
+   "id": 322,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Твоя наступна поїздка буде такою гарною, що фото не передадуть і половини.",
+   "en": "Your next trip will be so beautiful photos won't capture even half of it."
+  },
+  {
+   "id": 323,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Сьогодні ти спонтанно погодишся на щось нове. І не пошкодуєш.",
+   "en": "Today you'll spontaneously say yes to something new. And you won't regret it."
+  },
+  {
+   "id": 324,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Квитки, на які ти дивишся вже місяць, сьогодні подешевшають. Будь напоготові.",
+   "en": "The tickets you've been eyeing for a month will get cheaper today. Be ready."
+  },
+  {
+   "id": 325,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Сьогодні ти відкриєш нове місце у своєму ж місті. Як турист, тільки вдома.",
+   "en": "Today you'll discover a new place in your own city. Like a tourist, but at home."
+  },
+  {
+   "id": 326,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Сьогодні тобі захочеться подорожі. Почни з маленької — до найкращої кав'ярні поблизу.",
+   "en": "Today you'll crave travel. Start small — with a trip to the best café nearby."
+  },
+  {
+   "id": 327,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Твоя валіза сьогодні вміститься з першого разу. Навіть без сидіння на ній.",
+   "en": "Your suitcase will close on the first try today. Without sitting on it."
+  },
+  {
+   "id": 328,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Сьогодні ти спробуєш те, чого ніколи не пробував. Смак пригод тобі пасує.",
+   "en": "Today you'll try something you've never tried. The taste of adventure suits you."
+  },
+  {
+   "id": 329,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Куля бачить тебе десь біля моря. Можливо, не сьогодні, але дуже скоро.",
+   "en": "The orb sees you somewhere by the sea. Maybe not today, but very soon."
+  },
+  {
+   "id": 330,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Сьогодні прогулянка в обідню перерву перетвориться на маленьку пригоду.",
+   "en": "Today a lunch break walk will turn into a small adventure."
+  },
+  {
+   "id": 331,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Твоя наступна відпустка почнеться без жодної затримки рейсу.",
+   "en": "Your next vacation will start without a single flight delay."
+  },
+  {
+   "id": 332,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Сьогодні ти запишешся на щось нове: курс, танці чи похід. Сміливо!",
+   "en": "Today you'll sign up for something new: a class, dancing or a hike. Go for it!"
+  },
+  {
+   "id": 333,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Сьогодні ти зробиш фото, яке захочеться повісити на стіну.",
+   "en": "Today you'll take a photo worth hanging on the wall."
+  },
+  {
+   "id": 334,
+   "cat": "adventure",
+   "rare": false,
+   "ua": "Сьогодні ти вийдеш із зони комфорту. Ненадовго і в дуже приємне місце.",
+   "en": "Today you'll step out of your comfort zone. Briefly, and somewhere very nice."
+  },
+  {
+   "id": 335,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні ти виспишся. Організм уже пише тобі подяку.",
+   "en": "You'll get enough sleep today. Your body is already writing you a thank-you note."
+  },
+  {
+   "id": 336,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні ти пройдеш більше кроків, ніж планував. Навіть якщо просто ходитимеш на кухню.",
+   "en": "Today you'll walk more steps than planned. Even if it's just trips to the kitchen."
+  },
+  {
+   "id": 337,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Твоя енергія сьогодні — як у дитини після свята з солодощами.",
+   "en": "Your energy today — like a kid's after a party full of sweets."
+  },
+  {
+   "id": 338,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні ти розім'єшся посеред дня і відчуєш себе новою людиною.",
+   "en": "Today you'll stretch midday and feel like a new person."
+  },
+  {
+   "id": 339,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні твоя спина скаже тобі «дякую» за рівну поставу. Випрямись — ось так.",
+   "en": "Today your back will thank you for good posture. Sit up straight — like that."
+  },
+  {
+   "id": 340,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні ти вийдеш на свіже повітря і всі думки стануть на свої місця.",
+   "en": "Today you'll get some fresh air and all your thoughts will fall into place."
+  },
+  {
+   "id": 341,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні твоє тіло нарешті отримає овочі. І навіть не буде проти.",
+   "en": "Today your body will finally get some vegetables. And it won't even complain."
+  },
+  {
+   "id": 342,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні ти ляжеш раніше і прокинешся як після відпустки.",
+   "en": "Today you'll go to bed earlier and wake up like after a vacation."
+  },
+  {
+   "id": 343,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні ти відчуєш приплив сил о четвертій дня. Використай його на щось приємне.",
+   "en": "You'll feel a burst of energy at 4 p.m. today. Use it for something nice."
+  },
+  {
+   "id": 344,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні ти зробиш щось корисне для себе. Навіть якщо це просто п'ять хвилин тиші.",
+   "en": "Today you'll do something good for yourself. Even if it's just five minutes of quiet."
+  },
+  {
+   "id": 345,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні сходи будуть даватися тобі легко. Ліфт може відпочити.",
+   "en": "Stairs will feel easy today. The elevator can take a break."
+  },
+  {
+   "id": 346,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні ти посміхнешся щонайменше 20 разів. Куля рахує.",
+   "en": "You'll smile at least 20 times today. The orb is counting."
+  },
+  {
+   "id": 347,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні твій ранок почнеться без поспіху. Насолоджуйся кожним ковтком.",
+   "en": "Your morning will start without rushing today. Enjoy every sip."
+  },
+  {
+   "id": 348,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні ти відкладеш телефон на годину і помітиш, який гарний світ навколо.",
+   "en": "Today you'll put your phone away for an hour and notice how beautiful the world is."
+  },
+  {
+   "id": 349,
+   "cat": "energy",
+   "rare": false,
+   "ua": "Сьогодні ти будеш бадьорим без жодного будильника. Ну, майже без жодного.",
+   "en": "You'll be energetic today without a single alarm. Well, almost."
+  },
+  {
+   "id": 350,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні хтось розповість тобі історію, з якої ти сміятимешся весь вечір.",
+   "en": "Today someone will tell you a story that'll make you laugh all evening."
+  },
+  {
+   "id": 351,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні ти підтримаєш когось одним словом. І це слово запам'ятають надовго.",
+   "en": "Today you'll support someone with a single word. And they'll remember it for a long time."
+  },
+  {
+   "id": 352,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні з колегою знайдеться спільна тема, про яку ви навіть не здогадувались.",
+   "en": "Today you and a colleague will discover a common interest you never knew about."
+  },
+  {
+   "id": 353,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні тобі подзвонять просто так. Без справи. Просто, щоб почути тебе.",
+   "en": "Someone will call you today just because. No reason. Just to hear your voice."
+  },
+  {
+   "id": 354,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні ти пригостиш когось кавою, і день стане кращим для вас обох.",
+   "en": "Today you'll treat someone to coffee, and the day will get better for both of you."
+  },
+  {
+   "id": 355,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні ти скажеш комусь комплімент, і він засяє. Спробуй — це безкоштовно.",
+   "en": "Today you'll give someone a compliment and they'll light up. Try it — it's free."
+  },
+  {
+   "id": 356,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні твоя команда буде на одній хвилі. Навіть ті, хто на дзвінках завжди з вимкненою камерою.",
+   "en": "Your team will be on the same wave today. Even the ones who always keep their camera off."
+  },
+  {
+   "id": 357,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні ти познайомишся з цікавою людиною. Можливо, в черзі за кавою.",
+   "en": "Today you'll meet an interesting person. Maybe in line for coffee."
+  },
+  {
+   "id": 358,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні хтось попросить у тебе поради. І вона виявиться найкращою за тиждень.",
+   "en": "Today someone will ask for your advice. And it'll be the best advice of the week."
+  },
+  {
+   "id": 359,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні друзі запропонують зустрітися. Погоджуйся — буде весело.",
+   "en": "Today friends will suggest meeting up. Say yes — it'll be fun."
+  },
+  {
+   "id": 360,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні ти будеш тим, хто першим скаже «доброго ранку». І це запустить ланцюжок усмішок.",
+   "en": "Today you'll be the first to say \"good morning\". It'll start a chain of smiles."
+  },
+  {
+   "id": 361,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні ти дізнаєшся, що хтось давно тобою захоплюється. Тихенько, але щиро.",
+   "en": "Today you'll learn someone has admired you for a long time. Quietly, but sincerely."
+  },
+  {
+   "id": 362,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні твій сусід привітається першим. Маленьке диво, а приємно.",
+   "en": "Today your neighbor will say hello first. A small miracle, but a nice one."
+  },
+  {
+   "id": 363,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні в спільному чаті будуть лише хороші новини. І трохи котиків.",
+   "en": "Today the group chat will have only good news. And a few cats."
+  },
+  {
+   "id": 364,
+   "cat": "social",
+   "rare": false,
+   "ua": "Сьогодні ти помиришся з кимось без зайвих слів. Просто усмішкою.",
+   "en": "Today you'll make peace with someone without many words. Just a smile."
+  },
+  {
+   "id": 365,
+   "cat": "social",
+   "rare": true,
+   "ua": "Сьогодні тобі всі говоритимуть тільки приємне. Навіть автовідповідач.",
+   "en": "Today everyone will say only nice things to you. Even the answering machine."
   }
  ]
 }

@@ -100,16 +100,96 @@ h1{font:700 clamp(19px,5.6vw,30px)/1.15 var(--display);text-align:center;margin:
 .timer{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .timer small{color:var(--muted);font-size:13px;line-height:1.3;max-width:15em}
 .timer strong{font:700 20px/1 var(--display);font-variant-numeric:tabular-nums;letter-spacing:.02em;color:#fff}
-.share-t{margin:16px 0 10px;font-size:13px;color:var(--muted)}
-.share{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-.share button{all:unset;min-width:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:7px;padding:12px 4px 10px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid var(--line);font:600 11px/1 var(--body);color:var(--ink);transition:transform .15s, background .2s;text-align:center}
-.share button:active{transform:scale(.95)}
-.share button:hover{background:rgba(255,255,255,.09)}
-.share svg{width:24px;height:24px;flex-shrink:0}
-.share .lbl{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.more{display:flex;gap:8px;margin-top:8px}
-.more button{all:unset;cursor:pointer;flex:1;text-align:center;padding:12px;border-radius:14px;font:700 13px/1 var(--body);background:rgba(255,255,255,.05);border:1px solid var(--line)}
-.more button.primary{background:var(--red);border-color:var(--red);color:#fff}
+
+/* ---------- actions in panel ---------- */
+.actions{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.btn{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 18px;border-radius:14px;font:700 15px/1.15 var(--body);text-align:center;color:var(--ink);transition:transform .15s,background .2s,opacity .2s;-webkit-user-select:none;user-select:none}
+.btn:active{transform:scale(.97)}
+.btn svg{width:20px;height:20px;flex-shrink:0}
+.btn.primary{background:linear-gradient(180deg,#d02612,#a30700);color:#fff;box-shadow:0 10px 26px -12px rgba(224,51,27,.9)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{background:rgba(255,255,255,.06);border:1px solid var(--line)}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+.btn:focus-visible,.soc:focus-visible,.sh-grid a:focus-visible,.sh-grid button:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+.btn[hidden]{display:none}
+.socials{display:flex;justify-content:center;gap:clamp(10px,3.5vw,16px)}
+.soc{all:unset;box-sizing:border-box;cursor:pointer;width:clamp(44px,12.5vw,52px);height:clamp(44px,12.5vw,52px);border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--ink);transition:transform .15s,background .2s}
+.soc:hover{background:rgba(255,255,255,.12)}
+.soc:active{transform:scale(.92)}
+.soc svg{width:46%;height:46%}
+
+/* ---------- share sheet ---------- */
+body.lock{overflow:hidden}
+.sheet{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-end;justify-content:center;visibility:hidden;pointer-events:none}
+.sheet.on{visibility:visible;pointer-events:auto}
+.sheet .bd{position:absolute;inset:0;background:rgba(5,3,7,.7);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;transition:opacity .3s}
+.sheet.on .bd{opacity:1}
+.sheet .box{position:relative;box-sizing:border-box;width:100%;max-width:560px;max-height:94vh;max-height:94svh;overflow:auto;overscroll-behavior:contain;background:#151016;border:1px solid var(--line);border-bottom:0;border-radius:24px 24px 0 0;padding:10px 16px max(18px,env(safe-area-inset-bottom));display:grid;gap:12px;transform:translateY(102%);transition:transform .38s cubic-bezier(.2,.8,.2,1)}
+.sheet.on .box{transform:none}
+.sheet .grab{justify-self:center;width:42px;height:4px;border-radius:2px;background:rgba(255,255,255,.22)}
+.sh-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sh-head h2{font:700 17px/1.2 var(--display);margin:0}
+.x{all:unset;cursor:pointer;flex-shrink:0;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.07);color:var(--ink)}
+.x svg{width:18px;height:18px}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px;padding:3px}
+.seg button{all:unset;cursor:pointer;text-align:center;padding:10px 6px;border-radius:9px;font:700 13px/1 var(--body);color:var(--muted);transition:.2s}
+.seg button[aria-pressed="true"]{background:var(--red);color:#fff}
+.pv{position:relative;display:flex;justify-content:center;align-items:center;min-height:180px;background:rgba(0,0,0,.28);border-radius:16px;padding:10px}
+.pv img{display:block;max-width:100%;height:auto;max-height:min(44vh,520px);max-height:min(44svh,520px);border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.55);-webkit-touch-callout:default;-webkit-user-select:auto;user-select:auto}
+.pv img[hidden]{display:none}
+.pv .ld{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:13px}
+.pv .ld[hidden]{display:none}
+.tip{font-size:12.5px;color:var(--muted);text-align:center;margin:-2px 0 0;line-height:1.45}
+.tip:empty{display:none}
+.sh-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sh-btns .btn{min-height:46px;font-size:14px;padding:10px 12px}
+.sh-btns.single{grid-template-columns:1fr}
+.sh-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.sh-grid a,.sh-grid button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:7px;padding:4px 0;font:600 11px/1.1 var(--body);color:var(--ink);text-align:center;min-width:0;text-decoration:none}
+.sh-grid .ic{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.07);border:1px solid var(--line);transition:background .2s,transform .15s}
+.sh-grid a:hover .ic,.sh-grid button:hover .ic{background:rgba(255,255,255,.13)}
+.sh-grid a:active .ic,.sh-grid button:active .ic{transform:scale(.92)}
+.sh-grid svg{width:22px;height:22px}
+.sh-grid .t{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ig{display:none;gap:10px}
+.sheet.ig-mode .ig{display:grid}
+.sheet.ig-mode .seg,.sheet.ig-mode .sh-btns,.sheet.ig-mode .sh-grid{display:none}
+.ig .step{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:center;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:10px 12px}
+.ig .num{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--red);color:#fff;font:800 14px/1 var(--display)}
+.ig .step .btn{grid-column:1/-1;min-height:44px;font-size:14px}
+.ig .step p{margin:0;font-size:13.5px;line-height:1.4;color:var(--ink)}
+.ig .step small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.ig .back{all:unset;cursor:pointer;justify-self:center;font:600 13px/1 var(--body);color:var(--muted);padding:8px;text-decoration:underline;text-underline-offset:3px}
+.ig .btn.ig-open{background:linear-gradient(90deg,#f58529,#dd2a7b 50%,#8134af);color:#fff}
+.ver{display:block;margin-top:4px;font-size:11px;color:#4f454b}
+@media (min-width:760px) and (min-height:560px){ .ig{grid-area:btns} }
+@media (orientation:landscape) and (max-height:559px){ .ig{grid-area:btns;gap:6px} .ig .step{padding:7px 10px} .ig .step .btn{min-height:38px} }
+@media (max-width:359px){ .sh-grid .ic{width:42px;height:42px} .sh-grid svg{width:19px;height:19px} .sh-grid a,.sh-grid button{font-size:10px} .sheet .box{padding-left:12px;padding-right:12px} }
+/* tablets / desktop: centered dialog, preview left */
+@media (min-width:760px) and (min-height:560px){
+  .sheet{align-items:center;padding:24px}
+  .sheet .box{max-width:900px;border-radius:26px;border-bottom:1px solid var(--line);padding:24px;column-gap:24px;row-gap:14px;
+    grid-template-columns:minmax(0,1fr) minmax(300px,360px);grid-template-rows:auto auto auto auto 1fr;
+    grid-template-areas:"pv head" "pv seg" "pv btns" "pv grid" "pv tip";align-items:start;
+    transform:translateY(16px) scale(.98);opacity:0;transition:transform .3s,opacity .3s}
+  .sheet.on .box{transform:none;opacity:1}
+  .sheet .grab{display:none}
+  .sh-head{grid-area:head}.pv{grid-area:pv;align-self:stretch;min-height:420px}.seg{grid-area:seg}.sh-btns{grid-area:btns}.sh-grid{grid-area:grid}.tip{grid-area:tip;text-align:left}
+  .pv img{max-height:min(74vh,720px);max-height:min(74svh,720px)}
+}
+/* landscape phones: compact two columns */
+@media (orientation:landscape) and (max-height:559px){
+  .sheet{align-items:center;padding:8px}
+  .sheet .box{max-width:820px;border-radius:20px;border-bottom:1px solid var(--line);padding:12px 14px;column-gap:16px;row-gap:8px;
+    grid-template-columns:auto minmax(260px,1fr);grid-template-areas:"pv head" "pv seg" "pv btns" "pv grid" "pv tip";align-items:start;
+    transform:translateY(16px);opacity:0;transition:transform .3s,opacity .3s}
+  .sheet.on .box{transform:none;opacity:1}
+  .sheet .grab{display:none}
+  .sh-head{grid-area:head}.pv{grid-area:pv;align-self:stretch;min-height:0;padding:6px}.seg{grid-area:seg}.sh-btns{grid-area:btns}.sh-grid{grid-area:grid}.tip{grid-area:tip;text-align:left;font-size:11.5px}
+  .pv img{max-height:calc(100vh - 44px);max-height:calc(100svh - 44px)}
+  .sh-grid .ic{width:40px;height:40px} .sh-grid svg{width:18px;height:18px}
+  .sh-btns .btn{min-height:40px}
+}
 
 .motion{all:unset;cursor:pointer;margin-top:10px;font:600 12px/1 var(--body);color:var(--muted);padding:9px 13px;border-radius:999px;border:1px dashed rgba(255,255,255,.18);display:none;align-items:center;gap:8px}
 .motion svg{width:16px;height:16px}
@@ -144,17 +224,11 @@ footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(25
   .panel{padding:12px;border-radius:18px}
   .timer small{font-size:12px}
   .timer strong{font-size:17px}
-  .share{gap:6px}
-  .share button{font-size:10px;padding:10px 2px 8px;gap:5px;border-radius:13px}
-  .share svg{width:21px;height:21px}
-  .more button{font-size:12px;padding:11px 8px}
   .chip{font-size:10px;padding:7px 9px}
 }
 @media (min-width:600px) and (orientation:portrait){
   header img{height:36px}
   .panel{padding:20px}
-  .share button{font-size:12px;padding:14px 4px 12px}
-  .share svg{width:28px;height:28px}
 }
 /* landscape phones, tablets, desktops: orb left, info right */
 @media (orientation:landscape) and (min-width:560px){
@@ -194,13 +268,6 @@ footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(25
   .chip{padding:6px 9px;font-size:10px}
   .panel{margin-top:8px;padding:10px 12px;border-radius:16px}
   .timer strong{font-size:17px}
-  .share-t{margin:8px 0 6px;font-size:12px}
-  .share{gap:6px}
-  .share button{padding:9px 4px;border-radius:12px}
-  .share .lbl{display:none}
-  .share svg{width:20px;height:20px}
-  .more{margin-top:6px}
-  .more button{padding:9px}
   footer{padding-top:6px;font-size:11px}
 }
 @media (orientation:landscape) and (min-width:1800px) and (min-height:1000px){
@@ -210,10 +277,6 @@ footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(25
   .chip{font-size:13px;padding:10px 14px}
   .panel{padding:26px;border-radius:28px}
   .timer small{font-size:16px} .timer strong{font-size:28px}
-  .share-t{font-size:16px;margin:22px 0 14px}
-  .share{gap:12px} .share button{font-size:14px;padding:18px 6px 16px;gap:10px;border-radius:20px}
-  .share svg{width:32px;height:32px}
-  .more button{font-size:16px;padding:16px;border-radius:18px}
   footer{font-size:14px}
 }
 @media (min-width:1100px) and (min-height:700px){
@@ -275,28 +338,55 @@ footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(25
       <small data-i18n="next">Наступне передбачення через</small>
       <strong id="countdown">--:--:--</strong>
     </div>
-    <div class="share-t" data-i18n="shareTitle">Поділись передбаченням</div>
-    <div class="share">
-      <button type="button" data-share="instagram" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span class="lbl">Instagram</span></button>
-      <button type="button" data-share="telegram" aria-label="Telegram">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.4 4.2 2.9 11.3c-1.2.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM8.6 14l9.2-5.8c.4-.3.8-.1.5.2l-7.6 6.9-.3 3.2L8.6 14Z"/></svg><span class="lbl">Telegram</span></button>
-      <button type="button" data-share="threads" aria-label="Threads">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17.6 8.3C16.6 5.3 14.4 3.8 11.6 3.8 7 3.8 4.4 7.2 4.4 12s2.6 8.2 7.2 8.2c3.6 0 6.4-2.2 6.4-5.3 0-3.6-3.6-4.6-6.4-4.2-2.2.3-3.4 1.5-3.2 3 .2 1.6 1.8 2.3 3.4 2.2 2.6-.2 3.6-2.3 3.6-5.6"/></svg><span class="lbl">Threads</span></button>
-      <button type="button" data-share="linkedin" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.46h-4v-4.84c0-1.16-.02-2.64-1.61-2.64-1.61 0-1.86 1.26-1.86 2.56v4.92h-4v-11Z"/></svg><span class="lbl">LinkedIn</span></button>
-    </div>
-    <div class="more">
-      <button type="button" class="primary" data-share="image" data-i18n="saveImg">Зберегти картинку</button>
-      <button type="button" data-share="native" id="nativeBtn" data-i18n="more">Ще…</button>
+    <div class="actions">
+      <button type="button" class="btn primary" id="openShare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/><path d="M5 13v5a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-5"/></svg><span data-i18n="shareBtn">Поділитися передбаченням</span></button>
+      <div class="socials" role="group" aria-label="Share">
+        <button type="button" class="soc" data-act="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></button>
+        <a class="soc" data-link="telegram" href="#" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.4 4.2 2.9 11.3c-1.2.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM8.6 14l9.2-5.8c.4-.3.8-.1.5.2l-7.6 6.9-.3 3.2L8.6 14Z"/></svg></a>
+        <a class="soc" data-link="threads" href="#" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17.6 8.3C16.6 5.3 14.4 3.8 11.6 3.8 7 3.8 4.4 7.2 4.4 12s2.6 8.2 7.2 8.2c3.6 0 6.4-2.2 6.4-5.3 0-3.6-3.6-4.6-6.4-4.2-2.2.3-3.4 1.5-3.2 3 .2 1.6 1.8 2.3 3.4 2.2 2.6-.2 3.6-2.3 3.6-5.6"/></svg></a>
+        <a class="soc" data-link="linkedin" href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.46h-4v-4.84c0-1.16-.02-2.64-1.61-2.64-1.61 0-1.86 1.26-1.86 2.56v4.92h-4v-11Z"/></svg></a>
+        <button type="button" class="soc" data-act="copy" aria-label="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg></button>
+      </div>
     </div>
   </section>
   </div>
 
   <footer>
     <span data-i18n="footer">Зроблено з любов'ю командою</span> <a href="https://xerion.team/" target="_blank" rel="noopener">xerion.team</a>
+    <span class="ver" id="ver"></span>
   </footer>
 </main>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle" aria-hidden="true">
+  <div class="bd" data-close></div>
+  <div class="box">
+    <span class="grab" aria-hidden="true"></span>
+    <div class="sh-head"><h2 id="shTitle" data-i18n="shareTitle">Поділись передбаченням</h2><button type="button" class="x" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="pv"><img id="pvImg" alt="" hidden><span class="ld" id="pvLd" data-i18n="rendering">Малюю картинку…</span></div>
+    <p class="tip" id="shTip"></p>
+    <div class="seg" role="group" aria-label="Format">
+      <button type="button" data-fmt="story" aria-pressed="true" data-i18n="fmtStory">Stories 9:16</button>
+      <button type="button" data-fmt="post" aria-pressed="false" data-i18n="fmtPost">Пост 4:5</button>
+    </div>
+    <div class="ig" id="igGuide">
+      <div class="step"><span class="num">1</span><p><span data-i18n="igStep1">Збережи картинку на телефон</span><small id="igStep1Hint"></small></p>
+        <button type="button" class="btn ghost" id="igSave"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span data-i18n="igSaveBtn">Зберегти картинку</span></button></div>
+      <div class="step" id="igStep2"><span class="num">2</span><p><span data-i18n="igStep2">Відкрий Stories і обери картинку з галереї</span><small data-i18n="igStep2Hint">У камері Stories проведи вгору або торкнись іконки галереї в кутку</small></p>
+        <a class="btn ig-open" id="igOpen" href="instagram://story-camera"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span data-i18n="igOpenBtn">Відкрити Instagram Stories</span></a></div>
+      <button type="button" class="back" id="igBack" data-i18n="igBack">Інші способи поділитися</button>
+    </div>
+    <div class="sh-btns" id="shBtns">
+      <button type="button" class="btn primary" id="shShare"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/><path d="M5 13v5a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-5"/></svg><span data-i18n="shareImg">Поділитися</span></button>
+      <button type="button" class="btn ghost" id="shSave"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span data-i18n="saveImg">Зберегти</span></button>
+    </div>
+    <div class="sh-grid">
+      <button type="button" data-act="instagram"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></span><span class="t">Instagram</span></button>
+      <a data-link="telegram" href="#" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.4 4.2 2.9 11.3c-1.2.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM8.6 14l9.2-5.8c.4-.3.8-.1.5.2l-7.6 6.9-.3 3.2L8.6 14Z"/></svg></span><span class="t">Telegram</span></a>
+      <a data-link="threads" href="#" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17.6 8.3C16.6 5.3 14.4 3.8 11.6 3.8 7 3.8 4.4 7.2 4.4 12s2.6 8.2 7.2 8.2c3.6 0 6.4-2.2 6.4-5.3 0-3.6-3.6-4.6-6.4-4.2-2.2.3-3.4 1.5-3.2 3 .2 1.6 1.8 2.3 3.4 2.2 2.6-.2 3.6-2.3 3.6-5.6"/></svg></span><span class="t">Threads</span></a>
+      <a data-link="linkedin" href="#" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.46h-4v-4.84c0-1.16-.02-2.64-1.61-2.64-1.61 0-1.86 1.26-1.86 2.56v4.92h-4v-11Z"/></svg></span><span class="t">LinkedIn</span></a>
+      <button type="button" data-act="copy"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg></span><span class="t" data-i18n="copyShort">Посилання</span></button>
+    </div>
+  </div>
+</div>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
@@ -305,12 +395,15 @@ footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(25
 const SITE = 'https://foffpls.github.io/xerion-oracle/';
 const STORY_QR = '111111100000010011111001001111111100000100011011101001110101000001101110101010010001101110101011101101110101100001110001010001011101101110101110110100100011101011101100000101001100111101110001000001111111101010101010101010101111111000000001011101100100101100000000101111100000111111101010001111100010110001010000010111111001101101010100110011000110100000110010110011111000011001110000111010011110100110101011100100110010100111011010000011100011111001111001001011101010111111010001010000111101010110101001111000010111111111011100101010101110110001010000110111001110111001001100011111101001101101010011100100001101000110111110100110100001110010101101101011111101110000100011110010000010000111011100111001001110101100001011000101101001110111000110101010010010010100101000011000100000101101101101100001100111111111011010111110000000000001010000010111000100010101111111100110111110101011101010110100000101100101010000111100011111101110101010111000111010111111011101110101011110111011111010010111101110101010110001000011001101100100000100100111010010111011011100111111101111111001100011111100010';
 const KEY = 'xerion-oracle.v1';
+const VERSION = 'v3 · 13.10.2026';
 
 /* ---------- i18n ---------- */
 const T = {
   ua:{title:'Передбачення дня',hint:'Тапни по кулі або потруси телефон',hintDesk:'Клацни по кулі, щоб дізнатись майбутнє',tap:'Тапни',
       revealing:'Куля зазирає в майбутнє…',done:'Твоє передбачення на сьогодні',again:'Куля вже сказала своє. Повертайся завтра!',
-      next:'Наступне передбачення через',shareTitle:'Поділись передбаченням',saveImg:'Зберегти картинку',more:'Ще…',
+      next:'Наступне передбачення через',shareTitle:'Поділись передбаченням',shareBtn:'Поділитися передбаченням',shareImg:'Поділитися',saveImg:'Зберегти',copyShort:'Посилання',rendering:'Малюю картинку…',fmtStory:'Stories 9:16',fmtPost:'Пост 4:5',
+      tipHold:'Порада: натисни й утримуй картинку, щоб зберегти її в галерею.',tipInApp:'Якщо кнопки не спрацюють: відкрий сторінку в браузері (меню ⋯ → «Відкрити в браузері») або натисни й утримуй картинку.',tipDesk:'Завантаж картинку і додай її в пост або сторіз.',igHint:'Обери Instagram → Stories у меню, що відкриється',igSaved:'Картинку збережено — відкрий Instagram і додай її в Stories',linkCopied:'Посилання скопійовано',retry:'Картинка готова — натисни ще раз',
+      igTitle:'Додати в Instagram Stories',igStep1:'Збережи картинку на телефон',igStep1iOS:'У меню, що відкриється, обери «Зберегти зображення»',igStep1Other:'Картинка збережеться в галерею або «Завантаження»',igSaveBtn:'Зберегти картинку',igStep2:'Відкрий Stories і обери картинку з галереї',igStep2Hint:'У камері Stories проведи вгору або торкнись іконки галереї в кутку',igOpenBtn:'Відкрити Instagram Stories',igBack:'Інші способи поділитися',igDesk:'Stories додаються з телефона: збережи картинку і надішли її собі або відкрий цю сторінку на телефоні.',
       footer:"Зроблено з любов'ю командою",enableShake:'Увімкнути «потрусити»',shakeOn:'Готово! Тепер можна трусити телефон',
       shakeDenied:'Доступ до руху не надано — просто тапни по кулі',legendary:'Легендарне',no:'№',
       copied:'Текст скопійовано — встав його у пост',imgSaved:'Картинку збережено — додай її в Instagram Stories',
@@ -319,7 +412,9 @@ const T = {
       cats:{meme:'Мемні',career:"Робота",home:'Побут',money:'Гроші',food:'Кава і їжа',mood:'Настрій',social:'Люди',weekend:'Відпочинок',adventure:'Пригоди',energy:'Енергія',mystic:'Містика'}},
   en:{title:'Prophecy of the day',hint:'Tap the orb or shake your phone',hintDesk:'Click the orb to see your future',tap:'Tap',
       revealing:'The orb is looking into the future…',done:'Your prophecy for today',again:'The orb has spoken. Come back tomorrow!',
-      next:'Next prophecy in',shareTitle:'Share your prophecy',saveImg:'Save image',more:'More…',
+      next:'Next prophecy in',shareTitle:'Share your prophecy',shareBtn:'Share your prophecy',shareImg:'Share',saveImg:'Save',copyShort:'Link',rendering:'Drawing your card…',fmtStory:'Stories 9:16',fmtPost:'Post 4:5',
+      tipHold:'Tip: press and hold the image to save it to your photos.',tipInApp:'If buttons don’t work: open this page in your browser (menu ⋯ → “Open in browser”) or press and hold the image.',tipDesk:'Download the image and add it to a post or story.',igHint:'Pick Instagram → Stories in the menu that opens',igSaved:'Image saved — open Instagram and add it to your Story',linkCopied:'Link copied',retry:'Image is ready — tap again',
+      igTitle:'Add to Instagram Stories',igStep1:'Save the image to your phone',igStep1iOS:'In the menu that opens, choose “Save Image”',igStep1Other:'It will be saved to your gallery or Downloads',igSaveBtn:'Save image',igStep2:'Open Stories and pick the image from your gallery',igStep2Hint:'In the Stories camera swipe up or tap the gallery icon in the corner',igOpenBtn:'Open Instagram Stories',igBack:'Other ways to share',igDesk:'Stories are posted from a phone: save the image and send it to yourself, or open this page on your phone.',
       footer:'Made with love by the team at',enableShake:'Enable “shake”',shakeOn:'Done! Now you can shake your phone',
       shakeDenied:'Motion access denied — just tap the orb',legendary:'Legendary',no:'#',
       copied:'Text copied — paste it into your post',imgSaved:'Image saved — add it to your Instagram Story',
@@ -330,10 +425,33 @@ const T = {
 
 /* ---------- storage (safe) ---------- */
 const mem = {};
-function load(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return mem; } }
-function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){ Object.assign(mem,S); } }
+const CK = 'xo1';
+const ckPath = location.pathname.replace(/[^/]*$/, '') || '/';
+function packCookie(st){
+  return [st.seed||'', st.today?st.today.date:'', st.today?Number(st.today.id).toString(36):'', st.lang||'', (st.seen||[]).map(n=>Number(n).toString(36)).join('.')].join('~');
+}
+function unpackCookie(v){
+  const [seed,d,id,lang,seen]=v.split('~'); const o={};
+  if(seed) o.seed=seed; if(d&&id) o.today={date:d,id:parseInt(id,36)}; if(lang) o.lang=lang;
+  o.seen = seen ? seen.split('.').filter(Boolean).map(x=>parseInt(x,36)) : [];
+  return o;
+}
+function readCookie(){ try{ const m=document.cookie.match(new RegExp('(?:^|; )'+CK+'=([^;]*)')); return m?unpackCookie(decodeURIComponent(m[1])):null; }catch(e){ return null; } }
+function writeCookie(st){ try{ document.cookie=CK+'='+encodeURIComponent(packCookie(st))+'; Max-Age=34560000; Path='+ckPath+'; SameSite=Lax'+(location.protocol==='https:'?'; Secure':''); }catch(e){} }
+function load(){
+  let a=null; try{ a=JSON.parse(localStorage.getItem(KEY)); }catch(e){}
+  const b=readCookie();
+  if(!a && !b) return Object.keys(mem).length?mem:{};
+  if(!a) return b; if(!b) return a;
+  // both exist: keep the more recent "today" and merge seen lists
+  const ta=a.today?a.today.date:'', tb=b.today?b.today.date:'';
+  const base = tb>ta ? Object.assign({},a,{today:b.today}) : a;
+  base.seed = a.seed||b.seed;
+  base.seen = Array.from(new Set([...(a.seen||[]),...(b.seen||[])]));
+  return base;
+}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} Object.assign(mem,S); writeCookie(S); }
 const params = new URLSearchParams(location.search);
-if (params.has('reset')) { try{ localStorage.removeItem(KEY); }catch(e){} }
 let S = load();
 if (!S.seed) { S.seed = (crypto.getRandomValues ? crypto.getRandomValues(new Uint32Array(1))[0] : Math.random()*4e9|0).toString(36); }
 if (!Array.isArray(S.seen)) S.seen = [];
@@ -373,7 +491,7 @@ function applyLang(){
   document.querySelectorAll('[data-i18n]').forEach(el=>{ const v=L()[el.dataset.i18n]; if(typeof v==='string') el.innerHTML=v; });
   document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.lang===S.lang)));
   setSub();
-  if (state==='revealed' && current) showText(current, false);
+  if (state==='revealed' && current){ showText(current, false); if(typeof updateLinks==='function'){ updateLinks(); prewarm(); if(sheet.classList.contains('on')){ setMode(sheet.classList.contains('ig-mode')?'instagram':'share'); showPreview(); } } }
   renderMeta();
   document.title = S.lang==='en' ? 'Xerion Oracle — prophecy of the day' : 'Xerion Oracle — передбачення дня';
 }
@@ -412,11 +530,12 @@ function reveal(){
   if (!ITEMS.length) return;
   const orb=$('#orb');
   if (state==='busy') return;
+  if (state==='revealed' && preview==='random'){ orb.classList.remove('revealed','rare'); fx.setRare(false); state='idle'; }
   if (state==='revealed'){ orb.classList.remove('wobble'); void orb.offsetWidth; orb.classList.add('wobble'); toast(L().again); return; }
   state='busy'; setSub(); orb.classList.add('busy'); fx.boost(1);
   if (navigator.vibrate) try{ navigator.vibrate([25,60,25,60,25,60,90]); }catch(e){}
   const date=today();
-  current = preview ? (ITEMS.find(i=>String(i.id)===preview)||ITEMS[0]) : pickFor(date);
+  current = preview ? (preview==='random' ? ITEMS[Math.floor(Math.random()*ITEMS.length)] : (ITEMS.find(i=>String(i.id)===preview)||ITEMS[0])) : pickFor(date);
   if (!preview){
     S.today={date,id:current.id};
     if (!S.seen.includes(current.id)) S.seen.push(current.id);
@@ -428,7 +547,7 @@ function reveal(){
     state='revealed'; setSub(); showText(current,true); renderMeta();
     $('#meta').classList.add('on'); $('#panel').classList.add('on');
     if (current.rare) sparkle();
-    tick();
+    tick(); updateLinks(); prewarm();
   }, reduced?300:1700);
 }
 $('#orb').addEventListener('click', reveal);
@@ -440,7 +559,7 @@ function restoreToday(){
     current=it; state='revealed';
     const orb=$('#orb'); orb.classList.add('revealed'); if(it.rare){orb.classList.add('rare'); fx.setRare(true);}
     showText(it,true); renderMeta(); setSub();
-    $('#meta').classList.add('on'); $('#panel').classList.add('on'); tick();
+    $('#meta').classList.add('on'); $('#panel').classList.add('on'); tick(); updateLinks(); prewarm();
   }
 }
 
@@ -540,101 +659,249 @@ function sparkle(){
   }
 }
 
-/* ---------- share card (1080x1920) ---------- */
+/* ---------- share cards ---------- */
 const imgCache={};
 function img(src){ return imgCache[src] || (imgCache[src]=new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=src; })); }
-function wrapLines(ctx, text, maxW){
+function roundRect(c,x,y,w,h,r){ c.beginPath(); c.moveTo(x+r,y); c.arcTo(x+w,y,x+w,y+h,r); c.arcTo(x+w,y+h,x,y+h,r); c.arcTo(x,y+h,x,y,r); c.arcTo(x,y,x+w,y,r); c.closePath(); }
+function wrapLines(c, text, maxW){
   const words=text.split(/\s+/), lines=[]; let line='';
-  for(const w of words){ const t=line?line+' '+w:w; if(ctx.measureText(t).width>maxW && line){ lines.push(line); line=w; } else line=t; }
+  for(const w of words){ const t=line?line+' '+w:w; if(c.measureText(t).width>maxW && line){ lines.push(line); line=w; } else line=t; }
   if(line) lines.push(line); return lines;
 }
-async function makeCard(){
-  try{ await document.fonts.ready; }catch(e){}
-  const W=1080,H=1920, cv=document.createElement('canvas'); cv.width=W; cv.height=H; const c=cv.getContext('2d');
-  const gold=!!current.rare;
-  // background
-  let g=c.createLinearGradient(0,0,0,H); g.addColorStop(0,'#0b0910'); g.addColorStop(1,'#1a0c12'); c.fillStyle=g; c.fillRect(0,0,W,H);
-  g=c.createRadialGradient(W/2,880,50,W/2,880,900); g.addColorStop(0, gold?'rgba(255,180,60,.35)':'rgba(172,8,0,.45)'); g.addColorStop(1,'rgba(0,0,0,0)'); c.fillStyle=g; c.fillRect(0,0,W,H);
-  const rr=rng('card'+current.id); c.fillStyle='#ffe9e2';
-  for(let i=0;i<120;i++){ c.globalAlpha=.15+rr()*.5; c.beginPath(); c.arc(rr()*W, rr()*H, rr()*2.4+.4, 0, 6.283); c.fill(); }
-  c.globalAlpha=1;
-  // logo
-  try{ const lg=await img('logo.png'); const lw=380, lh=lw*lg.height/lg.width; c.drawImage(lg,(W-lw)/2,150,lw,lh); }catch(e){}
-  // title
-  c.textAlign='center'; c.fillStyle= gold?'#ffc54d':'#ff8f78';
-  c.font='700 40px Unbounded, Manrope, sans-serif';
-  if ('letterSpacing' in c) c.letterSpacing='8px';
-  c.fillText(L().cardTitle + (gold?' · ★':''), W/2, 370);
-  if ('letterSpacing' in c) c.letterSpacing='0px';
-  // orb
-  const cx=W/2, cy=900, R=380;
-  g=c.createRadialGradient(cx,cy+R*.1,R*.1,cx,cy,R); g.addColorStop(0,'#3a0f10'); g.addColorStop(.6,'#15070b'); g.addColorStop(1,'#07050a');
-  c.save(); c.shadowColor= gold?'rgba(255,197,77,.7)':'rgba(255,77,46,.7)'; c.shadowBlur=120; c.fillStyle=g; c.beginPath(); c.arc(cx,cy,R,0,6.283); c.fill(); c.restore();
-  c.save(); c.beginPath(); c.arc(cx,cy,R,0,6.283); c.clip(); c.globalCompositeOperation='lighter';
-  for(let i=0;i<260;i++){ const a=rr()*6.283, d=Math.pow(rr(),.7)*R*.92, z=rr();
-    c.fillStyle = gold?`hsla(${38+rr()*14},100%,${58+z*20}%,${.25+z*.5})`:`hsla(${rr()<.75?2+rr()*22:340+rr()*12},95%,${48+z*22}%,${.25+z*.5})`;
-    c.beginPath(); c.arc(cx+Math.cos(a)*d, cy+Math.sin(a)*d*.82, .8+z*3, 0, 6.283); c.fill(); }
-  c.globalCompositeOperation='source-over';
-  g=c.createRadialGradient(cx,cy,0,cx,cy,R*.8); g.addColorStop(0,'rgba(8,4,8,.8)'); g.addColorStop(.6,'rgba(8,4,8,.55)'); g.addColorStop(1,'rgba(8,4,8,0)'); c.fillStyle=g; c.fillRect(cx-R,cy-R,2*R,2*R);
-  g=c.createRadialGradient(cx-R*.32,cy-R*.6,0,cx-R*.32,cy-R*.6,R*.5); g.addColorStop(0,'rgba(255,255,255,.28)'); g.addColorStop(1,'rgba(255,255,255,0)'); c.fillStyle=g; c.fillRect(cx-R,cy-R,2*R,2*R);
-  c.restore();
-  c.lineWidth=3; c.strokeStyle= gold?'rgba(255,197,77,.6)':'rgba(255,90,60,.45)'; c.beginPath(); c.arc(cx,cy,R,0,6.283); c.stroke();
-  // text in orb
-  const txt=current[S.lang]||current.ua; let fs=58, lines;
-  for(;fs>=34;fs-=2){ c.font=`700 ${fs}px Manrope, sans-serif`; lines=wrapLines(c,txt,R*1.42); if(lines.length*fs*1.25<=R*1.25) break; }
-  c.fillStyle='#fff4ee'; c.shadowColor= gold?'rgba(255,197,77,.9)':'rgba(255,77,46,.9)'; c.shadowBlur=24;
-  const lh=fs*1.25, y0=cy-(lines.length-1)*lh/2+fs*.35;
-  lines.forEach((ln,i)=>c.fillText(ln,cx,y0+i*lh)); c.shadowBlur=0;
-  // pedestal
-  c.fillStyle='#2a1316'; c.beginPath(); c.ellipse(cx,cy+R+40,R*.62,46,0,0,6.283); c.fill();
-  c.fillStyle='#ac0800'; c.fillRect(cx-R*.5,cy+R+4,R,4);
-  // category + date
-  c.font='700 32px Manrope, sans-serif'; c.fillStyle='#a99ea3';
-  const d=new Date(); const ds=d.toLocaleDateString(S.lang==='en'?'en-GB':'uk-UA',{day:'numeric',month:'long',year:'numeric'});
-  c.fillText(`${(L().cats[current.cat]||'').toUpperCase()}  ·  ${ds}`, cx, 1420);
-  // QR + CTA
-  const q=Math.round(Math.sqrt(STORY_QR.length)), qs=220, cell=qs/q, qx=cx-qs/2, qy=1520;
-  c.fillStyle='#ffffff'; roundRect(c,qx-22,qy-22,qs+44,qs+44,26); c.fill();
-  c.fillStyle='#0b0910'; for(let y=0;y<q;y++) for(let x=0;x<q;x++) if(STORY_QR[y*q+x]==='1') c.fillRect(qx+x*cell,qy+y*cell,cell+.6,cell+.6);
-  c.font='600 30px Manrope, sans-serif'; c.fillStyle='#f6efe9'; c.fillText(L().cardCta, cx, 1840);
-  return new Promise(res=>cv.toBlob(res,'image/png'));
+let fontsP=null;
+function fontsReady(){
+  if(!fontsP){
+    const want=[]; try{ ['700 60px Manrope','600 30px Manrope','800 40px Unbounded','700 40px Unbounded'].forEach(f=>want.push(document.fonts.load(f))); }catch(e){}
+    fontsP=Promise.race([Promise.all(want).catch(()=>{}), new Promise(r=>setTimeout(r,1200))]);
+  }
+  return fontsP;
 }
-function roundRect(c,x,y,w,h,r){ c.beginPath(); c.moveTo(x+r,y); c.arcTo(x+w,y,x+w,y+h,r); c.arcTo(x+w,y+h,x,y+h,r); c.arcTo(x,y+h,x,y,r); c.arcTo(x,y,x+w,y,r); c.closePath(); }
+function spaced(c, text, x, y, sp){
+  if ('letterSpacing' in c){ c.letterSpacing=sp+'px'; c.fillText(text,x+sp/2,y); c.letterSpacing='0px'; return; }
+  c.fillText(text,x,y);
+}
+function pill(c, text, cx, y, opt){
+  c.font=opt.font; const pad=opt.pad||26, h=opt.h||58;
+  const sp=opt.sp||0; let w=c.measureText(text).width + (('letterSpacing' in c)?sp*text.length:0) + pad*2;
+  const x=cx-w/2; roundRect(c,x,y,w,h,h/2);
+  if(opt.grad){ const g=c.createLinearGradient(x,0,x+w,0); g.addColorStop(0,'#ffd36a'); g.addColorStop(1,'#ff8a3d'); c.fillStyle=g; c.fill(); }
+  else { c.fillStyle='rgba(255,255,255,.07)'; c.fill(); c.lineWidth=2; c.strokeStyle='rgba(255,255,255,.16)'; c.stroke(); }
+  c.fillStyle=opt.color; c.textAlign='center'; c.textBaseline='middle'; spaced(c,text,cx,y+h/2+1,sp); c.textBaseline='alphabetic';
+  return w;
+}
+async function drawCard(item, lang, fmt){
+  await fontsReady();
+  const Lx=T[lang]||T.ua, story=fmt==='story';
+  const W=1080, H=story?1920:1350;
+  const cv=document.createElement('canvas'); cv.width=W; cv.height=H; const c=cv.getContext('2d');
+  const gold=!!item.rare, acc=gold?'255,197,77':'255,77,46';
+  const R = story?400:300, cx=W/2, cy = story?830:600;
+  const rr=rng('card'+item.id+fmt);
+  // background
+  let g=c.createLinearGradient(0,0,0,H); g.addColorStop(0,'#0c0910'); g.addColorStop(.55,'#140a10'); g.addColorStop(1,'#1d0b10'); c.fillStyle=g; c.fillRect(0,0,W,H);
+  g=c.createRadialGradient(cx,cy,R*.3,cx,cy,R*2.3); g.addColorStop(0,gold?'rgba(255,170,60,.38)':'rgba(190,14,0,.5)'); g.addColorStop(1,'rgba(0,0,0,0)'); c.fillStyle=g; c.fillRect(0,0,W,H);
+  g=c.createRadialGradient(W*.9,H,0,W*.9,H,W*.8); g.addColorStop(0,'rgba(224,51,27,.16)'); g.addColorStop(1,'rgba(0,0,0,0)'); c.fillStyle=g; c.fillRect(0,0,W,H);
+  c.fillStyle='#ffe9e2'; for(let i=0;i<(story?170:130);i++){ c.globalAlpha=.12+rr()*.55; c.beginPath(); c.arc(rr()*W, rr()*H, rr()*2.6+.4, 0, 6.283); c.fill(); } c.globalAlpha=1;
+  // logo
+  try{ const lg=await img('logo.png'); const lw=story?340:270, lh=lw*lg.height/lg.width; c.drawImage(lg,(W-lw)/2,story?110:64,lw,lh); }catch(e){}
+  // title + date
+  c.textAlign='center'; c.fillStyle=gold?'#ffd36a':'#ff9a85'; c.font=`700 ${story?38:32}px Unbounded, Manrope, sans-serif`;
+  spaced(c, Lx.cardTitle, cx, story?330:225, story?7:6);
+  const ds=new Date().toLocaleDateString(lang==='en'?'en-GB':'uk-UA',{day:'numeric',month:'long',year:'numeric'});
+  c.fillStyle='#a99ea3'; c.font=`600 ${story?30:26}px Manrope, sans-serif`; c.fillText(ds, cx, story?382:268);
+  // pedestal (same shape as the site SVG 220x70)
+  const bw=R*1.24, bh=bw*70/220, bx=cx-bw/2, by=cy-R+2*R*1.16-bh, s=bw/220;
+  g=c.createRadialGradient(cx,by+bh,0,cx,by+bh,bw*.8); g.addColorStop(0,`rgba(${acc},.35)`); g.addColorStop(1,'rgba(0,0,0,0)'); c.fillStyle=g; c.fillRect(cx-bw,by-bh,bw*2,bh*3);
+  c.save(); c.translate(bx,by); c.scale(s,s);
+  g=c.createLinearGradient(0,0,0,70); g.addColorStop(0,'#3a1a1c'); g.addColorStop(1,'#120a0d');
+  c.fillStyle=g; c.beginPath(); c.moveTo(40,8); c.quadraticCurveTo(110,26,180,8); c.lineTo(196,46); c.quadraticCurveTo(110,64,24,46); c.closePath(); c.fill();
+  g=c.createLinearGradient(0,0,220,0); g.addColorStop(0,'#1a0d10'); g.addColorStop(.5,'#4a2024'); g.addColorStop(1,'#1a0d10');
+  c.fillStyle=g; c.beginPath(); c.moveTo(24,46); c.quadraticCurveTo(110,64,196,46); c.lineTo(204,58); c.quadraticCurveTo(110,78,16,58); c.closePath(); c.fill();
+  c.strokeStyle=gold?'#ffb43d':'#ac0800'; c.lineWidth=2; c.beginPath(); c.moveTo(40,8); c.quadraticCurveTo(110,26,180,8); c.stroke();
+  c.restore();
+  // orb body + outer glow
+  g=c.createRadialGradient(cx,cy+R*.1,R*.05,cx,cy,R); g.addColorStop(0,gold?'#3d2410':'#3c0d0e'); g.addColorStop(.55,'#14070b'); g.addColorStop(1,'#060409');
+  c.save(); c.shadowColor=`rgba(${acc},.75)`; c.shadowBlur=150; c.fillStyle=g; c.beginPath(); c.arc(cx,cy,R,0,6.283); c.fill(); c.restore();
+  c.save(); c.beginPath(); c.arc(cx,cy,R,0,6.283); c.clip();
+  c.globalCompositeOperation='lighter';
+  for(let i=0;i<3;i++){ const a=i*2.1+.6, x=cx+Math.cos(a)*R*.3, y=cy+Math.sin(a)*R*.25; g=c.createRadialGradient(x,y,0,x,y,R*.75); g.addColorStop(0,gold?'rgba(255,190,80,.2)':'rgba(224,51,27,.22)'); g.addColorStop(1,'rgba(0,0,0,0)'); c.fillStyle=g; c.fillRect(cx-R,cy-R,2*R,2*R); }
+  for(let i=0;i<(story?320:260);i++){ const a=rr()*6.283, d=Math.pow(rr(),.7)*R*.93, z=rr(), h=rr();
+    c.fillStyle = gold?`hsla(${38+h*14},100%,${58+z*20}%,${.25+z*.55})`:`hsla(${h<.75?2+h*22:340+h*12},95%,${48+z*22}%,${.25+z*.55})`;
+    c.beginPath(); c.arc(cx+Math.cos(a)*d, cy+Math.sin(a)*d*.82, (.8+z*3.2)*(R/400), 0, 6.283); c.fill(); }
+  g=c.createRadialGradient(cx,cy+R*.75,0,cx,cy+R*.75,R*.8); g.addColorStop(0,`rgba(${acc},.38)`); g.addColorStop(1,'rgba(0,0,0,0)'); c.fillStyle=g; c.fillRect(cx-R,cy-R,2*R,2*R);
+  c.globalCompositeOperation='source-over';
+  g=c.createRadialGradient(cx,cy,0,cx,cy,R*.82); g.addColorStop(0,'rgba(8,4,8,.82)'); g.addColorStop(.55,'rgba(8,4,8,.6)'); g.addColorStop(1,'rgba(8,4,8,0)'); c.fillStyle=g; c.fillRect(cx-R,cy-R,2*R,2*R);
+  g=c.createRadialGradient(cx,cy,R*.6,cx,cy,R); g.addColorStop(0,'rgba(0,0,0,0)'); g.addColorStop(1,'rgba(0,0,0,.55)'); c.fillStyle=g; c.fillRect(cx-R,cy-R,2*R,2*R);
+  c.save(); c.translate(cx-R*.3,cy-R*.6); c.scale(1,.68); g=c.createRadialGradient(0,0,0,0,0,R*.5); g.addColorStop(0,'rgba(255,255,255,.34)'); g.addColorStop(1,'rgba(255,255,255,0)'); c.fillStyle=g; c.fillRect(-R,-R,2*R,2*R); c.restore();
+  c.restore();
+  // rim
+  c.lineWidth=4*(R/400);
+  if (c.createConicGradient){ g=c.createConicGradient(3.6,cx,cy); g.addColorStop(0,`rgba(${acc},.08)`); g.addColorStop(.25,`rgba(${acc},.75)`); g.addColorStop(.5,`rgba(${acc},.12)`); g.addColorStop(.8,`rgba(${acc},.4)`); g.addColorStop(1,`rgba(${acc},.08)`); c.strokeStyle=g; }
+  else c.strokeStyle=`rgba(${acc},.45)`;
+  c.beginPath(); c.arc(cx,cy,R-1,0,6.283); c.stroke();
+  // prophecy text
+  const txt=item[lang]||item.ua; const maxW=R*1.36, maxH=R*1.18; let fs=story?66:54, lines;
+  for(;fs>=26;fs-=2){ c.font=`700 ${fs}px Manrope, sans-serif`; lines=wrapLines(c,txt,maxW); if(lines.length*fs*1.24<=maxH && lines.every(l=>c.measureText(l).width<=maxW)) break; }
+  const lh=fs*1.24, y0=cy-(lines.length-1)*lh/2+fs*.36;
+  c.textAlign='center';
+  c.save(); c.fillStyle='#fff4ee'; c.shadowColor=`rgba(${acc},.95)`; c.shadowBlur=30*(R/400); lines.forEach((ln,i)=>c.fillText(ln,cx,y0+i*lh)); c.restore();
+  c.fillStyle='#fff6f1'; lines.forEach((ln,i)=>c.fillText(ln,cx,y0+i*lh));
+  // chips
+  const chipY = by+bh+(story?40:26), chipFont=`800 ${story?24:21}px Manrope, sans-serif`;
+  const cat=(Lx.cats[item.cat]||item.cat||'').toUpperCase();
+  if (gold){
+    c.font=chipFont; const w1=c.measureText(cat).width+52+3*cat.length, w2=c.measureText(Lx.legendary.toUpperCase()).width+52+3*Lx.legendary.length, gap=14;
+    const total=w1+w2+gap;
+    pill(c,cat,cx-total/2+w1/2,chipY,{font:chipFont,color:'#d8ccd1',sp:3,h:story?56:50});
+    pill(c,Lx.legendary.toUpperCase(),cx+total/2-w2/2,chipY,{font:chipFont,color:'#2a1300',sp:3,grad:true,h:story?56:50});
+  } else pill(c,cat,cx,chipY,{font:chipFont,color:'#d8ccd1',sp:3,h:story?56:50});
+  // QR + CTA
+  const q=Math.round(Math.sqrt(STORY_QR.length));
+  const drawQR=(x,y,size)=>{ const pad=size*.09; c.fillStyle='#fff'; roundRect(c,x-pad,y-pad,size+pad*2,size+pad*2,size*.11); c.fill(); const cell=size/q; c.fillStyle='#0b0910'; for(let yy=0;yy<q;yy++) for(let xx=0;xx<q;xx++) if(STORY_QR[yy*q+xx]==='1') c.fillRect(x+xx*cell,y+yy*cell,cell+.5,cell+.5); };
+  const host=SITE.replace(/^https?:\/\//,'').replace(/\/$/,'');
+  if (story){
+    const qs=200, qy=H-qs-232; drawQR(cx-qs/2,qy,qs);
+    c.textAlign='center'; c.fillStyle='#f6efe9'; c.font='700 34px Manrope, sans-serif'; c.fillText(Lx.cardCta, cx, H-120);
+    c.fillStyle='#8d8187'; c.font='600 26px Manrope, sans-serif'; c.fillText(host, cx, H-76);
+  } else {
+    const qs=150, gap=34; c.font='700 32px Manrope, sans-serif'; const tw=Math.max(c.measureText(Lx.cardCta).width, (c.font='600 24px Manrope, sans-serif', c.measureText(host).width));
+    const total=qs+gap+tw, x0=cx-total/2, qy=H-qs-62;
+    drawQR(x0,qy,qs);
+    c.textAlign='left'; c.fillStyle='#f6efe9'; c.font='700 32px Manrope, sans-serif'; c.fillText(Lx.cardCta, x0+qs+gap, qy+qs/2-4);
+    c.fillStyle='#8d8187'; c.font='600 24px Manrope, sans-serif'; c.fillText(host, x0+qs+gap, qy+qs/2+34);
+  }
+  const blob=await new Promise(res=>cv.toBlob(res,'image/png'));
+  const url=cv.toDataURL('image/jpeg',.9);
+  return {blob, url, file:new File([blob],`xerion-oracle-${fmt}.png`,{type:'image/png'})};
+}
+const cards=new Map(); // key -> {promise, value}
+function cardKey(fmt){ return current?`${current.id}|${S.lang}|${fmt}`:''; }
+function getCard(fmt){
+  const k=cardKey(fmt); if(!k) return Promise.reject();
+  if(!cards.has(k)){ const e={value:null}; e.promise=drawCard(current,S.lang,fmt).then(v=>(e.value=v)); cards.set(k,e); }
+  return cards.get(k).promise;
+}
+function readyCard(fmt){ const e=cards.get(cardKey(fmt)); return e&&e.value; }
+function prewarm(){ if(!current) return; setTimeout(()=>{ getCard('story').then(()=>getCard('post')).catch(()=>{}); }, 500); }
 
+/* ---------- share actions ---------- */
+const UA=navigator.userAgent||'';
+const isIOS=/iPad|iPhone|iPod/.test(UA) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+const inApp=/Instagram|FBAN|FBAV|FB_IAB|FBIOS|Line\/|musical_ly|TikTok|Snapchat|Pinterest|LinkedInApp|Threads|Barcelona/i.test(UA);
+let canShareFiles=false;
+try{ canShareFiles=!!(navigator.canShare && navigator.canShare({files:[new File([new Blob(['x'],{type:'image/png'})],'t.png',{type:'image/png'})]})); }catch(e){}
+let fmt='story';
 function shareUrl(src){ return SITE+'?src='+src; }
 function shareText(){ return L().shareText(current[S.lang]||current.ua); }
-async function copy(t){ try{ await navigator.clipboard.writeText(t); return true; }catch(e){ return false; } }
-function download(blob){ const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='xerion-oracle-'+today()+'.png'; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();},1500); }
-async function shareImage(){
-  const blob=await makeCard(); const file=new File([blob],'xerion-oracle.png',{type:'image/png'});
-  if (navigator.canShare && navigator.canShare({files:[file]})){
-    try{ await navigator.share({files:[file]}); return; }catch(e){ if(e.name==='AbortError') return; }
-  }
-  download(blob); toast(L().imgSaved);
+function copyText(t){
+  try{ if(navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(t); return true; } }catch(e){}
+  try{ const ta=document.createElement('textarea'); ta.value=t; ta.setAttribute('readonly',''); ta.style.cssText='position:fixed;top:0;left:0;opacity:0'; document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0,t.length); const ok=document.execCommand('copy'); ta.remove(); return ok; }catch(e){ return false; }
 }
-async function doShare(kind){
-  if (!current) return;
-  const text=shareText();
-  switch(kind){
-    case 'instagram': case 'image': return shareImage();
-    case 'telegram': return open('https://t.me/share/url?url='+encodeURIComponent(shareUrl('telegram'))+'&text='+encodeURIComponent(text),'_blank','noopener');
-    case 'threads': return open('https://www.threads.net/intent/post?text='+encodeURIComponent(text+' '+shareUrl('threads')),'_blank','noopener');
-    case 'linkedin': { const ok=await copy(text+' '+shareUrl('linkedin')); if(ok) toast(L().copied);
-      setTimeout(()=>open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(shareUrl('linkedin')),'_blank','noopener'), ok?900:0); return; }
-    case 'native': {
-      if (navigator.share){ try{ await navigator.share({title:'Xerion Oracle',text,url:shareUrl('native')}); }catch(e){} }
-      else if (await copy(text+' '+shareUrl('copy'))) toast(L().copied);
-      return; }
-  }
+function updateLinks(){
+  if(!current) return; const text=shareText();
+  const href={
+    telegram:'https://t.me/share/url?url='+encodeURIComponent(shareUrl('telegram'))+'&text='+encodeURIComponent(text),
+    threads:'https://www.threads.net/intent/post?text='+encodeURIComponent(text+' '+shareUrl('threads')),
+    linkedin:'https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(shareUrl('linkedin'))
+  };
+  document.querySelectorAll('[data-link]').forEach(a=>{ a.href=href[a.dataset.link]; });
 }
-document.querySelectorAll('[data-share]').forEach(b=>b.addEventListener('click',()=>doShare(b.dataset.share)));
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-link="linkedin"]'); if(!a) return;
+  // LinkedIn accepts only a URL — put the text into the clipboard so it can be pasted
+  if(copyText(shareText()+' '+shareUrl('linkedin'))) toast(L().copied);
+});
+function download(card){
+  const a=document.createElement('a'); a.href=URL.createObjectURL(card.blob); a.download=`xerion-oracle-${today()}-${fmt}.png`;
+  document.body.appendChild(a); a.click(); setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); },2000);
+}
+async function shareFile(card, hint){
+  if(!canShareFiles) return false;
+  try{ if(hint) toast(hint); await navigator.share({files:[card.file]}); return true; }
+  catch(e){ if(e && e.name==='AbortError') return true; if(e && e.name==='NotAllowedError'){ toast(L().retry); return true; } return false; }
+}
+// card must already be rendered to keep the user gesture valid for navigator.share
+async function withCard(fn){
+  const ready=readyCard(fmt); if(ready) return fn(ready,true);
+  toast(L().rendering); try{ const c=await getCard(fmt); return fn(c,false); }catch(e){}
+}
+async function actShare(){ await withCard(async (card,sync)=>{ if(!sync && isIOS){ toast(L().retry); return; } if(!(await shareFile(card))) { download(card); toast(L().tipDesk); } }); }
+async function actSave(){ await withCard(async (card,sync)=>{
+  if(isIOS && canShareFiles){ if(!sync){ toast(L().retry); return; } await shareFile(card); return; }
+  download(card); if(isTouch) toast(L().tipHold);
+}); }
+function actInstagram(){ openSheet('instagram'); }
+function actCopy(){ if(copyText(shareText()+' '+shareUrl('copy'))) toast(L().copied); else toast(shareUrl('copy')); }
+document.querySelectorAll('[data-act]').forEach(b=>b.addEventListener('click',()=>{
+  if(!current) return;
+  if(b.dataset.act==='instagram' && sheet.classList.contains('on')){ setMode('instagram'); showPreview(); return; }
+  ({instagram:actInstagram, copy:actCopy})[b.dataset.act]();
+}));
+
+/* ---------- sheet ---------- */
+const sheet=$('#sheet');
+let lastFocus=null;
+function setTip(){
+  const t = inApp ? L().tipInApp : (isTouch ? L().tipHold : L().tipDesk);
+  $('#shTip').textContent=t;
+  $('#shShare').hidden=!canShareFiles;
+  $('#shBtns').classList.toggle('single',!canShareFiles);
+}
+async function showPreview(){
+  const im=$('#pvImg'), ld=$('#pvLd');
+  const ready=readyCard(fmt);
+  if(ready){ im.src=ready.url; im.hidden=false; ld.hidden=true; return; }
+  im.hidden=true; ld.hidden=false;
+  const want=cardKey(fmt);
+  try{ const c=await getCard(fmt); if(cardKey(fmt)===want){ im.src=c.url; im.hidden=false; ld.hidden=true; } }catch(e){ ld.textContent=':('; }
+}
+function setMode(mode){
+  const ig = mode==='instagram';
+  sheet.classList.toggle('ig-mode', ig);
+  $('#shTitle').textContent = ig ? L().igTitle : L().shareTitle;
+  if(ig){
+    fmt='story'; sheet.querySelectorAll('[data-fmt]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.fmt==='story')));
+    $('#igStep1Hint').textContent = isIOS && canShareFiles ? L().igStep1iOS : L().igStep1Other;
+    $('#igStep2').style.display = isTouch ? '' : 'none';
+    $('#shTip').textContent = isTouch ? (inApp ? L().tipInApp : '') : L().igDesk;
+  } else setTip();
+}
+function openSheet(mode){
+  if(!current) return;
+  if(typeof mode!=='string') mode='share';
+  lastFocus=document.activeElement; setTip(); updateLinks(); setMode(mode);
+  sheet.classList.add('on'); sheet.setAttribute('aria-hidden','false'); document.body.classList.add('lock');
+  showPreview(); getCard(fmt==='story'?'post':'story').catch(()=>{});
+  setTimeout(()=>sheet.querySelector('.x').focus({preventScroll:true}),50);
+}
+function closeSheet(){
+  sheet.classList.remove('on'); sheet.setAttribute('aria-hidden','true'); document.body.classList.remove('lock');
+  if(lastFocus && lastFocus.focus) lastFocus.focus({preventScroll:true});
+}
+$('#openShare').addEventListener('click',()=>openSheet('share'));
+$('#igBack').addEventListener('click',()=>{ setMode('share'); showPreview(); });
+$('#igSave').addEventListener('click',actSave);
+sheet.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',closeSheet));
+addEventListener('keydown',e=>{ if(e.key==='Escape' && sheet.classList.contains('on')) closeSheet(); });
+sheet.querySelectorAll('[data-fmt]').forEach(b=>b.addEventListener('click',()=>{
+  fmt=b.dataset.fmt; sheet.querySelectorAll('[data-fmt]').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); showPreview();
+}));
+$('#shShare').addEventListener('click',actShare);
+$('#shSave').addEventListener('click',actSave);
+// swipe down to close (mobile bottom sheet)
+(()=>{ const box=sheet.querySelector('.box'); let y0=null;
+  box.addEventListener('touchstart',e=>{ y0=(box.scrollTop<=0)?e.touches[0].clientY:null; },{passive:true});
+  box.addEventListener('touchmove',e=>{ if(y0==null) return; const dy=e.touches[0].clientY-y0; if(dy>0 && getComputedStyle(sheet).alignItems==='flex-end'){ box.style.transition='none'; box.style.transform=`translateY(${dy}px)`; } },{passive:true});
+  box.addEventListener('touchend',e=>{ if(y0==null) return; const dy=(e.changedTouches[0].clientY-y0); box.style.transition=''; box.style.transform=''; if(dy>110 && getComputedStyle(sheet).alignItems==='flex-end') closeSheet(); y0=null; });
+})();
 
 /* ---------- boot ---------- */
+$('#ver').textContent=VERSION;
 applyLang();
 fetch('predictions.json',{cache:'no-cache'}).then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(d=>{
   ITEMS=(d.items||[]).filter(i=>i && i.id!=null && (i.ua||i.en)).map(i=>({...i, id:Number(i.id), ua:i.ua||i.en, en:i.en||i.ua}));
   restoreToday();
-  if (preview) reveal();
+  if (preview && preview!=='random') reveal();
 }).catch(()=>{ $('#sub').textContent=L().loadErr; });
 addEventListener('resize',()=>{ if(state==='revealed') fit($('#msg')); });
 })();
